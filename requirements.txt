@@ -1,2 +1,2 @@
-json5
-pydash
+json5==0.7.0
+pydash==4.7.6
