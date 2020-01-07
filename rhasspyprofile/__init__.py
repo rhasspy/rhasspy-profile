@@ -106,7 +106,7 @@ class Profile:
             # Try to find in the user profile first
             full_path = profiles_dir.joinpath(self.name, *path_parts)
 
-            if full_path.is_file():
+            if full_path.exists():
                 return full_path
 
         # Use base dir
@@ -120,7 +120,7 @@ class Profile:
             # Try to find in the runtime profile first
             full_path = profiles_dir.joinpath(self.name, *path_parts)
 
-            if full_path.is_file():
+            if full_path.exists():
                 return_paths.append(full_path)
 
         return return_paths
