@@ -1,6 +1,6 @@
 """Reads and writes profile settings for Rhasspy."""
-import logging
 import collections
+import logging
 import typing
 from enum import Enum
 from pathlib import Path

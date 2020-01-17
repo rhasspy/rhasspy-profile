@@ -1,6 +1,0 @@
-json5==0.7.0
-pydash==4.7.6
-
-flake8==3.7.9
-pylint==2.4.4
-mypy==0.700
