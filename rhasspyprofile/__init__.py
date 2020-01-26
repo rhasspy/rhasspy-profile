@@ -77,7 +77,7 @@ class Profile:
         self.json: typing.Dict[str, typing.Any] = {}  # no defaults
         self.system_json: typing.Dict[str, typing.Any] = {}  # no defaults
 
-        if self.layers in [ProfileLayers.ALL, ProfileLayers.DEFAULTS]:
+        if self.layers in {ProfileLayers.ALL, ProfileLayers.DEFAULTS}:
             defaults_path = self.system_profiles_dir / "defaults.json"
             with open(defaults_path, "r") as defaults_file:
                 self.json = json5.load(defaults_file)
@@ -92,7 +92,7 @@ class Profile:
 
         # Overlay with profile
         self.json_path = self.read_path("profile.json")
-        if self.layers in [ProfileLayers.ALL, ProfileLayers.PROFILE]:
+        if self.layers in {ProfileLayers.ALL, ProfileLayers.PROFILE}:
             # Read in reverse order so user profile overrides system
             for profiles_dir in self.profiles_dirs[::-1]:
                 json_path = profiles_dir / self.name / "profile.json"
