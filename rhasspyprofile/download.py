@@ -66,24 +66,90 @@ async def download_file(
 
 @attr.s(auto_attribs=True)
 class DownloadFailedException(Exception):
+    """Exception raised when a file fails to download."""
+
     url: str
     reason: str
 
 
+def get_missing_profile_files(profile: Profile) -> typing.Set[typing.Tuple[str, Path]]:
+    """Return file (key, path) pairs that need to be downloaded."""
+    # Load settings
+    conditions: typing.Dict[str, typing.Any] = profile.get("download.conditions", {})
+    files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
+
+    # Keys in download.files that should be downloaded
+    required_files: typing.Set[typing.Tuple[str, Path]] = set()
+
+    # condition_key is a profile setting (e.g., speech_to_text.system).
+    # condition_value has setting value(s) and files required for those values.
+    for condition_key, condition_details in conditions.items():
+        # Get the actual profile setting for comparison
+        actual_value = profile.get(condition_key)
+        for expected_value, condition_files in condition_details.items():
+            # Allow comparisons like ">=0", etc.
+            compare_func = get_compare_func(expected_value)
+            compare_result = compare_func(actual_value)
+            _LOGGER.debug(
+                "%s %s %s = %s",
+                condition_key,
+                expected_value,
+                actual_value,
+                compare_result,
+            )
+
+            if compare_result:
+                # file_key is the destination path (relative to profile directory).
+                # file_value is the source name (in download.files).
+                for file_key, file_value in condition_files.items():
+                    file_path = profile.read_path(file_key)
+                    need_download = True
+
+                    # Check if a download is actually required
+                    if file_path.exists():
+                        if file_path.is_file():
+                            # Check if file is empty or matches expected size
+                            file_size = os.path.getsize(file_path)
+                            if file_size > 0:
+                                bytes_expected = files.get(file_value, {}).get(
+                                    "bytes_expected"
+                                )
+                                if (bytes_expected is None) or (
+                                    file_size == bytes_expected
+                                ):
+                                    need_download = False
+                        elif file_path.is_dir():
+                            # Check if directory is empty
+                            if list(file_path.glob("*")):
+                                need_download = False
+
+                    if need_download:
+                        # Add to required file set
+                        required_files.add((file_value, profile.write_path(file_key)))
+                    else:
+                        _LOGGER.debug("Skipping %s (%s)", file_key, str(file_path))
+
+    return required_files
+
+
 async def download_profile_files(
     profile: Profile,
+    required_files: typing.Optional[typing.Set[typing.Tuple[str, Path]]] = None,
     cache_dir: typing.Optional[Path] = None,
     session: typing.Optional[aiohttp.ClientSession] = None,
     chunk_size: int = 4096,
     status_fun: typing.Optional[DownloadStatusType] = None,
 ):
     """Download all required profile artifacts."""
+    if not required_files:
+        required_files = get_missing_profile_files(profile)
+
     # Directory for caching download files
     temp_cache_dir: typing.Optional[tempfile.TemporaryDirectory] = None
     if not cache_dir:
         # Use temporary directory
         temp_cache_dir = tempfile.TemporaryDirectory()
-        cache_dir = temp_cache_dir.name
+        cache_dir = Path(temp_cache_dir.name)
 
     # Create or re-use session
     close_session = session is None
@@ -92,67 +158,10 @@ async def download_profile_files(
 
     try:
         # Load settings
-        conditions: typing.Dict[str, typing.Any] = profile.get(
-            "download.conditions", {}
-        )
         files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
 
-        # Keys in download.files that should be downloaded
-        required_files: typing.Set[typing.Tuple[str, Path]] = set()
-
-        # condition_key is a profile setting (e.g., speech_to_text.system).
-        # condition_value has setting value(s) and files required for those values.
-        for condition_key, condition_details in conditions.items():
-            # Get the actual profile setting for comparison
-            actual_value = profile.get(condition_key)
-            for expected_value, condition_files in condition_details.items():
-                # Allow comparisons like ">=0", etc.
-                compare_func = get_compare_func(expected_value)
-                compare_result = compare_func(actual_value)
-                _LOGGER.debug(
-                    "%s %s %s = %s",
-                    condition_key,
-                    expected_value,
-                    actual_value,
-                    compare_result,
-                )
-
-                if compare_result:
-                    # file_key is the destination path (relative to profile directory).
-                    # file_value is the source name (in download.files).
-                    for file_key, file_value in condition_files.items():
-                        file_path = profile.read_path(file_key)
-                        need_download = True
-
-                        # Check if a download is actually required
-                        if file_path.exists():
-                            if file_path.is_file():
-                                # Check if file is empty or matches expected size
-                                file_size = os.path.getsize(file_path)
-                                if file_size > 0:
-                                    bytes_expected = files.get(file_key, {}).get(
-                                        "bytes_expected"
-                                    )
-                                    if (bytes_expected is None) or (
-                                        file_size == bytes_expected
-                                    ):
-                                        need_download = False
-                            elif file_path.is_dir():
-                                # Check if directory is empty
-                                if list(file_path.glob("*")):
-                                    need_download = False
-
-                        if need_download:
-                            # Add to required file set
-                            required_files.add(
-                                (file_value, profile.write_path(file_key))
-                            )
-                        else:
-                            _LOGGER.debug("Skipping %s (%s)", file_key, str(file_path))
-
         if required_files:
-            _LOGGER.debug(required_files)
-
+            # URL base if prefixed to every file URL
             url_base: str = profile.get("download.url_base", "")
             if url_base and (not url_base.endswith("/")):
                 url_base = url_base + "/"
@@ -220,9 +229,9 @@ async def download_profile_files(
                         )
 
                     # Wait for parts to download
-                    async for future in asyncio.as_completed(*awaitables):
+                    for future in asyncio.as_completed(awaitables):
                         part_url, part_bytes_downloaded, part_bytes_expected = (
-                            future.result()
+                            await future
                         )
                         if part_bytes_expected is not None:
                             if part_bytes_downloaded != part_bytes_expected:
@@ -241,7 +250,7 @@ async def download_profile_files(
                     download_path.parent.mkdir(parents=True, exist_ok=True)
                     with open(download_path, "wb") as final_file:
                         for part_path in part_paths:
-                            part_bytes: bytes = part_path.read()
+                            part_bytes: bytes = part_path.read_bytes()
                             final_file.write(part_bytes)
                             final_size += len(part_bytes)
                 else:
@@ -273,7 +282,7 @@ async def download_profile_files(
 
                 # When True, downloaded file is automatically unzipped in place
                 if unzip:
-                    unzip_command = ["gunzip", str(download_path)]
+                    unzip_command = ["gunzip", "--force", str(download_path)]
                     _LOGGER.debug(unzip_command)
                     subprocess.check_call(unzip_command, cwd=download_path.parent)
     finally:

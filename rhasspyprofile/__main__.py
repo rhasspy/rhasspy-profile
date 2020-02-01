@@ -40,7 +40,6 @@ async def main():
     profile = Profile(args.profile, args.system_profiles, args.user_profiles)
 
     # Override profile settings from the command line
-    extra_settings = {}
     for key, value in args.set:
         try:
             value = json.loads(value)
