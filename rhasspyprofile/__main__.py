@@ -6,7 +6,7 @@ import logging
 from pathlib import Path
 
 from . import Profile
-from .download import download_profile_files
+from .download import download_files
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -103,7 +103,7 @@ def get_args() -> argparse.Namespace:
 
 async def download(profile: Profile, args: argparse.Namespace):
     """Download required profile artifacts."""
-    await download_profile_files(profile)
+    await download_files(profile)
     print("OK")
 
 

@@ -10,7 +10,7 @@ from pathlib import Path
 import aiohttp
 import attr
 
-from . import Profile
+from .profile import Profile
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -65,6 +65,16 @@ async def download_file(
 
 
 @attr.s(auto_attribs=True)
+class MissingFile:
+    """Details of a missing file in a profile."""
+
+    file_key: str
+    file_path: Path
+    setting_name: str
+    setting_value: str
+
+
+@attr.s(auto_attribs=True)
 class DownloadFailedException(Exception):
     """Exception raised when a file fails to download."""
 
@@ -72,14 +82,14 @@ class DownloadFailedException(Exception):
     reason: str
 
 
-def get_missing_profile_files(profile: Profile) -> typing.Set[typing.Tuple[str, Path]]:
-    """Return file (key, path) pairs that need to be downloaded."""
+def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
+    """Return details of files that need to be downloaded."""
     # Load settings
     conditions: typing.Dict[str, typing.Any] = profile.get("download.conditions", {})
     files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
 
     # Keys in download.files that should be downloaded
-    required_files: typing.Set[typing.Tuple[str, Path]] = set()
+    missing_files: typing.List[MissingFile] = []
 
     # condition_key is a profile setting (e.g., speech_to_text.system).
     # condition_value has setting value(s) and files required for those values.
@@ -125,24 +135,31 @@ def get_missing_profile_files(profile: Profile) -> typing.Set[typing.Tuple[str, 
 
                     if need_download:
                         # Add to required file set
-                        required_files.add((file_value, profile.write_path(file_key)))
+                        missing_files.append(
+                            MissingFile(
+                                file_key=file_value,
+                                file_path=profile.write_path(file_key),
+                                setting_name=condition_key,
+                                setting_value=expected_value,
+                            )
+                        )
                     else:
                         _LOGGER.debug("Skipping %s (%s)", file_key, str(file_path))
 
-    return required_files
+    return missing_files
 
 
-async def download_profile_files(
+async def download_files(
     profile: Profile,
-    required_files: typing.Optional[typing.Set[typing.Tuple[str, Path]]] = None,
+    missing_files: typing.Optional[typing.List[MissingFile]] = None,
     cache_dir: typing.Optional[Path] = None,
     session: typing.Optional[aiohttp.ClientSession] = None,
     chunk_size: int = 4096,
     status_fun: typing.Optional[DownloadStatusType] = None,
 ):
     """Download all required profile artifacts."""
-    if not required_files:
-        required_files = get_missing_profile_files(profile)
+    if not missing_files:
+        missing_files = get_missing_files(profile)
 
     # Directory for caching download files
     temp_cache_dir: typing.Optional[tempfile.TemporaryDirectory] = None
@@ -160,14 +177,15 @@ async def download_profile_files(
         # Load settings
         files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
 
-        if required_files:
+        if missing_files:
             # URL base if prefixed to every file URL
             url_base: str = profile.get("download.url_base", "")
             if url_base and (not url_base.endswith("/")):
                 url_base = url_base + "/"
 
             # Actually download files
-            for file_key, download_path in required_files:
+            for missing_file in missing_files:
+                file_key, download_path = missing_file.file_key, missing_file.file_path
                 file_details: typing.Dict[str, typing.Any] = files.get(file_key)
                 assert file_details, f"Missing download details for {file_key}"
 
