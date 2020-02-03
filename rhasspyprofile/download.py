@@ -186,7 +186,7 @@ async def download_files(
             # Actually download files
             for missing_file in missing_files:
                 file_key, download_path = missing_file.file_key, missing_file.file_path
-                file_details: typing.Dict[str, typing.Any] = files.get(file_key)
+                file_details: typing.Dict[str, typing.Any] = files.get(file_key)  # type: ignore
                 assert file_details, f"Missing download details for {file_key}"
 
                 # Number of bytes the final file should be (pre-unzip)
@@ -248,9 +248,11 @@ async def download_files(
 
                     # Wait for parts to download
                     for future in asyncio.as_completed(awaitables):
-                        part_url, part_bytes_downloaded, part_bytes_expected = (
-                            await future
-                        )
+                        (
+                            part_url,
+                            part_bytes_downloaded,
+                            part_bytes_expected,
+                        ) = await future
                         if part_bytes_expected is not None:
                             if part_bytes_downloaded != part_bytes_expected:
                                 _LOGGER.error(
