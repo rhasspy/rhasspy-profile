@@ -6,17 +6,10 @@ PIP_INSTALL ?= install
 .PHONY: reformat check test venv dist
 
 reformat:
-	black .
-	isort $(PYTHON_FILES)
+	scripts/format-code.sh $(PYTHON_FILES)
 
 check:
-	flake8 $(PYTHON_FILES)
-	pylint $(PYTHON_FILES)
-	mypy $(PYTHON_FILES)
-	black --check .
-	isort --check-only $(PYTHON_FILES)
-	yamllint .
-	pip list --outdated
+	scripts/check-code.sh $(PYTHON_FILES)
 
 venv:
 	scripts/create-venv.sh
