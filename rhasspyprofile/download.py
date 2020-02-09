@@ -186,7 +186,9 @@ async def download_files(
             # Actually download files
             for missing_file in missing_files:
                 file_key, download_path = missing_file.file_key, missing_file.file_path
-                file_details: typing.Dict[str, typing.Any] = files.get(file_key)  # type: ignore
+                file_details: typing.Dict[str, typing.Any] = files.get(
+                    file_key
+                )  # type: ignore
                 assert file_details, f"Missing download details for {file_key}"
 
                 # Number of bytes the final file should be (pre-unzip)
@@ -256,13 +258,14 @@ async def download_files(
                         if part_bytes_expected is not None:
                             if part_bytes_downloaded != part_bytes_expected:
                                 _LOGGER.error(
-                                    "Download failure (%s, got %s byte(s), expected %s)",
+                                    "Part download failure (%s, got %s byte(s), expected %s)",
                                     part_url,
                                     part_bytes_downloaded,
                                     part_bytes_expected,
                                 )
                                 raise DownloadFailedException(
-                                    part_url, "File size mismatch"
+                                    part_url,
+                                    f"Part size mismatch (got {part_bytes_downloaded} byte(s), expected {part_bytes_expected})",
                                 )
 
                     # Concatenate parts
@@ -273,6 +276,8 @@ async def download_files(
                             part_bytes: bytes = part_path.read_bytes()
                             final_file.write(part_bytes)
                             final_size += len(part_bytes)
+
+                    file_url += download_path.name
                 else:
                     # Single file
                     _, final_size, _ = await download_file(
@@ -284,6 +289,16 @@ async def download_files(
                         status_fun=status_fun,
                     )
 
+                # When True, downloaded file is automatically unzipped in place
+                if unzip:
+                    unzip_command = ["gunzip", "--force", str(download_path)]
+                    _LOGGER.debug(unzip_command)
+                    subprocess.check_call(unzip_command, cwd=download_path.parent)
+
+                    # Fix path and size
+                    download_path = download_path.with_suffix("")
+                    final_size = os.path.getsize(download_path)
+
                 # Verify size
                 if bytes_expected is not None:
                     if final_size != bytes_expected:
@@ -294,17 +309,15 @@ async def download_files(
                             final_size,
                             bytes_expected,
                         )
-                        raise DownloadFailedException(file_url, "File size mismatch")
+                        raise DownloadFailedException(
+                            file_url,
+                            f"File size mismatch (got {final_size} byte(s), expected {bytes_expected})",
+                        )
 
                 _LOGGER.debug(
                     "Successfully downloaded %s (%s)", file_key, str(download_path)
                 )
 
-                # When True, downloaded file is automatically unzipped in place
-                if unzip:
-                    unzip_command = ["gunzip", "--force", str(download_path)]
-                    _LOGGER.debug(unzip_command)
-                    subprocess.check_call(unzip_command, cwd=download_path.parent)
     finally:
         # Clean up temporary directory
         if temp_cache_dir:
