@@ -9,6 +9,7 @@ import json5
 import pydash
 
 _LOGGER = logging.getLogger(__name__)
+_DIR = Path(__file__).parent
 
 # -----------------------------------------------------------------------------
 
@@ -30,14 +31,20 @@ class Profile:
     def __init__(
         self,
         name: str,
-        system_profiles_dir: typing.Union[str, Path],
+        system_profiles_dir: typing.Optional[typing.Union[str, Path]],
         user_profiles_dir: typing.Union[str, Path],
         layers: ProfileLayers = ProfileLayers.ALL,
     ) -> None:
 
         self.name: str = name
-        self.system_profiles_dir = Path(system_profiles_dir)
         self.user_profiles_dir = Path(user_profiles_dir)
+
+        if system_profiles_dir:
+            self.system_profiles_dir = Path(system_profiles_dir)
+        else:
+            # Bundled
+            self.system_profiles_dir = _DIR / "profiles"
+
         self.profiles_dirs: typing.List[Path] = [
             self.user_profiles_dir,
             self.system_profiles_dir,

@@ -1,5 +1,6 @@
 """Setup script for rhasspy-profile package"""
 import os
+from pathlib import Path
 
 import setuptools
 
@@ -13,6 +14,8 @@ with open("requirements.txt", "r") as requirements_file:
 with open("VERSION", "r") as version_file:
     version = version_file.read().strip()
 
+profiles_dir = Path(this_dir) / "rhasspyprofile" / "profiles"
+
 setuptools.setup(
     name="rhasspy-profile",
     version=version,
@@ -20,7 +23,7 @@ setuptools.setup(
     author_email="hansen.mike@gmail.com",
     url="https://github.com/rhasspy/rhasspy-profile",
     packages=setuptools.find_packages(),
-    package_data={"rhasspyprofile": ["py.typed"]},
+    package_data={"rhasspyprofile": ["py.typed"] + list(profiles_dir.glob("**/*"))},
     install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 3",

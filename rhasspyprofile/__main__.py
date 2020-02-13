@@ -3,6 +3,7 @@ import argparse
 import asyncio
 import json
 import logging
+import os
 from pathlib import Path
 
 from . import Profile
@@ -23,13 +24,16 @@ async def main():
     else:
         logging.basicConfig(level=logging.INFO)
 
-    if not args.system_profiles:
-        args.system_profiles = Path("profiles")
-    else:
+    if args.system_profiles:
         args.system_profiles = Path(args.system_profiles)
 
     if not args.user_profiles:
-        args.user_profiles = Path("~/.config/rhasspy/profiles").expanduser()
+        if "XDG_CONFIG_HOME" in os.environ:
+            args.user_profiles = (
+                Path(os.environ["XDG_CONFIG_HOME"]) / "rhasspy" / "profiles"
+            )
+        else:
+            args.user_profiles = Path("~/.config/rhasspy/profiles").expanduser()
     else:
         args.user_profiles = Path(args.user_profiles)
 
@@ -67,7 +71,7 @@ def get_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--system-profiles",
-        help="Directory with base profile files (read only, default=$CWD/profiles)",
+        help="Directory with base profile files (read only, default=bundled)",
     )
     parser.add_argument(
         "--user-profiles",
