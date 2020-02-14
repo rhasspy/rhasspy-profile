@@ -15,6 +15,7 @@ with open("VERSION", "r") as version_file:
     version = version_file.read().strip()
 
 profiles_dir = Path(this_dir) / "rhasspyprofile" / "profiles"
+profile_files = [str(f) for f in profiles_dir.glob("**/*")]
 
 setuptools.setup(
     name="rhasspy-profile",
@@ -23,7 +24,7 @@ setuptools.setup(
     author_email="hansen.mike@gmail.com",
     url="https://github.com/rhasspy/rhasspy-profile",
     packages=setuptools.find_packages(),
-    package_data={"rhasspyprofile": ["py.typed"] + list(profiles_dir.glob("**/*"))},
+    package_data={"rhasspyprofile": ["py.typed"] + profile_files},
     install_requires=requirements,
     classifiers=[
         "Programming Language :: Python :: 3",
