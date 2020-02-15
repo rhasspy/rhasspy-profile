@@ -10,7 +10,7 @@
     "oneshot": {
       "timeout_sec": 30
     },
-    "system": "webrtcvad",
+    "system": "dummy",
     "webrtcvad": {
       "chunk_size": 960,
       "min_sec": 2,
@@ -23,7 +23,7 @@
     }
   },
   "dialogue": {
-    "system": "hermes"
+    "system": "dummy"
   },
   "handle": {
     "command": {
@@ -84,7 +84,7 @@
       "url": "http://my-server:12101/api/text-to-intent"
     },
     "replace_numbers": true,
-    "system": "fsticuffs"
+    "system": "dummy"
   },
   "language": "",
   "microphone": {
@@ -110,7 +110,7 @@
     "gstreamer": {
       "pipeline": "udpsrc port=12333 ! rawaudioparse use-sink-caps=false format=pcm pcm-format=s16le sample-rate=16000 num-channels=1 ! queue ! audioconvert ! audioresample"
     },
-    "system": "pyaudio"
+    "system": "dummy"
   },
   "mqtt": {
     "enabled": false,
@@ -129,7 +129,7 @@
   },
   "sounds": {
     "recorded": "${RHASSPY_BASE_DIR}/etc/wav/beep_lo.wav",
-    "system": "aplay",
+    "system": "dummy",
     "wake": "${RHASSPY_BASE_DIR}/etc/wav/beep_hi.wav",
     "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav"
   },
@@ -208,7 +208,7 @@
       "url": "http://localhost:59125"
     },
     "picotts": {},
-    "system": "espeak",
+    "system": "dummy",
     "wavenet": {
       "cache_dir": "tts/googlewavenet/cache",
       "credentials_json": "tts/googlewavenet/credentials.json",
