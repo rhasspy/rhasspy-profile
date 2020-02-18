@@ -17,13 +17,16 @@ _LOGGER = logging.getLogger(__name__)
 
 # -----------------------------------------------------------------------------
 
-# url, path, done, bytes_downloaded, bytes_expected
-DownloadStatusType = typing.Callable[[str, Path, bool, int, typing.Optional[int]], None]
+# url, path, file_key, done, bytes_downloaded, bytes_expected
+DownloadStatusType = typing.Callable[
+    [str, Path, str, bool, int, typing.Optional[int]], None
+]
 
 
 async def download_file(
     url: str,
     path: Path,
+    file_key: str = "",
     bytes_expected: typing.Optional[int] = None,
     session: typing.Optional[aiohttp.ClientSession] = None,
     chunk_size: int = 4096,
@@ -53,7 +56,13 @@ async def download_file(
 
                     # Report status
                     if status_fun:
-                        status_fun(url, path, False, bytes_downloaded, bytes_expected)
+                        status_fun(
+                            url, path, file_key, False, bytes_downloaded, bytes_expected
+                        )
+
+        # Final status
+        if status_fun:
+            status_fun(url, path, file_key, True, bytes_downloaded, bytes_expected)
     finally:
         if close_session:
             await session.close()
@@ -219,7 +228,7 @@ async def download_files(
                     # Download all parts
                     awaitables = []
                     part_paths: typing.List[Path] = []
-                    for part_details in file_parts:
+                    for part_index, part_details in enumerate(file_parts):
                         if isinstance(part_details, str):
                             part_fragment = part_details
                             part_bytes_expected = None
@@ -241,6 +250,7 @@ async def download_files(
                             download_file(
                                 part_url,
                                 part_path,
+                                file_key=f"{file_key}[{part_index}]",
                                 chunk_size=chunk_size,
                                 bytes_expected=part_bytes_expected,
                                 session=session,
@@ -283,6 +293,7 @@ async def download_files(
                     _, final_size, _ = await download_file(
                         file_url,
                         download_path,
+                        file_key=file_key,
                         chunk_size=chunk_size,
                         bytes_expected=bytes_expected,
                         session=session,
