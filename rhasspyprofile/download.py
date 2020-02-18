@@ -195,12 +195,17 @@ async def download_files(
             # Actually download files
             for missing_file in missing_files:
                 file_key, download_path = missing_file.file_key, missing_file.file_path
-                file_details: typing.Dict[str, typing.Any] = files.get(
-                    file_key
-                )  # type: ignore
+                file_details = typing.cast(
+                    typing.Dict[str, typing.Any], files.get(file_key)
+                )
                 assert file_details, f"Missing download details for {file_key}"
 
-                # Number of bytes the final file should be (pre-unzip)
+                # Number of bytes the downloaded file should be (pre-unzip)
+                zip_bytes_expected: typing.Optional[int] = file_details.get(
+                    "zip_bytes_expected"
+                )
+
+                # Number of bytes the final file should be (post-unzip)
                 bytes_expected: typing.Optional[int] = file_details.get(
                     "bytes_expected"
                 )
@@ -215,6 +220,9 @@ async def download_files(
                     download_path = download_path.with_suffix(
                         download_path.suffix + ".gz"
                     )
+                else:
+                    # No unzipping
+                    zip_bytes_expected = bytes_expected
 
                 # Check if file is split into multiple parts that must be concatenated
                 file_parts: typing.List[
@@ -295,7 +303,7 @@ async def download_files(
                         download_path,
                         file_key=file_key,
                         chunk_size=chunk_size,
-                        bytes_expected=bytes_expected,
+                        bytes_expected=zip_bytes_expected,
                         session=session,
                         status_fun=status_fun,
                     )

@@ -127,26 +127,31 @@
       "en-us_pocketsphinx-cmu/base_dictionary.txt": {
         "url": "en-us_pocketsphinx-cmu/raw/master/base_dictionary.txt.gz",
         "bytes_expected": 3240168,
+        "zip_bytes_expected": 850548,
         "unzip": true
       },
       "en-us_pocketsphinx/base_language_model.txt": {
         "url": "en-us_pocketsphinx/raw/master/base_language_model.txt.gz",
         "unzip": true,
-        "bytes_expected": 95595651
+        "bytes_expected": 95595651,
+        "zip_bytes_expected": 33456672
       },
       "en-us_pocketsphinx-cmu/g2p.fst": {
         "url": "en-us_pocketsphinx-cmu/raw/master/g2p.fst.gz",
         "unzip": true,
-        "bytes_expected": 41213581
+        "bytes_expected": 41213581,
+        "zip_bytes_expected": 12796914
       },
       "en-us_kaldi-zamia/base_dictionary.txt": {
         "url": "en-us_kaldi-zamia/raw/master/base_dictionary.txt.gz",
         "bytes_expected": 3643709,
+        "zip_bytes_expected": 1089197,
         "unzip": true
       },
       "en-us_kaldi-zamia/g2p.fst.gz": {
         "url": "en-us_kaldi-zamia/raw/master/g2p.fst.gz",
         "bytes_expected": 52131905,
+        "zip_bytes_expected": 16209041,
         "unzip": true
       },
       "en-us_kaldi-zamia/acoustic_model/conf/mfcc.conf": {
