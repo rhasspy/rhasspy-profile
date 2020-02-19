@@ -15,7 +15,6 @@
       "language_model": "kaldi/language_model.txt",
       "model_dir": "kaldi/model",
       "unknown_words": "kaldi_unknown_words.txt",
-      "mix_fst": "kaldi/mixed.fst",
       "g2p_model": "kaldi/g2p.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
@@ -46,7 +45,6 @@
           "acoustic_model/variances": "en-us_pocketsphinx-cmu/acoustic_model/variances"
         },
         "kaldi": {
-          "kaldi": "en_kaldi-zamia.tar.gz:kaldi",
           "kaldi/base_dictionary.txt": "en-us_kaldi-zamia/base_dictionary.txt",
           "kaldi/g2p.fst": "en-us_kaldi-zamia/g2p.fst",
           "kaldi/model/conf/mfcc.conf": "en-us_kaldi-zamia/acoustic_model/conf/mfcc.conf",
@@ -72,6 +70,11 @@
           "kaldi/model/phones/silence_phones.txt": "en-us_kaldi-zamia/acoustic_model/phones/silence_phones.txt"
         }
       },
+      "speech_to_text.pocketsphinx.open_transcription": {
+        "True": {
+          "base_language_model.txt": "en-us_pocketsphinx-cmu/base_language_model.txt"
+        }
+      },
       "speech_to_text.kaldi.open_transcription": {
         "True": {
           "kaldi/model/base_graph": "en_kaldi-zamia-base_graph.tar.gz:base_graph"
@@ -79,11 +82,22 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "en-us_pocketsphinx/base_language_model.txt"
+          "base_language_model.txt": "en-us_pocketsphinx-cmu/base_language_model.txt"
+        }
+      },
+      "speech_to_text.kaldi.mix_weight": {
+        ">0": {
+          "base_language_model.txt": "en-us_kaldi-zamia/base_language_model.txt"
         }
       }
     },
     "files": {
+      "en-us_kaldi-zamia/base_language_model.txt.gz": {
+        "url": "en-us_kaldi-zamia/raw/master/base_language_model.txt.gz",
+        "unzip": true,
+        "zip_bytes_expected": 21364794,
+        "bytes_expected": 63241613
+      },
       "en-us_pocketsphinx-cmu/acoustic_model/feat.params": {
         "url": "en-us_pocketsphinx-cmu/raw/master/acoustic_model/feat.params",
         "bytes_expected": 129,
@@ -130,8 +144,8 @@
         "zip_bytes_expected": 850548,
         "unzip": true
       },
-      "en-us_pocketsphinx/base_language_model.txt": {
-        "url": "en-us_pocketsphinx/raw/master/base_language_model.txt.gz",
+      "en-us_pocketsphinx-cmu/base_language_model.txt": {
+        "url": "en-us_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
         "unzip": true,
         "bytes_expected": 95595651,
         "zip_bytes_expected": 33456672

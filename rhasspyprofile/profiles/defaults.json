@@ -110,6 +110,10 @@
     "gstreamer": {
       "pipeline": "udpsrc port=12333 ! rawaudioparse use-sink-caps=false format=pcm pcm-format=s16le sample-rate=16000 num-channels=1 ! queue ! audioconvert ! audioresample"
     },
+    "command": {
+      "program": "",
+      "arguments": []
+    },
     "system": "dummy"
   },
   "mqtt": {
@@ -131,7 +135,14 @@
     "recorded": "${RHASSPY_BASE_DIR}/etc/wav/beep_lo.wav",
     "system": "dummy",
     "wake": "${RHASSPY_BASE_DIR}/etc/wav/beep_hi.wav",
-    "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav"
+    "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav",
+    "command": {
+      "arguments": [],
+      "program": ""
+    },
+    "remote": {
+      "url": ""
+    }
   },
   "speech_to_text": {
     "command": {
