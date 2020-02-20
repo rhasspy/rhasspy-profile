@@ -1,0 +1,44 @@
+{
+    "ChangeLightState": [
+        {
+            "text": "t\u1eaft \u0111\u00e8n tr\u01b0\u1edbc",
+            "slots": {}
+        },
+        {
+            "text": "m\u1edf \u0111\u00e8n tr\u01b0\u1edbc",
+            "slots": {}
+        },
+        {
+            "text": "t\u1eaft \u0111\u00e8n ph\u00f2ng kh\u00e1ch",
+            "slots": {}
+        },
+        {
+            "text": "m\u1edf \u0111\u00e8n ph\u00f2ng kh\u00e1ch",
+            "slots": {}
+        },
+        {
+            "text": "m\u1edf \u0111\u00e8n ph\u00f2ng ng\u1ee7",
+            "slots": {}
+        },
+        {
+            "text": "m\u1edf \u0111\u00e8n ng\u1ee7",
+            "slots": {}
+        },
+        {
+            "text": "t\u1eaft \u0111\u00e8n ng\u1ee7",
+            "slots": {}
+        },
+        {
+            "text": "m\u1edf \u0111\u00e8n ph\u00f2ng t\u1eafm",
+            "slots": {}
+        },
+        {
+            "text": "t\u1eaft \u0111\u00e8n ph\u00f2ng t\u1eafm",
+            "slots": {}
+        },
+        {
+            "text": "t\u1eaft \u0111\u00e8n ph\u00f2ng ng\u1ee7",
+            "slots": {}
+        }
+    ]
+}

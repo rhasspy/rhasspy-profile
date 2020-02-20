@@ -136,6 +136,9 @@
     "system": "dummy",
     "wake": "${RHASSPY_BASE_DIR}/etc/wav/beep_hi.wav",
     "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav",
+    "aplay": {
+      "device": ""
+    },
     "command": {
       "arguments": [],
       "program": ""

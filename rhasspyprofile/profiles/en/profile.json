@@ -58,7 +58,6 @@
           "kaldi/model/extractor/splice_opts": "en-us_kaldi-zamia/acoustic_model/extractor/splice_opts",
           "kaldi/model/graph/disambig_tid.int": "en-us_kaldi-zamia/acoustic_model/graph/disambig_tid.int",
           "kaldi/model/graph/num_pdfs": "en-us_kaldi-zamia/acoustic_model/graph/num_pdfs",
-          "kaldi/model/graph/phones.txt": "en-us_kaldi-zamia/acoustic_model/graph/phones.txt",
           "kaldi/model/model/cmvn_opts": "en-us_kaldi-zamia/acoustic_model/model/cmvn_opts",
           "kaldi/model/model/den.fst": "en-us_kaldi-zamia/acoustic_model/model/den.fst",
           "kaldi/model/model/final.mdl": "en-us_kaldi-zamia/acoustic_model/model/final.mdl",
@@ -233,11 +232,6 @@
       "en-us_kaldi-zamia/acoustic_model/graph/num_pdfs": {
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/graph/num_pdfs",
         "bytes_expected": 5,
-        "unzip": false
-      },
-      "en-us_kaldi-zamia/acoustic_model/graph/phones.txt": {
-        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/graph/phones.txt",
-        "bytes_expected": 1986,
         "unzip": false
       },
       "en-us_kaldi-zamia/acoustic_model/model/cmvn_opts": {
