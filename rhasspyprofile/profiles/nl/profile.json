@@ -14,8 +14,7 @@
       "graph": "graph",
       "language_model": "kaldi/language_model.txt",
       "model_dir": "kaldi/model",
-      "unknown_words": "kaldi/unknown_words.txt",
-      "mix_fst": "kaldi/mixed.fst",
+      "unknown_words": "kaldi_unknown_words.txt",
       "g2p_model": "kaldi/g2p.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
@@ -24,14 +23,6 @@
   "text_to_speech": {
     "wavenet": {
       "language_code": "nl-NL"
-    }
-  },
-  "intent": {
-    "flair": {
-      "embeddings": [
-        "lm-nl-large-forward-v0.1.pt",
-        "lm-nl-large-backward-v0.1.pt"
-      ]
     }
   },
   "download": {
