@@ -77,7 +77,19 @@
       },
       "speech_to_text.kaldi.open_transcription": {
         "True": {
-          "kaldi/model/base_graph": "en_kaldi-zamia-base_graph.tar.gz:base_graph"
+          "kaldi/model/base_graph/HCLG.fst": "en-us_kaldi-zamia/acoustic_model/model/graph/HCLG.fst",
+          "kaldi/model/base_graph/num_pdfs": "en-us_kaldi-zamia/acoustic_model/model/graph/num_pdfs",
+          "kaldi/model/base_graph/phones.txt": "en-us_kaldi-zamia/acoustic_model/model/graph/phones.txt",
+          "kaldi/model/base_graph/phones/align_lexicon.int": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/align_lexicon.int",
+          "kaldi/model/base_graph/phones/align_lexicon.txt": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/align_lexicon.txt",
+          "kaldi/model/base_graph/phones/disambig.int": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/disambig.int",
+          "kaldi/model/base_graph/phones/disambig.txt": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/disambig.txt",
+          "kaldi/model/base_graph/phones/optional_silence.csl": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.csl",
+          "kaldi/model/base_graph/phones/optional_silence.int": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.int",
+          "kaldi/model/base_graph/phones/optional_silence.txt": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.txt",
+          "kaldi/model/base_graph/phones/silence.csl": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/silence.csl",
+          "kaldi/model/base_graph/phones/word_boundary.int": "en-us_kaldi-zamia/acoustic_model/model/graph/phones/word_boundary.int",
+          "kaldi/model/base_graph/words.txt": "en-us_kaldi-zamia/acoustic_model/model/graph/words.txt"
         }
       },
       "speech_to_text.pocketsphinx.mix_weight": {
@@ -158,7 +170,7 @@
       },
       "en-us_kaldi-zamia/base_dictionary.txt": {
         "url": "en-us_kaldi-zamia/raw/master/base_dictionary.txt.gz",
-        "bytes_expected": 3643709,
+        "bytes_expected": 3950267,
         "zip_bytes_expected": 1089197,
         "unzip": true
       },
@@ -184,34 +196,34 @@
         "unzip": false
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/final.dubm": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/final.dubm",
-        "bytes_expected": 168048,
-        "unzip": false
+        "bytes_expected": 168048
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/final.ie": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/final.ie",
-        "bytes_expected": 19757687,
-        "unzip": false
+        "bytes_expected": 19757687
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/final.mat": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/final.mat",
-        "bytes_expected": 44815,
-        "unzip": false
+        "bytes_expected": 44815
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/global_cmvn.stats": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/global_cmvn.stats",
-        "bytes_expected": 1083,
-        "unzip": false
+        "bytes_expected": 1081
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/online_cmvn.conf": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/online_cmvn.conf",
-        "bytes_expected": 108,
-        "unzip": false
+        "bytes_expected": 108
       },
       "en-us_kaldi-zamia/acoustic_model/extractor/splice_opts": {
+        "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/extractor/splice_opts",
-        "bytes_expected": 35,
-        "unzip": false
+        "bytes_expected": 35
       },
       "en-us_kaldi-zamia/acoustic_model/graph/disambig_tid.int": {
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/graph/disambig_tid.int",
@@ -255,12 +267,12 @@
       },
       "en-us_kaldi-zamia/acoustic_model/phones/extra_questions.txt": {
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/phones/extra_questions.txt",
-        "bytes_expected": 154,
+        "bytes_expected": 173,
         "unzip": false
       },
       "en-us_kaldi-zamia/acoustic_model/phones/nonsilence_phones.txt": {
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/phones/nonsilence_phones.txt",
-        "bytes_expected": 182,
+        "bytes_expected": 206,
         "unzip": false
       },
       "en-us_kaldi-zamia/acoustic_model/phones/optional_silence.txt": {
@@ -272,6 +284,99 @@
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/phones/silence_phones.txt",
         "bytes_expected": 12,
         "unzip": false
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/HCLG.fst": {
+        "unzip": true,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/",
+        "parts": [
+          {
+            "fragment": "HCLG.fst.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "HCLG.fst.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "HCLG.fst.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "HCLG.fst.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "HCLG.fst.gz.part-04",
+            "bytes_expected": 19128114
+          }
+        ],
+        "zip_bytes_expected": 123985714,
+        "bytes_expected": 371128829
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/align_lexicon.int": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/align_lexicon.int",
+        "bytes_expected": 6550695
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/align_lexicon.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/align_lexicon.txt",
+        "bytes_expected": 7687614
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/disambig.int": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/disambig.int",
+        "bytes_expected": 60
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/disambig.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/disambig.txt",
+        "bytes_expected": 50
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.csl": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/optional_silence.csl",
+        "bytes_expected": 2
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.int": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/optional_silence.int",
+        "bytes_expected": 2
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/optional_silence.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/optional_silence.txt",
+        "bytes_expected": 4
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/silence.csl": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/silence.csl",
+        "bytes_expected": 36
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/word_boundary.int": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/word_boundary.int",
+        "bytes_expected": 2943
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones/word_boundary.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones/word_boundary.txt",
+        "bytes_expected": 3199
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/num_pdfs": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/num_pdfs",
+        "bytes_expected": 5
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/phones.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones.txt",
+        "bytes_expected": 2326
+      },
+      "en-us_kaldi-zamia/acoustic_model/model/graph/words.txt": {
+        "unzip": false,
+        "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/words.txt",
+        "bytes_expected": 2534347
       }
     }
   }
