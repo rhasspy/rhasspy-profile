@@ -3,7 +3,6 @@
   "name": "ru",
   "locale": "ru_RU",
   "speech_to_text": {
-    "system": "pocketsphinx",
     "dictionary_casing": "lower"
   },
   "text_to_speech": {

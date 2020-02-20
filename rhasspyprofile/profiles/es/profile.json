@@ -1,63 +1,109 @@
 {
-    "language": "es",
-    "name": "es",
-    "locale": "es_ES",
-    "speech_to_text": {
-        "system": "pocketsphinx",
-        "dictionary_casing": "lower"
-    },
-    "text_to_speech": {
-        "wavenet": {
-            "language_code": "es-ES"
-        }
-    },
-    "intent": {
-        "flair": {
-            "embeddings": [
-                "lm-es-forward-fast.pt",
-                "lm-es-backward-fast.pt"
-            ]
-        }
-    },
-    "download": {
-        "conditions": {
-            "speech_to_text.system": {
-                "pocketsphinx": {
-                    "acoustic_model": "cmusphinx-es-5.2.tar.gz:cmusphinx-es-5.2/model_parameters/voxforge_es_sphinx.cd_ptm_4000/",
-                    "base_dictionary.txt": "cmusphinx-es-5.2.tar.gz:cmusphinx-es-5.2/etc/voxforge_es_sphinx.dic",
-                    "g2p.fst": "es-g2p.tar.gz:g2p.fst"
-                }
-            },
-
-            "speech_to_text.pocketsphinx.mix_weight": {
-                ">0": {
-                    "base_language_model.txt": "cmusphinx-es-5.2.tar.gz:cmusphinx-es-5.2/etc/es-20k.lm.gz:"
-                }
-            },
-
-            "intent.system": {
-                "flair": {
-                    "flair/cache/embeddings/lm-es-forward-fast.pt": "lm-es-forward-fast.pt",
-                    "flair/cache/embeddingslm-es-backward-fast.pt": "lm-es-backward-fast.pt"
-                }
-            }
-        },
-
-        "files": {
-            "cmusphinx-es-5.2.tar.gz": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-es/cmusphinx-es-5.2.tar.gz"
-            },
-            "es-g2p.tar.gz": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-es/es-g2p.tar.gz"
-            },
-            "lm-es-forward-fast.pt": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-es/lm-es-forward-fast.pt",
-                "cache": false
-            },
-            "lm-es-backward-fast.pt": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-es/lm-es-backward-fast.pt",
-                "cache": false
-            }
-        }
+  "language": "es",
+  "name": "es",
+  "locale": "es_ES",
+  "speech_to_text": {
+    "dictionary_casing": "lower"
+  },
+  "text_to_speech": {
+    "wavenet": {
+      "language_code": "es-ES"
     }
+  },
+  "intent": {
+    "flair": {
+      "embeddings": [
+        "lm-es-forward-fast.pt",
+        "lm-es-backward-fast.pt"
+      ]
+    }
+  },
+  "download": {
+    "conditions": {
+      "speech_to_text.system": {
+        "pocketsphinx": {
+          "base_dictionary.txt": "es_pocketsphinx-cmu/base_dictionary.txt",
+          "g2p.fst": "es_pocketsphinx-cmu/g2p.fst",
+          "acoustic_model/feat.params": "es_pocketsphinx-cmu/acoustic_model/feat.params",
+          "acoustic_model/mdef": "es_pocketsphinx-cmu/acoustic_model/mdef",
+          "acoustic_model/means": "es_pocketsphinx-cmu/acoustic_model/means",
+          "acoustic_model/mixture_weights": "es_pocketsphinx-cmu/acoustic_model/mixture_weights",
+          "acoustic_model/noisedict": "es_pocketsphinx-cmu/acoustic_model/noisedict",
+          "acoustic_model/sendump": "es_pocketsphinx-cmu/acoustic_model/sendump",
+          "acoustic_model/transition_matrices": "es_pocketsphinx-cmu/acoustic_model/transition_matrices",
+          "acoustic_model/variances": "es_pocketsphinx-cmu/acoustic_model/variances"
+        }
+      },
+      "speech_to_text.pocketsphinx.open_transcription": {
+        "True": {
+          "base_language_model.txt": "es_pocketsphinx-cmu/base_language_model.txt"
+        }
+      },
+      "speech_to_text.pocketsphinx.mix_weight": {
+        ">0": {
+          "base_language_model.txt": "es_pocketsphinx-cmu/base_language_model.txt"
+        }
+      }
+    },
+    "files": {
+      "es_pocketsphinx-cmu/base_dictionary.txt": {
+        "unzip": true,
+        "url": "es_pocketsphinx-cmu/raw/master/base_dictionary.txt.gz",
+        "zip_bytes_expected": 151621,
+        "bytes_expected": 584446
+      },
+      "es_pocketsphinx-cmu/base_language_model.txt": {
+        "unzip": true,
+        "url": "es_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
+        "zip_bytes_expected": 23391433,
+        "bytes_expected": 69689826
+      },
+      "es_pocketsphinx-cmu/g2p.fst": {
+        "unzip": true,
+        "url": "es_pocketsphinx-cmu/raw/master/g2p.fst.gz",
+        "zip_bytes_expected": 2034897,
+        "bytes_expected": 6731969
+      },
+      "es_pocketsphinx-cmu/acoustic_model/feat.params": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/feat.params",
+        "bytes_expected": 148
+      },
+      "es_pocketsphinx-cmu/acoustic_model/mdef": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/mdef",
+        "bytes_expected": 1351979
+      },
+      "es_pocketsphinx-cmu/acoustic_model/means": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/means",
+        "bytes_expected": 519244
+      },
+      "es_pocketsphinx-cmu/acoustic_model/mixture_weights": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/mixture_weights",
+        "bytes_expected": 6263872
+      },
+      "es_pocketsphinx-cmu/acoustic_model/noisedict": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/noisedict",
+        "bytes_expected": 27
+      },
+      "es_pocketsphinx-cmu/acoustic_model/sendump": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/sendump",
+        "bytes_expected": 1566592
+      },
+      "es_pocketsphinx-cmu/acoustic_model/transition_matrices": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/transition_matrices",
+        "bytes_expected": 1312
+      },
+      "es_pocketsphinx-cmu/acoustic_model/variances": {
+        "unzip": false,
+        "url": "es_pocketsphinx-cmu/raw/master/acoustic_model/variances",
+        "bytes_expected": 519244
+      }
+    }
+  }
 }

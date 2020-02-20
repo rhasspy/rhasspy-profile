@@ -129,14 +129,17 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                         if file_path.is_file():
                             # Check if file is empty or matches expected size
                             file_size = os.path.getsize(file_path)
-                            if file_size > 0:
-                                bytes_expected = files.get(file_value, {}).get(
-                                    "bytes_expected"
-                                )
-                                if (bytes_expected is None) or (
-                                    file_size == bytes_expected
-                                ):
+                            bytes_expected = files.get(file_value, {}).get(
+                                "bytes_expected"
+                            )
+
+                            if bytes_expected is not None:
+                                if file_size == bytes_expected:
+                                    # Matches expected size
                                     need_download = False
+                            elif file_size > 0:
+                                # Assume non-empty file is OK if we have no expectations
+                                need_download = False
                         elif file_path.is_dir():
                             # Check if directory is empty
                             if list(file_path.glob("*")):

@@ -2,9 +2,6 @@
   "name": "zh",
   "language": "zh",
   "locale": "zh_CN",
-  "speech_to_text": {
-    "system": "pocketsphinx"
-  },
   "text_to_speech": {
     "wavenet": {
       "language_code": "zh-TW"

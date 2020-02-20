@@ -148,7 +148,11 @@
     }
   },
   "speech_to_text": {
+    "dummy": {
+      "compatible": true
+    },
     "command": {
+      "compatible": true,
       "arguments": [],
       "program": ""
     },
@@ -194,9 +198,11 @@
       "open_transcription": false
     },
     "remote": {
+      "compatible": true,
       "url": "http://my-server:12101/api/speech-to-text"
     },
     "hass_stt": {
+      "compatible": true,
       "platform": "",
       "sample_rate": 16000,
       "bit_size": 16,
@@ -223,6 +229,9 @@
     },
     "picotts": {},
     "system": "dummy",
+    "remote": {
+      "url": ""
+    },
     "wavenet": {
       "cache_dir": "tts/googlewavenet/cache",
       "credentials_json": "tts/googlewavenet/credentials.json",
@@ -267,11 +276,16 @@
     }
   },
   "wake": {
+    "dummy": {
+      "compatible": true
+    },
     "command": {
+      "compatible": true,
       "arguments": [],
       "program": ""
     },
     "hermes": {
+      "compatible": true,
       "wakeword_id": "default"
     },
     "pocketsphinx": {
@@ -282,6 +296,7 @@
       "threshold": 1e-30
     },
     "precise": {
+      "compatible": true,
       "chunk_delay": 0.005,
       "chunk_size": 2048,
       "engine_path": "precise-engine",
@@ -290,6 +305,7 @@
       "trigger_level": 3
     },
     "snowboy": {
+      "compatible": true,
       "apply_frontend": false,
       "audio_gain": 1,
       "chunk_size": 960,
@@ -298,6 +314,7 @@
       "model_settings": {}
     },
     "porcupine": {
+      "compatible": true,
       "library_path": "porcupine/libpv_porcupine.so",
       "model_path": "porcupine/porcupine_params.pv",
       "keyword_path": "porcupine/porcupine.ppn",

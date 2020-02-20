@@ -9,7 +9,6 @@
     "pocketsphinx": {
       "compatible": false
     },
-    "system": "kaldi",
     "dictionary_casing": "lower"
   },
   "wake": {

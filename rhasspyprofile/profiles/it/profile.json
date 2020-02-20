@@ -1,43 +1,104 @@
 {
-    "name": "it",
-    "language": "it",
-    "locale": "it_IT",
-    "speech_to_text": {
-        "system": "pocketsphinx",
-        "dictionary_casing": "lower"
+  "name": "it",
+  "language": "it",
+  "locale": "it_IT",
+  "speech_to_text": {
+    "dictionary_casing": "lower"
+  },
+  "intent": {
+    "wavenet": {
+      "language_code": "it-IT"
     },
-    "intent": {
-        "wavenet": {
-            "language_code": "it-IT"
-        },
-        "flair": {
-            "compatible": false
-        }
-    },
-    "download": {
-        "conditions": {
-            "speech_to_text.system": {
-                "pocketsphinx": {
-                    "acoustic_model": "cmusphinx-it-5.2.tar.gz:cmusphinx-it-5.2/model_parameters/voxforge_it_sphinx.cd_cont_2000/",
-                    "base_dictionary.txt": "cmusphinx-it-5.2.tar.gz:cmusphinx-it-5.2/etc/voxforge_it_sphinx.dic",
-                    "g2p.fst": "it-g2p.tar.gz:g2p.fst"
-                }
-            },
-
-            "speech_to_text.pocketsphinx.mix_weight": {
-                ">0": {
-                    "base_language_model.txt": "cmusphinx-it-5.2.tar.gz:cmusphinx-it-5.2/etc/voxforge_it_sphinx.lm"
-                }
-            }
-        },
-
-        "files": {
-            "cmusphinx-it-5.2.tar.gz": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-it/cmusphinx-it-5.2.tar.gz"
-            },
-            "it-g2p.tar.gz": {
-                "url": "https://github.com/synesthesiam/rhasspy-profiles/releases/download/v1.0-it/it-g2p.tar.gz"
-            }
-        }
+    "flair": {
+      "compatible": false
     }
+  },
+  "download": {
+    "conditions": {
+      "speech_to_text.system": {
+        "pocketsphinx": {
+          "base_dictionary.txt": "it_pocketsphinx-cmu/base_dictionary.txt",
+          "g2p.fst": "it_pocketsphinx-cmu/g2p.fst",
+          "acoustic_model/feat.params": "it_pocketsphinx-cmu/acoustic_model/feat.params",
+          "acoustic_model/feature_transform": "it_pocketsphinx-cmu/acoustic_model/feature_transform",
+          "acoustic_model/mdef": "it_pocketsphinx-cmu/acoustic_model/mdef",
+          "acoustic_model/means": "it_pocketsphinx-cmu/acoustic_model/means",
+          "acoustic_model/mixture_weights": "it_pocketsphinx-cmu/acoustic_model/mixture_weights",
+          "acoustic_model/noisedict": "it_pocketsphinx-cmu/acoustic_model/noisedict",
+          "acoustic_model/transition_matrices": "it_pocketsphinx-cmu/acoustic_model/transition_matrices",
+          "acoustic_model/variances": "it_pocketsphinx-cmu/acoustic_model/variances"
+        }
+      },
+      "speech_to_text.pocketsphinx.open_transcription": {
+        "True": {
+          "base_language_model.txt": "it_pocketsphinx-cmu/base_language_model.txt"
+        }
+      },
+      "speech_to_text.pocketsphinx.mix_weight": {
+        ">0": {
+          "base_language_model.txt": "it_pocketsphinx-cmu/base_language_model.txt"
+        }
+      }
+    },
+    "files": {
+      "it_pocketsphinx-cmu/base_dictionary.txt": {
+        "unzip": true,
+        "url": "it_pocketsphinx-cmu/raw/master/base_dictionary.txt.gz",
+        "zip_bytes_expected": 62841,
+        "bytes_expected": 228365
+      },
+      "it_pocketsphinx-cmu/base_language_model.txt": {
+        "unzip": true,
+        "url": "it_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
+        "zip_bytes_expected": 242973,
+        "bytes_expected": 872064
+      },
+      "it_pocketsphinx-cmu/g2p.fst": {
+        "unzip": true,
+        "url": "it_pocketsphinx-cmu/raw/master/g2p.fst.gz",
+        "zip_bytes_expected": 768941,
+        "bytes_expected": 2670978
+      },
+      "it_pocketsphinx-cmu/acoustic_model/feat.params": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/feat.params",
+        "bytes_expected": 127
+      },
+      "it_pocketsphinx-cmu/acoustic_model/feature_transform": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/feature_transform",
+        "bytes_expected": 5036
+      },
+      "it_pocketsphinx-cmu/acoustic_model/mdef": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/mdef",
+        "bytes_expected": 2257434
+      },
+      "it_pocketsphinx-cmu/acoustic_model/means": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/means",
+        "bytes_expected": 4329540
+      },
+      "it_pocketsphinx-cmu/acoustic_model/mixture_weights": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/mixture_weights",
+        "bytes_expected": 135360
+      },
+      "it_pocketsphinx-cmu/acoustic_model/noisedict": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/noisedict",
+        "bytes_expected": 27
+      },
+      "it_pocketsphinx-cmu/acoustic_model/transition_matrices": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/transition_matrices",
+        "bytes_expected": 1888
+      },
+      "it_pocketsphinx-cmu/acoustic_model/variances": {
+        "unzip": false,
+        "url": "it_pocketsphinx-cmu/raw/master/acoustic_model/variances",
+        "bytes_expected": 4329540
+      }
+    }
+  }
 }
