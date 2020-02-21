@@ -7,6 +7,7 @@ import tempfile
 import typing
 from pathlib import Path
 
+import aiofiles
 import aiohttp
 import attr
 
@@ -48,9 +49,15 @@ async def download_file(
 
         bytes_downloaded: int = 0
 
-        async with session.get(url) as response:
-            with open(path, "wb") as out_file:
-                async for chunk in response.content.iter_chunked(chunk_size):
+        if url.startswith("file://"):
+            # Use file system
+            file_path = Path(url[7:])
+            async with aiofiles.open(file_path, "r") as local_file:
+                while True:
+                    chunk = await local_file.read(chunk_size)
+                    if not chunk:
+                        break
+
                     out_file.write(chunk)
                     bytes_downloaded += len(chunk)
 
@@ -59,6 +66,24 @@ async def download_file(
                         status_fun(
                             url, path, file_key, False, bytes_downloaded, bytes_expected
                         )
+        else:
+            # Actually download
+            async with session.get(url) as response:
+                with open(path, "wb") as out_file:
+                    async for chunk in response.content.iter_chunked(chunk_size):
+                        out_file.write(chunk)
+                        bytes_downloaded += len(chunk)
+
+                        # Report status
+                        if status_fun:
+                            status_fun(
+                                url,
+                                path,
+                                file_key,
+                                False,
+                                bytes_downloaded,
+                                bytes_expected,
+                            )
 
         # Final status
         if status_fun:
