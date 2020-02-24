@@ -173,7 +173,7 @@
         "zip_bytes_expected": 1089197,
         "unzip": true
       },
-      "en-us_kaldi-zamia/g2p.fst.gz": {
+      "en-us_kaldi-zamia/g2p.fst": {
         "url": "en-us_kaldi-zamia/raw/master/g2p.fst.gz",
         "bytes_expected": 52131905,
         "zip_bytes_expected": 16209041,
