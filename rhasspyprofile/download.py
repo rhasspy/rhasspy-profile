@@ -53,19 +53,25 @@ async def download_file(
             # Use file system
             file_path = Path(url[7:])
             async with aiofiles.open(file_path, "r") as local_file:
-                while True:
-                    chunk = await local_file.read(chunk_size)
-                    if not chunk:
-                        break
+                with open(path, "wb") as out_file:
+                    while True:
+                        chunk = await local_file.read(chunk_size)
+                        if not chunk:
+                            break
 
-                    out_file.write(chunk)
-                    bytes_downloaded += len(chunk)
+                        out_file.write(chunk)
+                        bytes_downloaded += len(chunk)
 
-                    # Report status
-                    if status_fun:
-                        status_fun(
-                            url, path, file_key, False, bytes_downloaded, bytes_expected
-                        )
+                        # Report status
+                        if status_fun:
+                            status_fun(
+                                url,
+                                path,
+                                file_key,
+                                False,
+                                bytes_downloaded,
+                                bytes_expected,
+                            )
         else:
             # Actually download
             async with session.get(url) as response:
