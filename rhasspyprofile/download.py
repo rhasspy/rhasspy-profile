@@ -103,6 +103,16 @@ async def download_file(
 
 # -----------------------------------------------------------------------------
 
+# https://stackoverflow.com/questions/1094841/reusable-library-to-get-human-readable-version-of-file-size
+def human_size(num: float, suffix="B") -> str:
+    """Gets human read file size."""
+    for unit in ["", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"]:
+        if abs(num) < 1024.0:
+            return "%3.1f %s%s" % (num, unit, suffix)
+        num /= 1024.0
+
+    return "%.1f %s%s" % (num, "Yi", suffix)
+
 
 @attr.s(auto_attribs=True)
 class MissingFile:
@@ -112,6 +122,29 @@ class MissingFile:
     file_path: Path
     setting_name: str
     setting_value: str
+    bytes_expected: typing.Optional[int] = None
+
+    def to_dict(self) -> typing.Dict[str, typing.Any]:
+        """Convert to JSON serializable dictionary."""
+        result = attr.asdict(self)
+        result["file_path"] = str(result["file_path"])
+
+        result["human_size"] = ""
+        if self.bytes_expected is not None:
+            result["human_size"] = human_size(self.bytes_expected)
+
+        return result
+
+
+@attr.s(auto_attribs=True)
+class MissingFilePart:
+    """Details of a missing file split into parts."""
+
+    index: int
+    url: str
+    path: Path
+    file_key: str
+    bytes_expected: typing.Optional[int] = None
 
 
 @attr.s(auto_attribs=True)
@@ -154,16 +187,13 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                 for file_key, file_value in condition_files.items():
                     file_path = profile.read_path(file_key)
                     need_download = True
+                    bytes_expected = files.get(file_value, {}).get("bytes_expected")
 
                     # Check if a download is actually required
                     if file_path.exists():
                         if file_path.is_file():
                             # Check if file is empty or matches expected size
                             file_size = os.path.getsize(file_path)
-                            bytes_expected = files.get(file_value, {}).get(
-                                "bytes_expected"
-                            )
-
                             if bytes_expected is not None:
                                 if file_size == bytes_expected:
                                     # Matches expected size
@@ -184,6 +214,7 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                                 file_path=profile.write_path(file_key),
                                 setting_name=condition_key,
                                 setting_value=expected_value,
+                                bytes_expected=bytes_expected,
                             )
                         )
                     else:
@@ -267,9 +298,7 @@ async def download_files(
                     if not file_url.endswith("/"):
                         file_url += "/"
 
-                    # Download all parts
-                    awaitables = []
-                    part_paths: typing.List[Path] = []
+                    missing_parts: typing.List[MissingFilePart] = []
                     for part_index, part_details in enumerate(file_parts):
                         if isinstance(part_details, str):
                             part_fragment = part_details
@@ -285,28 +314,56 @@ async def download_files(
                                 dir=cache_dir, delete=False
                             ).name
                         )
-                        part_paths.append(part_path)
+                        missing_parts.append(
+                            MissingFilePart(
+                                index=part_index,
+                                url=part_url,
+                                path=part_path,
+                                file_key=f"{file_key}[{part_index}]",
+                                bytes_expected=part_bytes_expected,
+                            )
+                        )
 
+                    # Download all parts
+                    awaitables = []
+                    for part in missing_parts:
                         # Add to download queue
                         awaitables.append(
                             download_file(
-                                part_url,
-                                part_path,
-                                file_key=f"{file_key}[{part_index}]",
+                                part.url,
+                                part.path,
+                                file_key=part.file_key,
                                 chunk_size=chunk_size,
-                                bytes_expected=part_bytes_expected,
+                                bytes_expected=part.bytes_expected,
                                 session=session,
-                                status_fun=status_fun,
+                                status_fun=None,
                             )
                         )
 
                     # Wait for parts to download
+                    total_bytes_downloaded = 0
+                    parts_left = len(awaitables)
                     for future in asyncio.as_completed(awaitables):
                         (
                             part_url,
                             part_bytes_downloaded,
                             part_bytes_expected,
                         ) = await future
+
+                        parts_left -= 1
+                        total_bytes_downloaded += part_bytes_downloaded
+                        if status_fun:
+                            # Report status when a part has finished
+                            done = parts_left == 0
+                            status_fun(
+                                file_url,
+                                download_path,
+                                file_key,
+                                done,
+                                total_bytes_downloaded,
+                                zip_bytes_expected,
+                            )
+
                         if part_bytes_expected is not None:
                             if part_bytes_downloaded != part_bytes_expected:
                                 _LOGGER.error(
@@ -324,8 +381,8 @@ async def download_files(
                     final_size: int = 0
                     download_path.parent.mkdir(parents=True, exist_ok=True)
                     with open(download_path, "wb") as final_file:
-                        for part_path in part_paths:
-                            part_bytes: bytes = part_path.read_bytes()
+                        for part in missing_parts:
+                            part_bytes: bytes = part.path.read_bytes()
                             final_file.write(part_bytes)
                             final_size += len(part_bytes)
 
