@@ -226,9 +226,13 @@
       "voice": "kal16"
     },
     "marytts": {
-      "url": "http://localhost:59125"
+      "url": "http://localhost:59125/process",
+      "locale": "",
+      "voice": ""
     },
-    "picotts": {},
+    "picotts": {
+      "language": ""
+    },
     "system": "dummy",
     "remote": {
       "url": ""
