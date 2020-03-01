@@ -2,6 +2,7 @@
 import asyncio
 import logging
 import os
+import ssl
 import subprocess
 import tempfile
 import typing
@@ -30,6 +31,7 @@ async def download_file(
     file_key: str = "",
     bytes_expected: typing.Optional[int] = None,
     session: typing.Optional[aiohttp.ClientSession] = None,
+    ssl_context: typing.Optional[ssl.SSLContext] = None,
     chunk_size: int = 4096,
     status_fun: typing.Optional[DownloadStatusType] = None,
 ) -> typing.Tuple[str, int, typing.Optional[int]]:
@@ -74,7 +76,7 @@ async def download_file(
                             )
         else:
             # Actually download
-            async with session.get(url) as response:
+            async with session.get(url, ssl=ssl_context) as response:
                 with open(path, "wb") as out_file:
                     async for chunk in response.content.iter_chunked(chunk_size):
                         out_file.write(chunk)
@@ -228,6 +230,7 @@ async def download_files(
     missing_files: typing.Optional[typing.List[MissingFile]] = None,
     cache_dir: typing.Optional[Path] = None,
     session: typing.Optional[aiohttp.ClientSession] = None,
+    ssl_context: typing.Optional[ssl.SSLContext] = None,
     chunk_size: int = 4096,
     status_fun: typing.Optional[DownloadStatusType] = None,
 ):
@@ -336,6 +339,7 @@ async def download_files(
                                 chunk_size=chunk_size,
                                 bytes_expected=part.bytes_expected,
                                 session=session,
+                                ssl_context=ssl_context,
                                 status_fun=None,
                             )
                         )
@@ -396,6 +400,7 @@ async def download_files(
                         chunk_size=chunk_size,
                         bytes_expected=zip_bytes_expected,
                         session=session,
+                        ssl_context=ssl_context,
                         status_fun=status_fun,
                     )
 
