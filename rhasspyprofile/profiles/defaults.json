@@ -320,9 +320,7 @@
     },
     "porcupine": {
       "compatible": true,
-      "library_path": "porcupine/libpv_porcupine.so",
-      "model_path": "porcupine/porcupine_params.pv",
-      "keyword_path": "porcupine/porcupine.ppn",
+      "keyword_path": "porcupine.ppn",
       "sensitivity": 0.5
     },
     "system": "dummy"
@@ -338,11 +336,6 @@
         "precise": {
           "precise/hey-mycroft-2.pb": "hey-mycroft-2.pb",
           "precise/hey-mycroft-2.pb.params": "hey-mycroft-2.pb.params"
-        },
-        "porcupine": {
-          "porcupine/porcupine_params.pv": "porcupine_params.pv",
-          "porcupine/libpv_porcupine.so": "libpv_porcupine.so",
-          "porcupine/porcupine.ppn": "porcupine.ppn"
         }
       }
     },

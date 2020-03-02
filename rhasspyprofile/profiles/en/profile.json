@@ -3,7 +3,6 @@
   "locale": "en_US",
   "name": "en",
   "speech_to_text": {
-    "system": "pocketsphinx",
     "dictionary_casing": "lower",
     "kaldi": {
       "base_dictionary": "kaldi/base_dictionary.txt",
