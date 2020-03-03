@@ -23,7 +23,10 @@
     }
   },
   "dialogue": {
-    "system": "dummy"
+    "system": "dummy",
+    "hermes": {
+      "siteId": ""
+    }
   },
   "handle": {
     "command": {
@@ -55,6 +58,9 @@
     },
     "conversation": {
       "handle_speech": true
+    },
+    "hermes": {
+      "siteId": ""
     },
     "error_sound": true,
     "fuzzywuzzy": {
@@ -92,12 +98,15 @@
     "arecord": {
       "chunk_size": 960,
       "device": "",
-      "keep_device_open": true
+      "siteId": ""
+    },
+    "hermes": {
+      "siteId": ""
     },
     "pyaudio": {
       "device": "",
       "frames_per_buffer": 480,
-      "keep_device_open": true
+      "siteId": ""
     },
     "stdin": {
       "auto_start": true,
@@ -139,6 +148,9 @@
     "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav",
     "aplay": {
       "device": ""
+    },
+    "hermes": {
+      "siteId": ""
     },
     "command": {
       "arguments": [],
@@ -211,6 +223,10 @@
       "channels": 1,
       "language": "en-US"
     },
+    "hermes": {
+      "siteId": "",
+      "compatible": true
+    },
     "sentences_ini": "sentences.ini",
     "sentences_dir": "intents",
     "slots_dir": "slots",
@@ -230,6 +246,9 @@
       "url": "http://localhost:59125/process",
       "locale": "",
       "voice": ""
+    },
+    "hermes": {
+      "siteId": ""
     },
     "picotts": {
       "language": ""
@@ -285,14 +304,14 @@
     "dummy": {
       "compatible": true
     },
+    "hermes": {
+      "compatible": true,
+      "wakeword_id": "default"
+    },
     "command": {
       "compatible": true,
       "arguments": [],
       "program": ""
-    },
-    "hermes": {
-      "compatible": true,
-      "wakeword_id": "default"
     },
     "pocketsphinx": {
       "chunk_size": 960,
