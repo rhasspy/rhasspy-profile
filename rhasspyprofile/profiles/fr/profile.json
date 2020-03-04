@@ -45,7 +45,6 @@
         },
         "kaldi": {
           "kaldi/base_dictionary.txt": "fr_kaldi-guyot/base_dictionary.txt",
-          "kaldi/base_language_model.txt": "fr_kaldi-guyot/base_language_model.txt",
           "kaldi/g2p.fst": "fr_kaldi-guyot/g2p.fst",
           "kaldi/model/conf/mfcc.conf": "fr_kaldi-guyot/acoustic_model/conf/mfcc.conf",
           "kaldi/model/conf/online_cmvn.conf": "fr_kaldi-guyot/acoustic_model/conf/online_cmvn.conf",

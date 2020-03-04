@@ -41,7 +41,6 @@
         },
         "kaldi": {
           "kaldi/base_dictionary.txt": "nl_kaldi-cgn/base_dictionary.txt",
-          "kaldi/base_language_model.txt": "nl_kaldi-cgn/base_language_model.txt",
           "kaldi/g2p.fst": "nl_kaldi-cgn/g2p.fst",
           "kaldi/model/conf/ivector_extractor.conf": "nl_kaldi-cgn/acoustic_model/conf/ivector_extractor.conf",
           "kaldi/model/conf/mfcc_hires.conf": "nl_kaldi-cgn/acoustic_model/conf/mfcc_hires.conf",

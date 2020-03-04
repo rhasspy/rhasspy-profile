@@ -45,7 +45,6 @@
         },
         "kaldi": {
           "kaldi/base_dictionary.txt": "de_kaldi-zamia/base_dictionary.txt",
-          "kaldi/base_language_model.txt": "de_kaldi-zamia/base_language_model.txt",
           "kaldi/g2p.fst": "de_kaldi-zamia/g2p.fst",
           "kaldi/model/model/cmvn_opts": "de_kaldi-zamia/acoustic_model/model/cmvn_opts",
           "kaldi/model/model/final.mdl": "de_kaldi-zamia/acoustic_model/model/final.mdl",

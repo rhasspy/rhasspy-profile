@@ -347,6 +347,7 @@
   },
   "webhooks": {},
   "download": {
+    "url_base": "https://github.com/synesthesiam/",
     "cache_dir": "download",
     "conditions": {
       "wake.system": {
