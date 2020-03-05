@@ -255,7 +255,7 @@
     },
     "system": "dummy",
     "remote": {
-      "url": ""
+      "url": "http://my-server:12101/api/text-to-speech"
     },
     "wavenet": {
       "cache_dir": "tts/googlewavenet/cache",
