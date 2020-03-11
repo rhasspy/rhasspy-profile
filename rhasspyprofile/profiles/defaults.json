@@ -23,9 +23,11 @@
     }
   },
   "dialogue": {
+    "satellite_site_ids": "",
     "system": "dummy"
   },
   "handle": {
+    "satellite_site_ids": "",
     "command": {
       "arguments": [],
       "program": ""
@@ -46,6 +48,7 @@
     "handle_type": "event"
   },
   "intent": {
+    "satellite_site_ids": "",
     "adapt": {
       "stop_words": "stop_words.txt"
     },
@@ -90,6 +93,7 @@
   },
   "language": "",
   "microphone": {
+    "satellite_site_ids": "",
     "arecord": {
       "chunk_size": 960,
       "device": "",
@@ -126,13 +130,7 @@
     "publish_intents": true,
     "reconnect_sec": 5,
     "site_id": "default",
-    "satellite_site_ids": "",
     "username": ""
-  },
-  "rhasspy": {
-    "listen_on_start": true,
-    "load_timeout_sec": 15,
-    "preload_profile": true
   },
   "sounds": {
     "recorded": "${RHASSPY_BASE_DIR}/etc/wav/beep_lo.wav",
@@ -151,6 +149,7 @@
     }
   },
   "speech_to_text": {
+    "satellite_site_ids": "",
     "dummy": {
       "compatible": true
     },
@@ -223,6 +222,7 @@
     "system": "dummy"
   },
   "text_to_speech": {
+    "satellite_site_ids": "",
     "command": {
       "arguments": [],
       "program": ""
@@ -288,6 +288,7 @@
     }
   },
   "wake": {
+    "satellite_site_ids": "",
     "dummy": {
       "compatible": true
     },
