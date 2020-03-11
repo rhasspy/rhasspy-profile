@@ -333,7 +333,9 @@
     },
     "system": "dummy"
   },
-  "webhooks": {},
+  "webhooks": {
+    "satellite_site_ids": ""
+  },
   "download": {
     "url_base": "https://github.com/synesthesiam/",
     "cache_dir": "download",
