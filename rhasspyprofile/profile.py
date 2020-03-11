@@ -66,7 +66,7 @@ class Profile:
 
         _LOGGER.debug("Loading default profile settings from %s", defaults_path)
         with open(defaults_path, "r") as defaults_file:
-            return json5.load(defaults_file)
+            return json.load(defaults_file)
 
     # -------------------------------------------------------------------------
 
@@ -104,9 +104,19 @@ class Profile:
             # Read in reverse order so user profile overrides system
             for profiles_dir in self.profiles_dirs[::-1]:
                 json_path = profiles_dir / self.name / "profile.json"
+                _LOGGER.debug("Loading %s", json_path)
                 if json_path.is_file():
-                    with open(json_path, "r") as profile_file:
-                        Profile.recursive_update(self.json, json5.load(profile_file))
+                    try:
+                        with open(json_path, "r") as profile_file:
+                            profile_json = json.load(profile_file)
+                    except Exception as e:
+                        _LOGGER.warning(str(e))
+
+                        # Fall back to json5
+                        with open(json_path, "r") as profile_file:
+                            profile_json = json5.load(profile_file)
+
+                    Profile.recursive_update(self.json, profile_json)
 
     def read_path(self, *path_parts: str) -> Path:
         """Get first readable path in user then system directories."""
