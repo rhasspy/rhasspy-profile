@@ -95,7 +95,7 @@
   "microphone": {
     "satellite_site_ids": "",
     "udpraw": {
-      "host": "localhost",
+      "host": "",
       "port": 12333
     },
     "arecord": {
