@@ -336,6 +336,9 @@
   "webhooks": {
     "satellite_site_ids": ""
   },
+  "logging": {
+    "format": ""
+  },
   "download": {
     "url_base": "https://github.com/synesthesiam/",
     "cache_dir": "download",
