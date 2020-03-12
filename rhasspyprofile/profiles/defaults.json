@@ -104,17 +104,9 @@
       "frames_per_buffer": 480,
       "siteId": ""
     },
-    "http": {
-      "host": "127.0.0.1",
-      "port": 12333,
-      "stop_after": "never"
-    },
-    "gstreamer": {
-      "pipeline": "udpsrc port=12333 ! rawaudioparse use-sink-caps=false format=pcm pcm-format=s16le sample-rate=16000 num-channels=1 ! queue ! audioconvert ! audioresample"
-    },
     "command": {
-      "program": "",
-      "arguments": []
+      "record_program": "",
+      "record_arguments": []
     },
     "system": "dummy"
   },
