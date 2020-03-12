@@ -94,10 +94,6 @@
   "language": "",
   "microphone": {
     "satellite_site_ids": "",
-    "udpraw": {
-      "host": "",
-      "port": 12333
-    },
     "arecord": {
       "chunk_size": 960,
       "device": "",
