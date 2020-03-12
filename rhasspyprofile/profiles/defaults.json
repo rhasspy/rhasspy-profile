@@ -94,6 +94,10 @@
   "language": "",
   "microphone": {
     "satellite_site_ids": "",
+    "udpraw": {
+      "host": "localhost",
+      "port": 12333
+    },
     "arecord": {
       "chunk_size": 960,
       "device": "",
@@ -103,10 +107,6 @@
       "device": "",
       "frames_per_buffer": 480,
       "siteId": ""
-    },
-    "stdin": {
-      "auto_start": true,
-      "chunk_size": 960
     },
     "http": {
       "host": "127.0.0.1",
