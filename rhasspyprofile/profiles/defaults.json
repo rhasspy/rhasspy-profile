@@ -297,10 +297,9 @@
     },
     "precise": {
       "compatible": true,
-      "chunk_delay": 0.005,
       "chunk_size": 2048,
-      "engine_path": "precise-engine",
-      "model": "precise/hey-mycroft-2.pb",
+      "engine_path": "",
+      "model": "hey-mycroft-2.pb",
       "sensitivity": 0.5,
       "trigger_level": 3
     },
@@ -328,24 +327,7 @@
   },
   "download": {
     "url_base": "https://github.com/synesthesiam/",
-    "cache_dir": "download",
     "conditions": {
-      "wake.system": {
-        "precise": {
-          "precise/hey-mycroft-2.pb": "hey-mycroft-2.pb",
-          "precise/hey-mycroft-2.pb.params": "hey-mycroft-2.pb.params"
-        }
-      }
-    },
-    "files": {
-      "hey-mycroft-2.pb": {
-        "url": "https://github.com/MycroftAI/precise-data/raw/models/hey-mycroft-2.pb",
-        "cache": false
-      },
-      "hey-mycroft-2.pb.params": {
-        "url": "https://github.com/MycroftAI/precise-data/raw/models/hey-mycroft-2.pb.params",
-        "cache": false
-      }
     }
   }
 }
