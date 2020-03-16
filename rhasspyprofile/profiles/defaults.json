@@ -83,7 +83,9 @@
     "rasa": {
       "examples_markdown": "intent_examples.md",
       "project_name": "rhasspy",
-      "url": "http://localhost:5005/"
+      "url": "http://localhost:5005/",
+      "language": "",
+      "config_yaml": ""
     },
     "remote": {
       "url": "http://my-server:12101/api/text-to-intent"
@@ -327,7 +329,6 @@
   },
   "download": {
     "url_base": "https://github.com/synesthesiam/",
-    "conditions": {
-    }
+    "conditions": {}
   }
 }
