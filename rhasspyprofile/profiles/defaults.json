@@ -24,6 +24,7 @@
   },
   "dialogue": {
     "satellite_site_ids": "",
+    "session_timeout": 30,
     "system": "dummy"
   },
   "handle": {
