@@ -67,7 +67,7 @@
     },
     "fsticuffs": {
       "intent_fst": "intent.fst",
-      "intent_graph": "intent.json",
+      "intent_graph": "intent_graph.pickle.gz",
       "ignore_unknown_words": true,
       "converters_dir": "converters",
       "fuzzy": true
@@ -249,25 +249,23 @@
     }
   },
   "training": {
-    "dictionary_number_duplicates": true,
-    "grammars": {
-      "delete_before_training": true
-    },
     "intent": {
       "command": {
         "arguments": [],
         "program": ""
       },
-      "intent_map": "intent_map.json",
+      "remote": {
+        "url": ""
+      },
       "system": "auto"
-    },
-    "regex": {
-      "split": "\\s+"
     },
     "speech_to_text": {
       "command": {
         "arguments": [],
         "program": ""
+      },
+      "remote": {
+        "url": ""
       },
       "system": "auto"
     },
