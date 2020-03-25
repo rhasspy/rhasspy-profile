@@ -1,16 +1,17 @@
 """Methods for downloading profile artifacts"""
 import asyncio
+import dataclasses
 import logging
 import os
 import ssl
 import subprocess
 import tempfile
 import typing
+from dataclasses import dataclass
 from pathlib import Path
 
 import aiofiles
 import aiohttp
-import attr
 
 from .profile import Profile
 
@@ -116,7 +117,7 @@ def human_size(num: float, suffix="B") -> str:
     return "%.1f %s%s" % (num, "Yi", suffix)
 
 
-@attr.s(auto_attribs=True)
+@dataclass
 class MissingFile:
     """Details of a missing file in a profile."""
 
@@ -128,7 +129,7 @@ class MissingFile:
 
     def to_dict(self) -> typing.Dict[str, typing.Any]:
         """Convert to JSON serializable dictionary."""
-        result = attr.asdict(self)
+        result = dataclasses.asdict(self)
         result["file_path"] = str(result["file_path"])
 
         result["human_size"] = ""
@@ -138,7 +139,7 @@ class MissingFile:
         return result
 
 
-@attr.s(auto_attribs=True)
+@dataclass
 class MissingFilePart:
     """Details of a missing file split into parts."""
 
@@ -149,7 +150,7 @@ class MissingFilePart:
     bytes_expected: typing.Optional[int] = None
 
 
-@attr.s(auto_attribs=True)
+@dataclass
 class DownloadFailedException(Exception):
     """Exception raised when a file fails to download."""
 
