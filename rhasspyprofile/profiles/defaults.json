@@ -6,7 +6,7 @@
       "speech_sec": 0.3,
       "silence_sec": 0.5,
       "before_sec": 0.5,
-      "vad_mode": 3
+      "vad_mode": 1
     }
   },
   "dialogue": {
