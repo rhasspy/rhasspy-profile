@@ -1,25 +1,12 @@
 {
   "command": {
-    "command": {
-      "arguments": [],
-      "program": ""
-    },
-    "hermes": {
-      "timeout_sec": 30
-    },
-    "oneshot": {
-      "timeout_sec": 30
-    },
-    "system": "dummy",
     "webrtcvad": {
-      "chunk_size": 960,
-      "min_sec": 2,
-      "sample_rate": 16000,
+      "min_sec": 1,
+      "max_sec": 30,
+      "speech_sec": 0.3,
       "silence_sec": 0.5,
-      "speech_buffers": 5,
-      "throwaway_buffers": 10,
-      "timeout_sec": 30,
-      "vad_mode": 0
+      "before_sec": 0.5,
+      "vad_mode": 3
     }
   },
   "dialogue": {
