@@ -96,7 +96,14 @@
     },
     "command": {
       "record_program": "",
-      "record_arguments": []
+      "record_arguments": [],
+      "list_program": "",
+      "list_arguments": [],
+      "test_program": "",
+      "test_arguments": [],
+      "sample_rate": 16000,
+      "sample_width": 2,
+      "channels": 1
     },
     "system": "dummy"
   },
@@ -119,8 +126,10 @@
       "device": ""
     },
     "command": {
-      "arguments": [],
-      "program": ""
+      "play_program": "",
+      "play_arguments": [],
+      "list_program": "",
+      "list_arguments": []
     },
     "remote": {
       "url": ""
@@ -202,8 +211,11 @@
   "text_to_speech": {
     "satellite_site_ids": "",
     "command": {
-      "arguments": [],
-      "program": ""
+      "say_program": "",
+      "say_arguments": [],
+      "voices_program": "",
+      "voices_arguments": [],
+      "language": ""
     },
     "espeak": {},
     "flite": {
