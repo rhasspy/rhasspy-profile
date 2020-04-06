@@ -86,20 +86,20 @@
       },
       "speech_to_text.kaldi.open_transcription": {
         "True": {
-          "kaldi/model/model/base_graph/HCLG.fst": "fr_kaldi-guyot/acoustic_model/model/graph/HCLG.fst",
-          "kaldi/model/model/base_graph/words.txt": "fr_kaldi-guyot/acoustic_model/model/graph/words.txt",
-          "kaldi/model/model/base_graph/phones/align_lexicon.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/align_lexicon.int",
-          "kaldi/model/model/base_graph/phones/optional_silence.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.txt",
-          "kaldi/model/model/base_graph/phones/align_lexicon.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/align_lexicon.txt",
-          "kaldi/model/model/base_graph/phones/disambig.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/disambig.int",
-          "kaldi/model/model/base_graph/phones/silence.csl": "fr_kaldi-guyot/acoustic_model/model/graph/phones/silence.csl",
-          "kaldi/model/model/base_graph/phones/optional_silence.csl": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.csl",
-          "kaldi/model/model/base_graph/phones/word_boundary.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/word_boundary.txt",
-          "kaldi/model/model/base_graph/phones/disambig.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/disambig.txt",
-          "kaldi/model/model/base_graph/phones/optional_silence.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.int",
-          "kaldi/model/model/base_graph/phones/word_boundary.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/word_boundary.int",
-          "kaldi/model/model/base_graph/phones.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones.txt",
-          "kaldi/model/model/base_graph/num_pdfs": "fr_kaldi-guyot/acoustic_model/model/graph/num_pdfs"
+          "kaldi/model/base_graph/HCLG.fst": "fr_kaldi-guyot/acoustic_model/model/graph/HCLG.fst",
+          "kaldi/model/base_graph/words.txt": "fr_kaldi-guyot/acoustic_model/model/graph/words.txt",
+          "kaldi/model/base_graph/phones/align_lexicon.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/align_lexicon.int",
+          "kaldi/model/base_graph/phones/optional_silence.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.txt",
+          "kaldi/model/base_graph/phones/align_lexicon.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/align_lexicon.txt",
+          "kaldi/model/base_graph/phones/disambig.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/disambig.int",
+          "kaldi/model/base_graph/phones/silence.csl": "fr_kaldi-guyot/acoustic_model/model/graph/phones/silence.csl",
+          "kaldi/model/base_graph/phones/optional_silence.csl": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.csl",
+          "kaldi/model/base_graph/phones/word_boundary.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/word_boundary.txt",
+          "kaldi/model/base_graph/phones/disambig.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones/disambig.txt",
+          "kaldi/model/base_graph/phones/optional_silence.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/optional_silence.int",
+          "kaldi/model/base_graph/phones/word_boundary.int": "fr_kaldi-guyot/acoustic_model/model/graph/phones/word_boundary.int",
+          "kaldi/model/base_graph/phones.txt": "fr_kaldi-guyot/acoustic_model/model/graph/phones.txt",
+          "kaldi/model/base_graph/num_pdfs": "fr_kaldi-guyot/acoustic_model/model/graph/num_pdfs"
         }
       },
       "intent.system": {
