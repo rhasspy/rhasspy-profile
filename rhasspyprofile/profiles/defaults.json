@@ -1,6 +1,7 @@
 {
   "command": {
     "webrtcvad": {
+      "skip_sec": 0,
       "min_sec": 1,
       "max_sec": 30,
       "speech_sec": 0.3,
@@ -103,7 +104,8 @@
       "test_arguments": [],
       "sample_rate": 16000,
       "sample_width": 2,
-      "channels": 1
+      "channels": 1,
+      "siteId": ""
     },
     "system": "dummy"
   },
