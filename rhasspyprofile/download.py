@@ -3,6 +3,7 @@ import asyncio
 import dataclasses
 import logging
 import os
+import platform
 import ssl
 import subprocess
 import tempfile
@@ -251,6 +252,9 @@ async def download_files(
     session = session or aiohttp.ClientSession()
     assert session
 
+    # Cache machine type for later
+    machine_type = platform.machine()
+
     try:
         # Load settings
         files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
@@ -280,7 +284,12 @@ async def download_files(
                 )
 
                 # Join with url base
-                file_url: str = url_base + file_details["url"]
+                if machine_type in file_details:
+                    # Use machine-specific URL
+                    file_url = url_base + file_details[machine_type]
+                else:
+                    # Use general URL
+                    file_url = url_base + file_details["url"]
 
                 # When True, downloaded file is automatically unzipped in place
                 unzip = file_details.get("unzip", False)
