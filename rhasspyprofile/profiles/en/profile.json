@@ -18,6 +18,9 @@
       "g2p_model": "kaldi/g2p.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
+    },
+    "deepspeech": {
+      "compatible": true
     }
   },
   "text_to_speech": {
@@ -64,6 +67,9 @@
           "kaldi/model/phones/nonsilence_phones.txt": "en-us_kaldi-zamia/acoustic_model/phones/nonsilence_phones.txt",
           "kaldi/model/phones/optional_silence.txt": "en-us_kaldi-zamia/acoustic_model/phones/optional_silence.txt",
           "kaldi/model/phones/silence_phones.txt": "en-us_kaldi-zamia/acoustic_model/phones/silence_phones.txt"
+        },
+        "deepspeech": {
+          "deepspeech/0.6.1/output_graph.pb": "en-us_deepspeech-mozilla/model/output_graph"
         }
       },
       "speech_to_text.pocketsphinx.open_transcription": {
@@ -89,6 +95,12 @@
           "kaldi/model/base_graph/disambig_tid.int": "en-us_kaldi-zamia/acoustic_model/graph/disambig_tid.int"
         }
       },
+      "speech_to_text.deepspeech.open_transcription": {
+        "True": {
+          "deepspeech/0.6.1/base_lm.binary": "en-us_deepspeech-mozilla/model/lm.binary",
+          "deepspeech/0.6.1/base_trie": "en-us_deepspeech-mozilla/model/trie"
+        }
+      },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
           "base_language_model.txt": "en-us_pocketsphinx-cmu/base_language_model.txt"
@@ -101,6 +113,200 @@
       }
     },
     "files": {
+      "en-us_deepspeech-mozilla/model/output_graph": {
+        "platform": {
+          "arm.+": "en-us_deepspeech-mozilla/model/output_graph.tflite",
+          "": "en-us_deepspeech-mozilla/model/output_graph.pbmm"
+        }
+      },
+      "en-us_deepspeech-mozilla/model/lm.binary": {
+        "unzip": true,
+        "url": "en-us_deepspeech-mozilla/raw/master/model/",
+        "parts": [
+          {
+            "fragment": "lm.binary.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-04",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-05",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-06",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-07",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-08",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-09",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-10",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-11",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-12",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-13",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-14",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-15",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-16",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-17",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-18",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-19",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-20",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-21",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-22",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-23",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-24",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-25",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-26",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-27",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-28",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-29",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-30",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-31",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-32",
+            "bytes_expected": 11599540
+          }
+        ],
+        "zip_bytes_expected": 850460340,
+        "bytes_expected": 945699324
+      },
+      "en-us_deepspeech-mozilla/model/output_graph.pbmm": {
+        "unzip": true,
+        "url": "en-us_deepspeech-mozilla/raw/master/model/",
+        "parts": [
+          {
+            "fragment": "output_graph.pbmm.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-04",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-05",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pbmm.gz.part-06",
+            "bytes_expected": 17931816
+          }
+        ],
+        "zip_bytes_expected": 175218216,
+        "bytes_expected": 188915850
+      },
+      "en-us_deepspeech-mozilla/model/output_graph.tflite": {
+        "unzip": true,
+        "url": "en-us_deepspeech-mozilla/raw/master/model/output_graph.tflite.gz",
+        "zip_bytes_expected": 25117023,
+        "bytes_expected": 47331120
+      },
+      "en-us_deepspeech-mozilla/model/trie": {
+        "unzip": true,
+        "url": "en-us_deepspeech-mozilla/raw/master/model/trie.gz",
+        "zip_bytes_expected": 2049091,
+        "bytes_expected": 12200736
+      },
       "en-us_kaldi-zamia/base_language_model.txt.gz": {
         "url": "en-us_kaldi-zamia/raw/master/base_language_model.txt.gz",
         "unzip": true,

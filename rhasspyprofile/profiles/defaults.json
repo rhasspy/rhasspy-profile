@@ -189,6 +189,22 @@
       "phoneme_map": "espeak_phonemes.txt",
       "open_transcription": false
     },
+    "deepspeech": {
+      "acoustic_model": "deepspeech/model/0.6.1/output_graph.pb",
+      "base_dictionary": "",
+      "base_language_model": "base_lm.binary",
+      "base_trie": "base_trie",
+      "compatible": false,
+      "custom_words": "",
+      "dictionary": "",
+      "language_model": "lm.binary",
+      "trie": "trie",
+      "unknown_words": "",
+      "g2p_model": "",
+      "phoneme_examples": "",
+      "phoneme_map": "",
+      "open_transcription": false
+    },
     "remote": {
       "compatible": true,
       "url": "http://my-server:12101/api/speech-to-text"

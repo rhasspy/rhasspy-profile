@@ -4,6 +4,7 @@ import dataclasses
 import logging
 import os
 import platform
+import re
 import ssl
 import subprocess
 import tempfile
@@ -161,6 +162,10 @@ class DownloadFailedException(Exception):
 
 def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
     """Return details of files that need to be downloaded."""
+
+    # Cache machine type for later
+    machine_type = platform.machine()
+
     # Load settings
     conditions: typing.Dict[str, typing.Any] = profile.get("download.conditions", {})
     files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
@@ -189,9 +194,46 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                 # file_key is the destination path (relative to profile directory).
                 # file_value is the source name (in download.files).
                 for file_key, file_value in condition_files.items():
+                    file_details = typing.cast(
+                        typing.Dict[str, typing.Any], files.get(file_value)
+                    )
+                    assert file_details, f"Missing download details for {file_value}"
+
+                    if "platform" in file_details:
+                        # Use platform-specific file
+                        new_key = ""
+                        for platform_regex, platform_file_key in file_details[
+                            "platform"
+                        ].items():
+                            if not platform_regex:
+                                # Empty regex matches any platform
+                                new_key = platform_file_key
+                            elif re.match(platform_regex, machine_type):
+                                # Specific platform match
+                                new_key = platform_file_key
+                                break
+
+                        assert new_key, "No new platform-specific file key"
+                        _LOGGER.debug(
+                            "Using platform-specific file for %s: %s",
+                            machine_type,
+                            new_key,
+                        )
+
+                        # Use new key
+                        file_value = new_key
+                        file_details = typing.cast(
+                            typing.Dict[str, typing.Any], files.get(file_value)
+                        )
+                        assert (
+                            file_details
+                        ), f"Missing download details for {file_value}"
+
+                    # ---------------------------------------------------------
+
                     file_path = profile.read_path(file_key)
                     need_download = True
-                    bytes_expected = files.get(file_value, {}).get("bytes_expected")
+                    bytes_expected = file_details.get("bytes_expected")
 
                     # Check if a download is actually required
                     if file_path.exists():
@@ -273,6 +315,32 @@ async def download_files(
                 )
                 assert file_details, f"Missing download details for {file_key}"
 
+                if "platform" in file_details:
+                    # Use platform-specific file
+                    new_key = ""
+                    for platform_regex, platform_file_key in file_details[
+                        "platform"
+                    ].items():
+                        if not platform_regex:
+                            # Empty regex matches any platform
+                            new_key = platform_file_key
+                        elif re.match(platform_regex, machine_type):
+                            # Specific platform match
+                            new_key = platform_file_key
+                            break
+
+                    assert new_key, "No new platform-specific file key"
+                    _LOGGER.debug(
+                        "Using platform-specific file for %s: %s", machine_type, new_key
+                    )
+
+                    # Use new key
+                    file_key = new_key
+                    file_details = typing.cast(
+                        typing.Dict[str, typing.Any], files.get(file_key)
+                    )
+                    assert file_details, f"Missing download details for {file_key}"
+
                 # Number of bytes the downloaded file should be (pre-unzip)
                 zip_bytes_expected: typing.Optional[int] = file_details.get(
                     "zip_bytes_expected"
@@ -284,12 +352,7 @@ async def download_files(
                 )
 
                 # Join with url base
-                if machine_type in file_details:
-                    # Use machine-specific URL
-                    file_url = url_base + file_details[machine_type]
-                else:
-                    # Use general URL
-                    file_url = url_base + file_details["url"]
+                file_url: str = url_base + file_details["url"]
 
                 # When True, downloaded file is automatically unzipped in place
                 unzip = file_details.get("unzip", False)
