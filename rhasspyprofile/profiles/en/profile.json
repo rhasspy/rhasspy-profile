@@ -69,7 +69,7 @@
           "kaldi/model/phones/silence_phones.txt": "en-us_kaldi-zamia/acoustic_model/phones/silence_phones.txt"
         },
         "deepspeech": {
-          "deepspeech/0.6.1/output_graph.pb": "en-us_deepspeech-mozilla/model/output_graph"
+          "deepspeech/model/0.6.1/output_graph.pbmm": "en-us_deepspeech-mozilla/model/output_graph"
         }
       },
       "speech_to_text.pocketsphinx.open_transcription": {
@@ -97,8 +97,8 @@
       },
       "speech_to_text.deepspeech.open_transcription": {
         "True": {
-          "deepspeech/0.6.1/base_lm.binary": "en-us_deepspeech-mozilla/model/lm.binary",
-          "deepspeech/0.6.1/base_trie": "en-us_deepspeech-mozilla/model/trie"
+          "deepspeech/model/0.6.1/base_lm.binary": "en-us_deepspeech-mozilla/model/lm.binary",
+          "deepspeech/model/0.6.1/base_trie": "en-us_deepspeech-mozilla/model/trie"
         }
       },
       "speech_to_text.pocketsphinx.mix_weight": {

@@ -198,6 +198,7 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                         typing.Dict[str, typing.Any], files.get(file_value)
                     )
                     assert file_details, f"Missing download details for {file_value}"
+                    replace_filename = file_details.get("replace_filename", False)
 
                     if "platform" in file_details:
                         # Use platform-specific file
@@ -231,7 +232,17 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
 
                     # ---------------------------------------------------------
 
-                    file_path = profile.read_path(file_key)
+                    file_key_path = file_key
+
+                    if replace_filename:
+                        # Use final component of target key as file name.
+                        # Used for multi-platform paths.
+                        file_key_path = "/".join(
+                            file_key.split("/")[:-1] + [file_value.split("/")[-1]]
+                        )
+
+                    file_path = profile.read_path(file_key_path)
+
                     need_download = True
                     bytes_expected = file_details.get("bytes_expected")
 
@@ -257,7 +268,7 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                         missing_files.append(
                             MissingFile(
                                 file_key=file_value,
-                                file_path=profile.write_path(file_key),
+                                file_path=profile.write_path(file_key_path),
                                 setting_name=condition_key,
                                 setting_value=expected_value,
                                 bytes_expected=bytes_expected,
@@ -314,32 +325,9 @@ async def download_files(
                     typing.Dict[str, typing.Any], files.get(file_key)
                 )
                 assert file_details, f"Missing download details for {file_key}"
-
-                if "platform" in file_details:
-                    # Use platform-specific file
-                    new_key = ""
-                    for platform_regex, platform_file_key in file_details[
-                        "platform"
-                    ].items():
-                        if not platform_regex:
-                            # Empty regex matches any platform
-                            new_key = platform_file_key
-                        elif re.match(platform_regex, machine_type):
-                            # Specific platform match
-                            new_key = platform_file_key
-                            break
-
-                    assert new_key, "No new platform-specific file key"
-                    _LOGGER.debug(
-                        "Using platform-specific file for %s: %s", machine_type, new_key
-                    )
-
-                    # Use new key
-                    file_key = new_key
-                    file_details = typing.cast(
-                        typing.Dict[str, typing.Any], files.get(file_key)
-                    )
-                    assert file_details, f"Missing download details for {file_key}"
+                assert (
+                    "platform" not in file_details
+                ), "Platform should be already be resolved"
 
                 # Number of bytes the downloaded file should be (pre-unzip)
                 zip_bytes_expected: typing.Optional[int] = file_details.get(
