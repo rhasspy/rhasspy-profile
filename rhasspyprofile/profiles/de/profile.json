@@ -18,6 +18,10 @@
       "g2p_model": "kaldi/g2p.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
+    },
+    "deepspeech": {
+      "compatible": true,
+      "acoustic_model": "deepspeech/model/0.6.1/output_graph.pb"
     }
   },
   "text_to_speech": {
@@ -65,6 +69,10 @@
           "kaldi/model/ivectors_test_hires/conf/online_cmvn.conf": "de_kaldi-zamia/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf",
           "kaldi/model/ivectors_test_hires/conf/ivector_extractor.conf": "de_kaldi-zamia/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf",
           "kaldi/model/ivectors_test_hires/conf/splice.conf": "de_kaldi-zamia/acoustic_model/ivectors_test_hires/conf/splice.conf"
+        },
+        "deepspeech": {
+          "deepspeech/model/0.6.1/alphabet.txt": "de_deepspeech-aashishag/model/alphabet.txt",
+          "deepspeech/model/0.6.1/output_graph.pb": "de_deepspeech-aashishag/model/output_graph.pb"
         }
       },
       "speech_to_text.pocketsphinx.open_transcription": {
@@ -88,6 +96,12 @@
           "kaldi/model/base_graph/num_pdfs": "de_kaldi-zamia/acoustic_model/model/graph/num_pdfs",
           "kaldi/model/base_graph/words.txt": "de_kaldi-zamia/acoustic_model/model/graph/words.txt",
           "kaldi/model/base_graph/phones.txt": "de_kaldi-zamia/acoustic_model/model/graph/phones.txt"
+        }
+      },
+      "speech_to_text.deepspeech.open_transcription": {
+        "True": {
+          "deepspeech/model/0.6.1/base_lm.binary": "de_deepspeech-aashishag/model/lm.binary",
+          "deepspeech/model/0.6.1/base_trie": "de_deepspeech-aashishag/model/trie"
         }
       },
       "speech_to_text.pocketsphinx.mix_weight": {
@@ -358,6 +372,261 @@
         "unzip": false,
         "url": "de_kaldi-zamia/raw/master/acoustic_model/ivectors_test_hires/conf/splice.conf",
         "bytes_expected": 35
+      },
+      "de_deepspeech-aashishag/model/alphabet.txt": {
+        "unzip": false,
+        "url": "de_deepspeech-aashishag/raw/master/model/alphabet.txt",
+        "bytes_expected": 338
+      },
+      "de_deepspeech-aashishag/model/lm.binary": {
+        "unzip": true,
+        "url": "de_deepspeech-aashishag/raw/master/model/",
+        "parts": [
+          {
+            "fragment": "lm.binary.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-04",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-05",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-06",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-07",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-08",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-09",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-10",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-11",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-12",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-13",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-14",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-15",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-16",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-17",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-18",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-19",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-20",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-21",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-22",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-23",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-24",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-25",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-26",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-27",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-28",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-29",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-30",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-31",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-32",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-33",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-34",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-35",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-36",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-37",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-38",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-39",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-40",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-41",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-42",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-43",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-44",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-45",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-46",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-47",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-48",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "lm.binary.gz.part-49",
+            "bytes_expected": 13671407
+          }
+        ],
+        "zip_bytes_expected": 1298177007,
+        "bytes_expected": 2063447966
+      },
+      "de_deepspeech-aashishag/model/output_graph.pb": {
+        "unzip": true,
+        "url": "de_deepspeech-aashishag/raw/master/model/",
+        "parts": [
+          {
+            "fragment": "output_graph.pb.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-04",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-05",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "output_graph.pb.gz.part-06",
+            "bytes_expected": 17999715
+          }
+        ],
+        "zip_bytes_expected": 175286115,
+        "bytes_expected": 188939504
+      },
+      "de_deepspeech-aashishag/model/trie": {
+        "unzip": true,
+        "url": "de_deepspeech-aashishag/raw/master/model/trie.gz",
+        "zip_bytes_expected": 12510829,
+        "bytes_expected": 67818944
       }
     }
   }
