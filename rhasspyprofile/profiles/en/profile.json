@@ -69,6 +69,7 @@
           "kaldi/model/phones/silence_phones.txt": "en-us_kaldi-zamia/acoustic_model/phones/silence_phones.txt"
         },
         "deepspeech": {
+          "deepspeech/model/0.6.1/alphabet.txt": "en-us_deepspeech-mozilla/model/alphabet.txt",
           "deepspeech/model/0.6.1/output_graph.pbmm": "en-us_deepspeech-mozilla/model/output_graph"
         }
       },
@@ -570,6 +571,11 @@
         "unzip": false,
         "url": "en-us_kaldi-zamia/raw/master/acoustic_model/model/graph/phones.txt",
         "bytes_expected": 2326
+      },
+      "en-us_deepspeech-mozilla/model/alphabet.txt": {
+        "unzip": false,
+        "url": "en-us_deepspeech-mozilla/raw/master/model/alphabet.txt",
+        "bytes_expected": 329
       },
       "en-us_kaldi-zamia/acoustic_model/model/graph/words.txt": {
         "unzip": false,

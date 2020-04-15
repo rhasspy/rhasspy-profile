@@ -190,6 +190,7 @@
       "open_transcription": false
     },
     "deepspeech": {
+      "alphabet": "deepspeech/model/0.6.1/alphabet.txt",
       "acoustic_model": "deepspeech/model/0.6.1/output_graph.pbmm",
       "base_dictionary": "",
       "base_language_model": "deepspeech/model/0.6.1/base_lm.binary",
