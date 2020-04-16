@@ -69,6 +69,11 @@
       "num_samples": 10000,
       "compatible": true
     },
+    "snips": {
+      "language": "",
+      "engine_dir": "snips/engine",
+      "dataset_file": "snips/dataset.yaml"
+    },
     "rasa": {
       "examples_markdown": "intent_examples.md",
       "project_name": "rhasspy",
