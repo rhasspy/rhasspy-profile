@@ -122,7 +122,16 @@
     "publish_intents": true,
     "reconnect_sec": 5,
     "site_id": "default",
-    "username": ""
+    "username": "",
+    "tls": {
+      "enabled": false,
+      "ca_certs": "",
+      "cert_reqs": "CERT_REQUIRED",
+      "certfile": "",
+      "ciphers": "",
+      "keyfile": "",
+      "version": ""
+    }
   },
   "sounds": {
     "recorded": "${RHASSPY_BASE_DIR}/etc/wav/beep_lo.wav",
