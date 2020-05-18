@@ -181,14 +181,21 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
         for expected_value, condition_files in condition_details.items():
             # Allow comparisons like ">=0", etc.
             compare_func = get_compare_func(expected_value)
-            compare_result = compare_func(actual_value)
-            _LOGGER.debug(
-                "%s %s %s = %s",
-                condition_key,
-                expected_value,
-                actual_value,
-                compare_result,
-            )
+
+            try:
+                compare_result = compare_func(actual_value)
+                _LOGGER.debug(
+                    "%s %s %s = %s",
+                    condition_key,
+                    expected_value,
+                    actual_value,
+                    compare_result,
+                )
+            except ValueError:
+                _LOGGER.exception(
+                    "%s %s %s = error", condition_key, expected_value, actual_value
+                )
+                compare_result = False
 
             if compare_result:
                 # file_key is the destination path (relative to profile directory).
@@ -510,19 +517,19 @@ def get_compare_func(value: str):
     """Use mini-language to allow for profile setting value comparison."""
     if value.startswith(">="):
         f_value = float(value[2:])
-        return lambda v: v >= f_value
+        return lambda v: float(v) >= f_value
 
     if value.startswith("<="):
         f_value = float(value[2:])
-        return lambda v: v <= f_value
+        return lambda v: float(v) <= f_value
 
     if value.startswith(">"):
         f_value = float(value[1:])
-        return lambda v: v > f_value
+        return lambda v: float(v) > f_value
 
     if value.startswith("<"):
         f_value = float(value[1:])
-        return lambda v: v < f_value
+        return lambda v: float(v) < f_value
 
     if value.startswith("!"):
         return lambda v: v != value
