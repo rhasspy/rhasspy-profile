@@ -83,12 +83,12 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "nl_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "nl_pocketsphinx-cmu/base_language_model.fst"
         }
       },
       "speech_to_text.kaldi.mix_weight": {
         ">0": {
-          "base_language_model.txt": "nl_kaldi-cgn/base_language_model.txt"
+          "kaldi/base_language_model.fst": "nl_kaldi-cgn/base_language_model.fst"
         }
       }
     },
@@ -105,9 +105,15 @@
         "zip_bytes_expected": 8318068,
         "bytes_expected": 25339908
       },
+      "nl_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "nl_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 9413696,
+        "bytes_expected": 21890602
+      },
       "nl_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,
-        "url": "nl_pocketsphinx-cmu/raw/master/./",
+        "url": "nl_pocketsphinx-cmu/raw/master/g2p.fst",
         "parts": [
           {
             "fragment": "g2p.fst.gz.part-00",
@@ -198,6 +204,26 @@
         ],
         "zip_bytes_expected": 65650217,
         "bytes_expected": 188321926
+      },
+      "nl_kaldi-cgn/base_language_model.fst": {
+        "unzip": true,
+        "url": "nl_kaldi-cgn/raw/master/",
+        "parts": [
+          {
+            "fragment": "base_language_model.fst.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-02",
+            "bytes_expected": 20523087
+          }
+        ],
+        "zip_bytes_expected": 72951887,
+        "bytes_expected": 141987448
       },
       "nl_kaldi-cgn/g2p.fst": {
         "unzip": true,

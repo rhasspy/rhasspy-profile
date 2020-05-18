@@ -55,7 +55,7 @@
       },
       "speech_to_text.kaldi.mix_weight": {
         ">0": {
-          "base_language_model.txt": "vi_kaldi-montreal/base_language_model.txt"
+          "base_language_model.fst": "vi_kaldi-montreal/base_language_model.fst"
         }
       }
     },
@@ -63,14 +63,20 @@
       "vi_kaldi-montreal/base_dictionary.txt": {
         "unzip": true,
         "url": "vi_kaldi-montreal/raw/master/base_dictionary.txt.gz",
-        "zip_bytes_expected": 240776,
-        "bytes_expected": 844909
+        "zip_bytes_expected": 240258,
+        "bytes_expected": 843168
       },
       "vi_kaldi-montreal/base_language_model.txt": {
         "unzip": true,
         "url": "vi_kaldi-montreal/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 27497628,
         "bytes_expected": 111389907
+      },
+      "vi_kaldi-montreal/base_language_model.fst": {
+        "unzip": true,
+        "url": "vi_kaldi-montreal/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 33329067,
+        "bytes_expected": 78212370
       },
       "vi_kaldi-montreal/g2p.fst": {
         "unzip": true,

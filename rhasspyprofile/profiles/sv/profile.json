@@ -61,7 +61,7 @@
       },
       "speech_to_text.kaldi.mix_weight": {
         ">0": {
-          "base_language_model.txt": "sv_kaldi-montreal/base_language_model.txt"
+          "base_language_model.fst": "sv_kaldi-montreal/base_language_model.fst"
         }
       }
     },
@@ -77,6 +77,12 @@
         "url": "sv_kaldi-montreal/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 520152,
         "bytes_expected": 2126280
+      },
+      "sv_kaldi-montreal/base_language_model.fst": {
+        "unzip": true,
+        "url": "sv_kaldi-montreal/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 686945,
+        "bytes_expected": 2360330
       },
       "sv_kaldi-montreal/g2p.fst": {
         "unzip": true,

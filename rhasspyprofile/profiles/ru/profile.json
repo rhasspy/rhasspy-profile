@@ -33,7 +33,7 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "ru_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "ru_pocketsphinx-cmu/base_language_model.fst"
         }
       }
     },
@@ -46,7 +46,7 @@
       },
       "ru_pocketsphinx-cmu/base_language_model.txt": {
         "unzip": true,
-        "url": "ru_pocketsphinx-cmu/raw/master/./",
+        "url": "ru_pocketsphinx-cmu/raw/master/",
         "parts": [
           {
             "fragment": "base_language_model.txt.gz.part-00",
@@ -71,6 +71,38 @@
         ],
         "zip_bytes_expected": 108872897,
         "bytes_expected": 554026362
+      },
+      "ru_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "ru_pocketsphinx-cmu/raw/master/",
+        "parts": [
+          {
+            "fragment": "base_language_model.fst.gz.part-00",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-01",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-02",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-03",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-04",
+            "bytes_expected": 26214400
+          },
+          {
+            "fragment": "base_language_model.fst.gz.part-05",
+            "bytes_expected": 4324833
+          }
+        ],
+        "zip_bytes_expected": 135396833,
+        "bytes_expected": 311913998
       },
       "ru_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,
