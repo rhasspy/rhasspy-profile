@@ -16,6 +16,7 @@
       "model_dir": "kaldi/model",
       "unknown_words": "kaldi_unknown_words.txt",
       "g2p_model": "kaldi/g2p.fst",
+      "mix_fst": "kaldi/mixed.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
     }
@@ -76,12 +77,12 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "fr_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "fr_pocketsphinx-cmu/base_language_model.fst"
         }
       },
       "speech_to_text.kaldi.mix_weight": {
         ">0": {
-          "base_language_model.txt": "fr_kaldi-guyot/base_language_model.txt"
+          "kaldi/base_language_model.fst": "fr_kaldi-guyot/base_language_model.fst"
         }
       },
       "speech_to_text.kaldi.open_transcription": {
@@ -121,6 +122,12 @@
         "url": "fr_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 21453362,
         "bytes_expected": 67751494
+      },
+      "fr_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "fr_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 27944649,
+        "bytes_expected": 63365092
       },
       "fr_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,
@@ -169,8 +176,9 @@
         "bytes_expected": 2158660
       },
       "fr_kaldi-guyot/base_dictionary.txt": {
-        "unzip": false,
-        "url": "fr_kaldi-guyot/raw/master/base_dictionary.txt",
+        "unzip": true,
+        "url": "fr_kaldi-guyot/raw/master/base_dictionary.txt.gz",
+        "zip_bytes_expected": 551504,
         "bytes_expected": 2116243
       },
       "fr_kaldi-guyot/base_language_model.txt": {
@@ -178,6 +186,12 @@
         "url": "fr_kaldi-guyot/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 21453362,
         "bytes_expected": 67751494
+      },
+      "fr_kaldi-guyot/base_language_model.fst": {
+        "unzip": true,
+        "url": "fr_kaldi-guyot/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 27944649,
+        "bytes_expected": 63365092
       },
       "fr_kaldi-guyot/g2p.fst": {
         "unzip": true,

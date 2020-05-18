@@ -41,7 +41,7 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "es_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "es_pocketsphinx-cmu/base_language_model.fst"
         }
       }
     },
@@ -57,6 +57,12 @@
         "url": "es_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 23391433,
         "bytes_expected": 69689826
+      },
+      "es_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "es_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 25525538,
+        "bytes_expected": 51737102
       },
       "es_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,

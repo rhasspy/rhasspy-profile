@@ -16,11 +16,14 @@
       "model_dir": "kaldi/model",
       "unknown_words": "kaldi_unknown_words.txt",
       "g2p_model": "kaldi/g2p.fst",
+      "mix_fst": "kaldi/mixed.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
     },
     "deepspeech": {
-      "compatible": true
+      "compatible": true,
+      "base_language_model_fst": "deepspeech/base_language_model.fst",
+      "mix_fst": "deepspeech/mixed.fst"
     }
   },
   "text_to_speech": {
@@ -104,12 +107,17 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "base_language_model.txt": "en-us_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "en-us_pocketsphinx-cmu/base_language_model.fst"
         }
       },
       "speech_to_text.kaldi.mix_weight": {
         ">0": {
-          "base_language_model.txt": "en-us_kaldi-zamia/base_language_model.txt"
+          "kaldi/base_language_model.fst": "en-us_kaldi-zamia/base_language_model.fst"
+        }
+      },
+      "speech_to_text.deepspeech.mix_weight": {
+        ">0": {
+          "deepspeech/base_language_model.fst": "en-us_deepspeech-mozilla/base_language_model.fst"
         }
       }
     },
@@ -308,12 +316,6 @@
         "zip_bytes_expected": 2049091,
         "bytes_expected": 12200736
       },
-      "en-us_kaldi-zamia/base_language_model.txt.gz": {
-        "url": "en-us_kaldi-zamia/raw/master/base_language_model.txt.gz",
-        "unzip": true,
-        "zip_bytes_expected": 21364794,
-        "bytes_expected": 63241613
-      },
       "en-us_pocketsphinx-cmu/acoustic_model/feat.params": {
         "url": "en-us_pocketsphinx-cmu/raw/master/acoustic_model/feat.params",
         "bytes_expected": 129,
@@ -366,6 +368,12 @@
         "bytes_expected": 95595651,
         "zip_bytes_expected": 33456672
       },
+      "en-us_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "en-us_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 37267066,
+        "bytes_expected": 72090312
+      },
       "en-us_pocketsphinx-cmu/g2p.fst": {
         "url": "en-us_pocketsphinx-cmu/raw/master/g2p.fst.gz",
         "unzip": true,
@@ -377,6 +385,18 @@
         "bytes_expected": 3950267,
         "zip_bytes_expected": 1089197,
         "unzip": true
+      },
+      "en-us_kaldi-zamia/base_language_model.txt.gz": {
+        "url": "en-us_kaldi-zamia/raw/master/base_language_model.txt.gz",
+        "unzip": true,
+        "zip_bytes_expected": 21364794,
+        "bytes_expected": 63241613
+      },
+      "en-us_kaldi-zamia/base_language_model.fst": {
+        "unzip": true,
+        "url": "en-us_kaldi-zamia/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 37267066,
+        "bytes_expected": 72090312
       },
       "en-us_kaldi-zamia/g2p.fst": {
         "url": "en-us_kaldi-zamia/raw/master/g2p.fst.gz",
@@ -576,6 +596,12 @@
         "unzip": false,
         "url": "en-us_deepspeech-mozilla/raw/master/model/alphabet.txt",
         "bytes_expected": 329
+      },
+      "en-us_deepspeech-mozilla/base_language_model.fst": {
+        "unzip": true,
+        "url": "en-us_deepspeech-mozilla/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 37267066,
+        "bytes_expected": 72090312
       },
       "en-us_kaldi-zamia/acoustic_model/model/graph/words.txt": {
         "unzip": false,

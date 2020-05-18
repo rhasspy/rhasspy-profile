@@ -168,6 +168,7 @@
     "kaldi": {
       "base_dictionary": "base_dictionary.txt",
       "base_language_model": "base_language_model.txt",
+      "base_language_model_fst": "base_language_model.fst",
       "compatible": false,
       "custom_words": "custom_words.txt",
       "dictionary": "dictionary.txt",
@@ -189,6 +190,7 @@
       "acoustic_model": "acoustic_model",
       "base_dictionary": "base_dictionary.txt",
       "base_language_model": "base_language_model.txt",
+      "base_language_model_fst": "base_language_model.fst",
       "compatible": true,
       "custom_words": "custom_words.txt",
       "dictionary": "dictionary.txt",
@@ -208,6 +210,7 @@
       "acoustic_model": "deepspeech/model/0.6.1/output_graph.pbmm",
       "base_dictionary": "",
       "base_language_model": "deepspeech/model/0.6.1/base_lm.binary",
+      "base_language_model_fst": "base_language_model.fst",
       "base_trie": "deepspeech/model/0.6.1/base_trie",
       "compatible": false,
       "custom_words": "",
@@ -216,6 +219,8 @@
       "trie": "deepspeech/trie",
       "unknown_words": "",
       "g2p_model": "",
+      "mix_weight": 0,
+      "mix_fst": "mixed.fst",
       "phoneme_examples": "",
       "phoneme_map": "",
       "open_transcription": false

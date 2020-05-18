@@ -21,6 +21,16 @@
           "acoustic_model/transition_matrices": "ca-es_pocketsphinx-cmu/acoustic_model/transition_matrices",
           "acoustic_model/variances": "ca-es_pocketsphinx-cmu/acoustic_model/variances"
         }
+      },
+      "speech_to_text.pocketsphinx.open_transcription": {
+        "True": {
+          "base_language_model.txt": "ca-es_pocketsphinx-cmu/base_language_model.txt"
+        }
+      },
+      "speech_to_text.pocketsphinx.mix_weight": {
+        ">0": {
+          "base_language_model.fst": "ca-es_pocketsphinx-cmu/base_language_model.fst"
+        }
       }
     },
     "files": {
@@ -35,6 +45,12 @@
         "url": "ca-es_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 1746859,
         "bytes_expected": 6947267
+      },
+      "ca-es_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "ca-es_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 2181120,
+        "bytes_expected": 7041946
       },
       "ca-es_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,
@@ -76,6 +92,11 @@
         "unzip": false,
         "url": "ca-es_pocketsphinx-cmu/raw/master/acoustic_model/variances",
         "bytes_expected": 40520132
+      },
+      "ca-es_pocketsphinx-cmu/phoneme_examples.txt": {
+        "unzip": false,
+        "url": "ca-es_pocketsphinx-cmu/raw/master/phoneme_examples.txt",
+        "bytes_expected": 622
       }
     }
   }

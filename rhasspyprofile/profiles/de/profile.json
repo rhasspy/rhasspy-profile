@@ -16,12 +16,15 @@
       "model_dir": "kaldi/model",
       "unknown_words": "kaldi_unknown_words.txt",
       "g2p_model": "kaldi/g2p.fst",
+      "mix_fst": "kaldi/mixed.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
     },
     "deepspeech": {
       "compatible": true,
-      "acoustic_model": "deepspeech/model/0.6.1/output_graph.pb"
+      "acoustic_model": "deepspeech/model/0.6.1/output_graph.pb",
+      "base_language_model_fst": "deepspeech/base_language_model.fst",
+      "mix_fst": "deepspeech/mixed.fst"
     }
   },
   "text_to_speech": {
@@ -106,7 +109,17 @@
       },
       "speech_to_text.pocketsphinx.mix_weight": {
         ">0": {
-          "kaldi/base_language_model.txt": "de_pocketsphinx-cmu/base_language_model.txt"
+          "base_language_model.fst": "de_pocketsphinx-cmu/base_language_model.fst"
+        }
+      },
+      "speech_to_text.kaldi.mix_weight": {
+        ">0": {
+          "kaldi/base_language_model.fst": "de_pocketsphinx-cmu/base_language_model.fst"
+        }
+      },
+      "speech_to_text.deepspeech.mix_weight": {
+        ">0": {
+          "deepspeech/base_language_model.fst": "de_pocketsphinx-cmu/base_language_model.fst"
         }
       }
     },
@@ -122,6 +135,12 @@
         "url": "de_pocketsphinx-cmu/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 35798869,
         "bytes_expected": 117496832
+      },
+      "de_pocketsphinx-cmu/base_language_model.fst": {
+        "unzip": true,
+        "url": "de_pocketsphinx-cmu/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 46294251,
+        "bytes_expected": 116125088
       },
       "de_pocketsphinx-cmu/g2p.fst": {
         "unzip": true,
@@ -180,6 +199,12 @@
         "url": "de_kaldi-zamia/raw/master/base_language_model.txt.gz",
         "zip_bytes_expected": 35798869,
         "bytes_expected": 117496832
+      },
+      "de_kaldi-zamia/base_language_model.fst": {
+        "unzip": true,
+        "url": "de_kaldi-zamia/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 46294251,
+        "bytes_expected": 116125088
       },
       "de_kaldi-zamia/g2p.fst": {
         "unzip": true,
@@ -627,6 +652,12 @@
         "url": "de_deepspeech-aashishag/raw/master/model/trie.gz",
         "zip_bytes_expected": 12510829,
         "bytes_expected": 67818944
+      },
+      "de_deepspeech-aashishag/base_language_model.fst": {
+        "unzip": true,
+        "url": "de_deepspeech-aashishag/raw/master/base_language_model.fst.gz",
+        "zip_bytes_expected": 46294251,
+        "bytes_expected": 116125088
       }
     }
   }
