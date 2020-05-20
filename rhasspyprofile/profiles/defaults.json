@@ -267,6 +267,10 @@
     "picotts": {
       "language": ""
     },
+    "nanotts": {
+      "language": "",
+      "langdir": ""
+    },
     "system": "dummy",
     "remote": {
       "url": "http://my-server:12101/api/text-to-speech"
