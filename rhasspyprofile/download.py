@@ -312,9 +312,6 @@ async def download_files(
     session = session or aiohttp.ClientSession()
     assert session
 
-    # Cache machine type for later
-    machine_type = platform.machine()
-
     try:
         # Load settings
         files: typing.Dict[str, typing.Any] = profile.get("download.files", {})
