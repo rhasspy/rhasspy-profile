@@ -21,6 +21,9 @@
   "text_to_speech": {
     "wavenet": {
       "language_code": "sv-SE"
+    },
+    "opentts": {
+      "voice": "espeak:sv"
     }
   },
   "download": {

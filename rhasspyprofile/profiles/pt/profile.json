@@ -8,6 +8,9 @@
   "text_to_speech": {
     "wavenet": {
       "language_code": "pt-BR"
+    },
+    "opentts": {
+      "voice": "espeak:pt-br"
     }
   },
   "download": {

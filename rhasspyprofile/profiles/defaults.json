@@ -264,6 +264,10 @@
       "locale": "",
       "voice": ""
     },
+    "opentts": {
+      "url": "http://localhost:5500",
+      "voice": ""
+    },
     "picotts": {
       "language": ""
     },

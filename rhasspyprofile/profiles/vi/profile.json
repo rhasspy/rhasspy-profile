@@ -12,6 +12,11 @@
     },
     "dictionary_casing": "lower"
   },
+  "text_to_speech": {
+    "opentts": {
+      "voice": "espeak:vi"
+    }
+  },
   "wake": {
     "pocketsphinx": {
       "compatible": false

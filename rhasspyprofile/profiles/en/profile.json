@@ -32,6 +32,9 @@
     },
     "marytts": {
       "locale": "en-US"
+    },
+    "opentts": {
+      "voice": "nanotts:en-GB"
     }
   },
   "download": {

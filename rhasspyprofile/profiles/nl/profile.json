@@ -22,6 +22,9 @@
   "text_to_speech": {
     "wavenet": {
       "language_code": "nl-NL"
+    },
+    "opentts": {
+      "voice": "espeak:nl"
     }
   },
   "download": {

@@ -6,6 +6,11 @@
     "g2p_casing": "lower",
     "dictionary_casing": "lower"
   },
+  "text_to_speech": {
+    "opentts": {
+      "voice": "espeak:el"
+    }
+  },
   "intent": {
     "flair": {
       "compatible": false

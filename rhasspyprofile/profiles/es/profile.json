@@ -8,6 +8,9 @@
   "text_to_speech": {
     "wavenet": {
       "language_code": "es-ES"
+    },
+    "opentts": {
+      "voice": "nanotts:es-ES"
     }
   },
   "intent": {

@@ -5,10 +5,15 @@
   "speech_to_text": {
     "dictionary_casing": "lower"
   },
-  "intent": {
+  "text_to_speech": {
     "wavenet": {
       "language_code": "it-IT"
     },
+    "opentts": {
+      "voice": "nanotts:it-IT"
+    }
+  },
+  "intent": {
     "flair": {
       "compatible": false
     }

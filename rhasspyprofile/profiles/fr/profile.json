@@ -27,6 +27,9 @@
     },
     "marytts": {
       "locale": "fr-FR"
+    },
+    "opentts": {
+      "voice": "nanotts:fr-FR"
     }
   },
   "download": {
