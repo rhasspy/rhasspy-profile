@@ -34,7 +34,7 @@
     "pem_file": "",
     "key_file": "",
     "url": "http://hassio/homeassistant/",
-    "handle_type": "event"
+    "handle_type": "intent"
   },
   "intent": {
     "satellite_site_ids": "",
