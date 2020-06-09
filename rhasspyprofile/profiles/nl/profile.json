@@ -45,10 +45,8 @@
         "kaldi": {
           "kaldi/base_dictionary.txt": "nl_kaldi-cgn/base_dictionary.txt",
           "kaldi/g2p.fst": "nl_kaldi-cgn/g2p.fst",
-          "kaldi/model/conf/ivector_extractor.conf": "nl_kaldi-cgn/acoustic_model/conf/ivector_extractor.conf",
           "kaldi/model/conf/mfcc_hires.conf": "nl_kaldi-cgn/acoustic_model/conf/mfcc_hires.conf",
           "kaldi/model/conf/online_cmvn.conf": "nl_kaldi-cgn/acoustic_model/conf/online_cmvn.conf",
-          "kaldi/model/conf/online.conf": "nl_kaldi-cgn/acoustic_model/conf/online.conf",
           "kaldi/model/extractor/final.dubm": "nl_kaldi-cgn/acoustic_model/extractor/final.dubm",
           "kaldi/model/extractor/final.ie": "nl_kaldi-cgn/acoustic_model/extractor/final.ie",
           "kaldi/model/extractor/final.mat": "nl_kaldi-cgn/acoustic_model/extractor/final.mat",
