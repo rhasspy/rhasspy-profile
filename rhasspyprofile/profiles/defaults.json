@@ -372,7 +372,7 @@
     "format": ""
   },
   "download": {
-    "url_base": "https://github.com/synesthesiam/",
+    "url_base": "https://raw.githubusercontent.com/synesthesiam/",
     "conditions": {}
   }
 }

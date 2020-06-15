@@ -67,147 +67,147 @@
     "files": {
       "vi_kaldi-montreal/base_dictionary.txt": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/base_dictionary.txt.gz",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/base_dictionary.txt.gz",
         "zip_bytes_expected": 240258,
         "bytes_expected": 843168
       },
       "vi_kaldi-montreal/base_language_model.txt": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/base_language_model.txt.gz",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/base_language_model.txt.gz",
         "zip_bytes_expected": 27497628,
         "bytes_expected": 111389907
       },
       "vi_kaldi-montreal/base_language_model.fst": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/base_language_model.fst.gz",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/base_language_model.fst.gz",
         "zip_bytes_expected": 33329067,
         "bytes_expected": 78212370
       },
       "vi_kaldi-montreal/g2p.fst": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/g2p.fst.gz",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/g2p.fst.gz",
         "zip_bytes_expected": 2777134,
         "bytes_expected": 9050702
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/word_boundary.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/word_boundary.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/word_boundary.int",
         "bytes_expected": 10008
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/align_lexicon.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/align_lexicon.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/align_lexicon.txt",
         "bytes_expected": 322
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/word_boundary.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/word_boundary.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/word_boundary.txt",
         "bytes_expected": 13579
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/disambig.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/disambig.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/disambig.int",
         "bytes_expected": 8
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/silence.csl": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/silence.csl",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/silence.csl",
         "bytes_expected": 36
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/optional_silence.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/optional_silence.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/optional_silence.txt",
         "bytes_expected": 4
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/optional_silence.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/optional_silence.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/optional_silence.int",
         "bytes_expected": 2
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/disambig.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/disambig.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/disambig.txt",
         "bytes_expected": 6
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/align_lexicon.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/align_lexicon.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/align_lexicon.int",
         "bytes_expected": 163
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones/optional_silence.csl": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones/optional_silence.csl",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones/optional_silence.csl",
         "bytes_expected": 2
       },
       "vi_kaldi-montreal/acoustic_model/graph/disambig_tid.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/disambig_tid.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/disambig_tid.int",
         "bytes_expected": 18
       },
       "vi_kaldi-montreal/acoustic_model/graph/num_pdfs": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/num_pdfs",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/num_pdfs",
         "bytes_expected": 5
       },
       "vi_kaldi-montreal/acoustic_model/graph/words.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/words.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/words.txt",
         "bytes_expected": 123
       },
       "vi_kaldi-montreal/acoustic_model/graph/phones.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/graph/phones.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/graph/phones.txt",
         "bytes_expected": 10569
       },
       "vi_kaldi-montreal/acoustic_model/model/final.occs": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/final.occs",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/final.occs",
         "bytes_expected": 14306
       },
       "vi_kaldi-montreal/acoustic_model/model/tree": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/tree",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/tree",
         "bytes_expected": 1237996
       },
       "vi_kaldi-montreal/acoustic_model/model/final.mdl": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/final.mdl.gz",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/final.mdl.gz",
         "zip_bytes_expected": 14633132,
         "bytes_expected": 16011551
       },
       "vi_kaldi-montreal/acoustic_model/model/meta.yaml": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/meta.yaml",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/meta.yaml",
         "bytes_expected": 1628
       },
       "vi_kaldi-montreal/acoustic_model/phones/nonsilence_phones.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/phones/nonsilence_phones.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/phones/nonsilence_phones.txt",
         "bytes_expected": 1303
       },
       "vi_kaldi-montreal/acoustic_model/phones/optional_silence.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/phones/optional_silence.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/phones/optional_silence.txt",
         "bytes_expected": 4
       },
       "vi_kaldi-montreal/acoustic_model/phones/silence_phones.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/phones/silence_phones.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/phones/silence_phones.txt",
         "bytes_expected": 11
       },
       "vi_kaldi-montreal/acoustic_model/path.sh": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/path.sh",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/path.sh",
         "bytes_expected": 34
       },
       "vi_kaldi-montreal/acoustic_model/conf/mfcc.conf": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/conf/mfcc.conf",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/conf/mfcc.conf",
         "bytes_expected": 92
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/HCLG.fst": {
         "unzip": true,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/",
         "parts": [
           {
             "fragment": "HCLG.fst.gz.part-00",
@@ -267,72 +267,72 @@
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/word_boundary.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/word_boundary.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/word_boundary.int",
         "bytes_expected": 10008
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/align_lexicon.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/align_lexicon.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/align_lexicon.txt",
         "bytes_expected": 1430646
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/word_boundary.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/word_boundary.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/word_boundary.txt",
         "bytes_expected": 13579
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/disambig.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/disambig.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/disambig.int",
         "bytes_expected": 20
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/silence.csl": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/silence.csl",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/silence.csl",
         "bytes_expected": 36
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/optional_silence.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/optional_silence.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/optional_silence.txt",
         "bytes_expected": 4
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/optional_silence.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/optional_silence.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/optional_silence.int",
         "bytes_expected": 2
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/disambig.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/disambig.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/disambig.txt",
         "bytes_expected": 15
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/align_lexicon.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/align_lexicon.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/align_lexicon.int",
         "bytes_expected": 867273
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones/optional_silence.csl": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones/optional_silence.csl",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones/optional_silence.csl",
         "bytes_expected": 2
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/disambig_tid.int": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/disambig_tid.int",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/disambig_tid.int",
         "bytes_expected": 36
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/num_pdfs": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/num_pdfs",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/num_pdfs",
         "bytes_expected": 5
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/words.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/words.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/words.txt",
         "bytes_expected": 481810
       },
       "vi_kaldi-montreal/acoustic_model/model/graph/phones.txt": {
         "unzip": false,
-        "url": "vi_kaldi-montreal/raw/master/acoustic_model/model/graph/phones.txt",
+        "url": "vi_kaldi-montreal/b1a321b21baaf02d56221532b0823c3d981d8d3b/acoustic_model/model/graph/phones.txt",
         "bytes_expected": 10590
       }
     }
