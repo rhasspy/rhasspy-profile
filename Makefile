@@ -1,20 +1,26 @@
-PYTHON_NAME = rhasspyprofile
-SOURCE = $(PYTHON_NAME)
-PYTHON_FILES = $(SOURCE)/*.py *.py
-PIP_INSTALL ?= install
+SHELL := bash
 
-.PHONY: reformat check test venv dist
+.PHONY: reformat check dist install
 
-all: venv
+all:
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
 
 reformat:
-	scripts/format-code.sh $(PYTHON_FILES)
+	scripts/format-code.sh
 
 check:
-	scripts/check-code.sh $(PYTHON_FILES)
+	scripts/check-code.sh
 
-venv:
+install:
 	scripts/create-venv.sh
 
-dist:
+dist: sdist
+
+sdist:
 	python3 setup.py sdist
+
+test:
+	scripts/run-tests.sh
