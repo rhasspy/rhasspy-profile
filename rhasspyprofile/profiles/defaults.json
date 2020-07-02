@@ -7,7 +7,11 @@
       "speech_sec": 0.3,
       "silence_sec": 0.5,
       "before_sec": 0.5,
-      "vad_mode": 1
+      "vad_mode": 1,
+      "max_energy": 0,
+      "max_current_ratio_threshold": 20,
+      "current_energy_threshold": 50,
+      "silence_method": "vad_only"
     }
   },
   "dialogue": {
