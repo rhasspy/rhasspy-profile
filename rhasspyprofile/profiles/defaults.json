@@ -290,8 +290,7 @@
       "language_code": "en-US",
       "sample_rate": 22050,
       "url": "https://texttospeech.googleapis.com/v1/text:synthesize",
-      "voice": "Wavenet-C",
-      "fallback_tts": "espeak"
+      "voice": "Wavenet-C"
     },
     "hass_tts": {
       "platform": ""
