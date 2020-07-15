@@ -10,12 +10,14 @@
       "base_language_model_fst": "kaldi/base_language_model.fst",
       "compatible": true,
       "custom_words": "kaldi_custom_words.txt",
+      "sounds_like": "kaldi_sounds_like.txt",
       "dictionary": "kaldi/dictionary.txt",
       "graph": "graph",
       "language_model": "kaldi/language_model.txt",
       "model_dir": "kaldi/model",
       "unknown_words": "kaldi_unknown_words.txt",
       "g2p_model": "kaldi/g2p.fst",
+      "g2p_corpus": "kaldi/g2p.corpus",
       "mix_fst": "kaldi/mixed.fst",
       "phoneme_examples": "kaldi/phoneme_examples.txt",
       "phoneme_map": "kaldi/espeak_phonemes.txt"
@@ -43,6 +45,7 @@
         "pocketsphinx": {
           "base_dictionary.txt": "en-us_pocketsphinx-cmu/base_dictionary.txt",
           "g2p.fst": "en-us_pocketsphinx-cmu/g2p.fst",
+          "g2p.corpus": "en-us_pocketsphinx-cmu/g2p.corpus",
           "acoustic_model/feat.params": "en-us_pocketsphinx-cmu/acoustic_model/feat.params",
           "acoustic_model/feature_transform": "en-us_pocketsphinx-cmu/acoustic_model/feature_transform",
           "acoustic_model/mdef": "en-us_pocketsphinx-cmu/acoustic_model/mdef",
@@ -55,6 +58,7 @@
         "kaldi": {
           "kaldi/base_dictionary.txt": "en-us_kaldi-zamia/base_dictionary.txt",
           "kaldi/g2p.fst": "en-us_kaldi-zamia/g2p.fst",
+          "kaldi/g2p.corpus": "en-us_kaldi-zamia/g2p.corpus",
           "kaldi/model/conf/mfcc.conf": "en-us_kaldi-zamia/acoustic_model/conf/mfcc.conf",
           "kaldi/model/conf/mfcc_hires.conf": "en-us_kaldi-zamia/acoustic_model/conf/mfcc_hires.conf",
           "kaldi/model/conf/online_cmvn.conf": "en-us_kaldi-zamia/acoustic_model/conf/online_cmvn.conf",
@@ -383,6 +387,12 @@
         "bytes_expected": 41213581,
         "zip_bytes_expected": 12796914
       },
+      "en-us_pocketsphinx-cmu/g2p.corpus": {
+        "url": "en-us_pocketsphinx-cmu/295bf49bbb041077470b286c6143d119a7e587b6/g2p.corpus.gz",
+        "unzip": true,
+        "zip_bytes_expected": 615312,
+        "bytes_expected": 4190329
+      },
       "en-us_kaldi-zamia/base_dictionary.txt": {
         "url": "en-us_kaldi-zamia/7058bae82c62b8beb63bdec8397841996122c335/base_dictionary.txt.gz",
         "bytes_expected": 3950267,
@@ -405,6 +415,12 @@
         "url": "en-us_kaldi-zamia/7058bae82c62b8beb63bdec8397841996122c335/g2p.fst.gz",
         "bytes_expected": 52131905,
         "zip_bytes_expected": 16209041,
+        "unzip": true
+      },
+      "en-us_kaldi-zamia/g2p.corpus": {
+        "url": "en-us_kaldi-zamia/a2d6be48f21d3e0ca15c907320e6b46f52c38568/g2p.corpus.gz",
+        "zip_bytes_expected": 825001,
+        "bytes_expected": 5228636,
         "unzip": true
       },
       "en-us_kaldi-zamia/acoustic_model/conf/mfcc.conf": {
