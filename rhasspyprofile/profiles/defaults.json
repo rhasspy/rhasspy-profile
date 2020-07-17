@@ -370,6 +370,15 @@
       "keyword_path": "porcupine.ppn",
       "sensitivity": 0.5
     },
+    "raven": {
+      "compatible": true,
+      "template_dir": "raven",
+      "probability_threshold": [
+        0.45,
+        0.55
+      ],
+      "minimum_matches": 1
+    },
     "system": "dummy"
   },
   "webhooks": {
