@@ -374,7 +374,9 @@
       "compatible": true,
       "template_dir": "raven",
       "probability_threshold": 0.5,
-      "minimum_matches": 1
+      "minimum_matches": 1,
+      "average_templates": true,
+      "vad_sensitivity": 1
     },
     "system": "dummy"
   },
