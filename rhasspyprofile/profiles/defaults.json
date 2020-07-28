@@ -378,7 +378,8 @@
       "average_templates": true,
       "vad_sensitivity": 1,
       "examples_dir": "",
-      "examples_format": ""
+      "examples_format": "",
+      "keywords": {}
     },
     "system": "dummy"
   },
