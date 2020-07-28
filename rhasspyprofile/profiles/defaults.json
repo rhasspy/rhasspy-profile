@@ -376,7 +376,9 @@
       "probability_threshold": 0.5,
       "minimum_matches": 1,
       "average_templates": true,
-      "vad_sensitivity": 1
+      "vad_sensitivity": 1,
+      "examples_dir": "",
+      "examples_format": ""
     },
     "system": "dummy"
   },
