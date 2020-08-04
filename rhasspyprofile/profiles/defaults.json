@@ -190,7 +190,8 @@
       "g2p_corpus": "g2p.corpus",
       "phoneme_examples": "phoneme_examples.txt",
       "phoneme_map": "espeak_phonemes.txt",
-      "open_transcription": false
+      "open_transcription": false,
+      "language_model_type": "arpa"
     },
     "pocketsphinx": {
       "acoustic_model": "acoustic_model",
