@@ -132,6 +132,7 @@
       "en-us_deepspeech-mozilla/model/output_graph": {
         "platform": {
           "arm.+": "en-us_deepspeech-mozilla/model/output_graph.tflite",
+          "aarch64": "en-us_deepspeech-mozilla/model/output_graph.tflite",
           "": "en-us_deepspeech-mozilla/model/output_graph.pbmm"
         }
       },
