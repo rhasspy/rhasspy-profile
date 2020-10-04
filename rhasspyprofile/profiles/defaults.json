@@ -54,7 +54,7 @@
     },
     "error_sound": true,
     "fuzzywuzzy": {
-      "examples_json": "intent_examples.json",
+      "examples_json": "intent_examples.db",
       "min_confidence": 0
     },
     "fsticuffs": {
