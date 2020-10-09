@@ -24,6 +24,9 @@
             "mix_fst": "kaldi/mixed.fst",
             "phoneme_examples": "kaldi/phoneme_examples.txt",
             "phoneme_map": "kaldi/espeak_phonemes.txt"
+        },
+        "deepspeech": {
+            "compatible": false
         }
     },
     "text_to_speech": {
@@ -89,14 +92,14 @@
             "cs_kaldi-rhasspy/base_dictionary.txt": {
                 "unzip": true,
                 "url": "cs_kaldi-rhasspy/raw/master/base_dictionary.txt.gz",
-                "zip_bytes_expected": 540389,
-                "bytes_expected": 1813398
+                "zip_bytes_expected": 540195,
+                "bytes_expected": 1813407
             },
             "cs_kaldi-rhasspy/base_language_model.txt": {
                 "unzip": true,
                 "url": "cs_kaldi-rhasspy/raw/master/base_language_model.txt.gz",
-                "zip_bytes_expected": 34239749,
-                "bytes_expected": 111024184
+                "zip_bytes_expected": 13307937,
+                "bytes_expected": 42444165
             },
             "cs_kaldi-rhasspy/g2p.corpus": {
                 "unzip": true,
@@ -107,8 +110,8 @@
             "cs_kaldi-rhasspy/base_language_model.fst": {
                 "unzip": true,
                 "url": "cs_kaldi-rhasspy/raw/master/base_language_model.fst.gz",
-                "zip_bytes_expected": 32026137,
-                "bytes_expected": 92641304
+                "zip_bytes_expected": 13550085,
+                "bytes_expected": 38177054
             },
             "cs_kaldi-rhasspy/g2p.fst": {
                 "unzip": true,
@@ -124,46 +127,22 @@
             "cs_kaldi-rhasspy/acoustic_model/model/tree": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/model/tree",
-                "bytes_expected": 98252
+                "bytes_expected": 99094
             },
             "cs_kaldi-rhasspy/acoustic_model/model/den.fst": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/model/den.fst",
-                "bytes_expected": 403086
+                "bytes_expected": 401546
             },
             "cs_kaldi-rhasspy/acoustic_model/model/final.mdl": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/model/final.mdl",
-                "bytes_expected": 6463893
+                "bytes_expected": 6419301
             },
             "cs_kaldi-rhasspy/acoustic_model/model/normalization.fst": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/model/normalization.fst",
-                "bytes_expected": 537534
-            },
-            "cs_kaldi-rhasspy/acoustic_model/base_graph/HCLG.fst": {
-                "unzip": true,
-                "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/",
-                "parts": [
-                    {
-                        "fragment": "HCLG.fst.gz.part-00",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "HCLG.fst.gz.part-01",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "HCLG.fst.gz.part-02",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "HCLG.fst.gz.part-03",
-                        "bytes_expected": 729647
-                    }
-                ],
-                "zip_bytes_expected": 79372847,
-                "bytes_expected": 258989469
+                "bytes_expected": 536234
             },
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones/word_boundary.int": {
                 "unzip": false,
@@ -173,7 +152,7 @@
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones/align_lexicon.txt": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/phones/align_lexicon.txt",
-                "bytes_expected": 3380672
+                "bytes_expected": 3380688
             },
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones/word_boundary.txt": {
                 "unzip": false,
@@ -208,7 +187,7 @@
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones/align_lexicon.int": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/phones/align_lexicon.int",
-                "bytes_expected": 2301468
+                "bytes_expected": 2301483
             },
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones/optional_silence.csl": {
                 "unzip": false,
@@ -220,6 +199,22 @@
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/disambig_tid.int",
                 "bytes_expected": 35
             },
+            "cs_kaldi-rhasspy/acoustic_model/base_graph/HCLG.fst": {
+                "unzip": true,
+                "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/",
+                "parts": [
+                    {
+                        "fragment": "HCLG.fst.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "HCLG.fst.gz.part-01",
+                        "bytes_expected": 6425018
+                    }
+                ],
+                "zip_bytes_expected": 32639418,
+                "bytes_expected": 96543437
+            },
             "cs_kaldi-rhasspy/acoustic_model/base_graph/num_pdfs": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/num_pdfs",
@@ -228,7 +223,7 @@
             "cs_kaldi-rhasspy/acoustic_model/base_graph/words.txt": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/base_graph/words.txt",
-                "bytes_expected": 972017
+                "bytes_expected": 972028
             },
             "cs_kaldi-rhasspy/acoustic_model/base_graph/phones.txt": {
                 "unzip": false,
@@ -288,7 +283,7 @@
             "cs_kaldi-rhasspy/acoustic_model/extractor/global_cmvn.stats": {
                 "unzip": false,
                 "url": "cs_kaldi-rhasspy/raw/master/acoustic_model/extractor/global_cmvn.stats",
-                "bytes_expected": 934
+                "bytes_expected": 931
             },
             "cs_kaldi-rhasspy/acoustic_model/extractor/splice_opts": {
                 "unzip": false,
