@@ -66,7 +66,7 @@ class Profile:
 
         _LOGGER.debug("Loading default profile settings from %s", defaults_path)
         with open(defaults_path, "r") as defaults_file:
-            return json.load(defaults_file)
+            return json5.load(defaults_file)
 
     # -------------------------------------------------------------------------
 
@@ -89,14 +89,14 @@ class Profile:
         if self.layers in {ProfileLayers.ALL, ProfileLayers.DEFAULTS}:
             defaults_path = self.system_profiles_dir / "defaults.json"
             with open(defaults_path, "r") as defaults_file:
-                self.json = json.load(defaults_file)
+                self.json = json5.load(defaults_file)
                 self.system_json = copy.deepcopy(self.json)
 
         # Load just the system profile.json (on top of defaults)
         system_profile_path = self.system_profiles_dir / self.name / "profile.json"
 
         with open(system_profile_path, "r") as system_profile_file:
-            Profile.recursive_update(self.system_json, json.load(system_profile_file))
+            Profile.recursive_update(self.system_json, json5.load(system_profile_file))
 
         # Overlay with profile
         self.json_path = self.read_path("profile.json")
@@ -108,7 +108,7 @@ class Profile:
                 if json_path.is_file():
                     try:
                         with open(json_path, "r") as profile_file:
-                            profile_json = json.load(profile_file)
+                            profile_json = json5.load(profile_file)
                     except Exception as e:
                         _LOGGER.warning(str(e))
 
