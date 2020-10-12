@@ -299,6 +299,10 @@
     },
     "hass_tts": {
       "platform": ""
+    },
+    "larynx": {
+      "compatible": false,
+      "cache_dir": "tts/larynx/cache"
     }
   },
   "training": {
