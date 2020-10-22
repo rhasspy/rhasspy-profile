@@ -18,7 +18,7 @@
             "g2p_model": "kaldi/g2p.fst",
             "g2p_corpus": "kaldi/g2p.corpus",
             "phoneme_examples": "kaldi/phoneme_examples.txt",
-            "phoneme_map": "kaldi/espeak_phonemes.txt",
+            "phoneme_map": "kaldi/espeak_phonemes.txt"
         }
     },
     "text_to_speech": {
