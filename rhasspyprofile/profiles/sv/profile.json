@@ -5,7 +5,8 @@
     "speech_to_text": {
         "kaldi": {
             "compatible": true,
-            "model_type": "gmm"
+            "model_type": "gmm",
+            "spn_phone": "spn"
         },
         "pocketsphinx": {
             "compatible": false
