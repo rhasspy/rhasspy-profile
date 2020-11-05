@@ -17,7 +17,8 @@
     "dialogue": {
         "satellite_site_ids": "",
         "session_timeout": 30,
-        "system": "dummy"
+        "system": "dummy",
+        "volume": 1
     },
     "handle": {
         "satellite_site_ids": "",
@@ -143,7 +144,8 @@
         "wake": "${RHASSPY_BASE_DIR}/etc/wav/beep_hi.wav",
         "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav",
         "aplay": {
-            "device": ""
+            "device": "",
+            "volume": 1
         },
         "command": {
             "play_program": "",
@@ -262,27 +264,35 @@
             "say_arguments": [],
             "voices_program": "",
             "voices_arguments": [],
-            "language": ""
+            "language": "",
+            "volume": 1
         },
-        "espeak": {},
+        "espeak": {
+            "volume": 1
+        },
         "flite": {
-            "voice": "kal16"
+            "voice": "kal16",
+            "volume": 1
         },
         "marytts": {
             "url": "http://localhost:59125/process",
             "locale": "",
-            "voice": ""
+            "voice": "",
+            "volume": 1
         },
         "opentts": {
             "url": "http://localhost:5500",
-            "voice": ""
+            "voice": "",
+            "volume": 1
         },
         "picotts": {
-            "language": ""
+            "language": "",
+            "volume": 1
         },
         "nanotts": {
             "language": "",
-            "langdir": ""
+            "langdir": "",
+            "volume": 1
         },
         "system": "dummy",
         "remote": {
@@ -295,14 +305,16 @@
             "language_code": "en-US",
             "sample_rate": 22050,
             "url": "https://texttospeech.googleapis.com/v1/text:synthesize",
-            "voice": "en-US-Wavenet-C"
+            "voice": "en-US-Wavenet-C",
+            "volume": 1
         },
         "hass_tts": {
             "platform": ""
         },
         "larynx": {
             "compatible": false,
-            "cache_dir": "tts/larynx/cache"
+            "cache_dir": "tts/larynx/cache",
+            "volume": 1
         }
     },
     "training": {
