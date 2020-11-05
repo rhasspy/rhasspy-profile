@@ -462,7 +462,7 @@
             },
             "rhasspy/nl_larynx-rdh/checkpoint_555000.pth.tar": {
                 "unzip": true,
-                "url": "rhasspy/nl_larynx-rdh/raw/master/",
+                "url": "rhasspy/nl_larynx-rdh/master/",
                 "parts": [
                     {
                         "fragment": "checkpoint_555000.pth.tar.gz.part-00",
@@ -514,17 +514,17 @@
             },
             "rhasspy/nl_larynx-rdh/config.json": {
                 "unzip": false,
-                "url": "rhasspy/nl_larynx-rdh/raw/master/config.json",
+                "url": "rhasspy/nl_larynx-rdh/master/config.json",
                 "bytes_expected": 3656
             },
             "rhasspy/nl_larynx-rdh/scale_stats.npy": {
                 "unzip": false,
-                "url": "rhasspy/nl_larynx-rdh/raw/master/scale_stats.npy",
+                "url": "rhasspy/nl_larynx-rdh/master/scale_stats.npy",
                 "bytes_expected": 10535
             },
             "rhasspy/nl_larynx-rdh/vocoder/checkpoint_675000.pth.tar": {
                 "unzip": true,
-                "url": "rhasspy/nl_larynx-rdh/raw/master/vocoder/",
+                "url": "rhasspy/nl_larynx-rdh/master/vocoder/",
                 "parts": [
                     {
                         "fragment": "checkpoint_675000.pth.tar.gz.part-00",
@@ -544,7 +544,7 @@
             },
             "rhasspy/nl_larynx-rdh/vocoder/config.json": {
                 "unzip": false,
-                "url": "rhasspy/nl_larynx-rdh/raw/master/vocoder/config.json",
+                "url": "rhasspy/nl_larynx-rdh/master/vocoder/config.json",
                 "bytes_expected": 3440
             }
         }
