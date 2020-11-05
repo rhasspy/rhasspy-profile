@@ -101,7 +101,7 @@
         },
         "pyaudio": {
             "device": "",
-            "frames_per_buffer": 480,
+            "frames_per_buffer": 1024,
             "siteId": ""
         },
         "command": {
