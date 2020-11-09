@@ -27,6 +27,16 @@
         },
         "opentts": {
             "voice": "nanotts:es-ES"
+        },
+        "larynx": {
+            "compatible": true,
+            "default_voice": "es-css10",
+            "voices": {
+                "es-css10": {
+                    "model": "tts/larynx/es/css10/checkpoint_335000.pth.tar",
+                    "vocoder_model": "tts/larynx/es/css10/vocoder/checkpoint_425000.pth.tar"
+                }
+            }
         }
     },
     "intent": {
@@ -102,6 +112,15 @@
             "speech_to_text.kaldi.mix_weight": {
                 ">0": {
                     "kaldi/base_language_model.fst": "rhasspy/es_kaldi-rhasspy/base_language_model.fst"
+                }
+            },
+            "text_to_speech.system": {
+                "larynx": {
+                    "tts/larynx/es/css10/checkpoint_335000.pth.tar": "rhasspy/es_larynx-css10/checkpoint_335000.pth.tar",
+                    "tts/larynx/es/css10/config.json": "rhasspy/es_larynx-css10/config.json",
+                    "tts/larynx/es/css10/scale_stats.npy": "rhasspy/es_larynx-css10/scale_stats.npy",
+                    "tts/larynx/es/css10/vocoder/checkpoint_425000.pth.tar": "rhasspy/es_larynx-css10/vocoder/checkpoint_425000.pth.tar",
+                    "tts/larynx/es/css10/vocoder/config.json": "rhasspy/es_larynx-css10/vocoder/config.json"
                 }
             }
         },
@@ -446,6 +465,93 @@
                 "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/base_dictionary.txt.gz",
                 "zip_bytes_expected": 3577381,
                 "bytes_expected": 21175148
+            },
+            "rhasspy/es_larynx-css10/config.json": {
+                "unzip": false,
+                "url": "rhasspy/es_larynx-css10/raw/master/config.json",
+                "bytes_expected": 3565
+            },
+            "rhasspy/es_larynx-css10/checkpoint_335000.pth.tar": {
+                "unzip": true,
+                "url": "rhasspy/es_larynx-css10/raw/master/",
+                "parts": [
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-06",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-07",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-08",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-09",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_335000.pth.tar.gz.part-10",
+                        "bytes_expected": 14695241
+                    }
+                ],
+                "zip_bytes_expected": 276839241,
+                "bytes_expected": 301887983
+            },
+            "rhasspy/es_larynx-css10/scale_stats.npy": {
+                "unzip": false,
+                "url": "rhasspy/es_larynx-css10/raw/master/scale_stats.npy",
+                "bytes_expected": 10539
+            },
+            "rhasspy/es_larynx-css10/vocoder/config.json": {
+                "unzip": false,
+                "url": "rhasspy/es_larynx-css10/raw/master/vocoder/config.json",
+                "bytes_expected": 4114
+            },
+            "rhasspy/es_larynx-css10/vocoder/checkpoint_425000.pth.tar": {
+                "unzip": true,
+                "url": "rhasspy/es_larynx-css10/raw/master/vocoder/",
+                "parts": [
+                    {
+                        "fragment": "checkpoint_425000.pth.tar.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_425000.pth.tar.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_425000.pth.tar.gz.part-02",
+                        "bytes_expected": 24238388
+                    }
+                ],
+                "zip_bytes_expected": 76667188,
+                "bytes_expected": 82913903
             }
         }
     }
