@@ -27,6 +27,16 @@
         },
         "opentts": {
             "voice": "festival:msu_ru_nsh_clunits"
+        },
+        "larynx": {
+            "compatible": true,
+            "default_voice": "ru-nikolaev",
+            "voices": {
+                "ru-nikolaev": {
+                    "model": "tts/larynx/ru/nikolaev/checkpoint_160000.pth.tar",
+                    "vocoder_model": "tts/larynx/ru/nikolaev/vocoder/checkpoint_300000.pth.tar"
+                }
+            }
         }
     },
     "download": {
@@ -106,6 +116,15 @@
             "speech_to_text.kaldi.mix_weight": {
                 ">0": {
                     "kaldi/base_language_model.fst": "rhasspy/ru_kaldi-rhasspy/base_language_model.fst"
+                }
+            },
+            "text_to_speech.system": {
+                "larynx": {
+                    "tts/larynx/ru/nikolaev/checkpoint_160000.pth.tar": "rhasspy/ru_larynx-nikolaev/checkpoint_160000.pth.tar",
+                    "tts/larynx/ru/nikolaev/config.json": "rhasspy/ru_larynx-nikolaev/config.json",
+                    "tts/larynx/ru/nikolaev/scale_stats.npy": "rhasspy/ru_larynx-nikolaev/scale_stats.npy",
+                    "tts/larynx/ru/nikolaev/vocoder/checkpoint_300000.pth.tar": "rhasspy/ru_larynx-nikolaev/vocoder/checkpoint_300000.pth.tar",
+                    "tts/larynx/ru/nikolaev/vocoder/config.json": "rhasspy/ru_larynx-nikolaev/vocoder/config.json"
                 }
             }
         },
@@ -504,6 +523,93 @@
                 "unzip": false,
                 "url": "rhasspy/ru_kaldi-rhasspy/raw/master/acoustic_model/ivectors_test_hires/conf/splice.conf",
                 "bytes_expected": 35
+            },
+            "rhasspy/ru_larynx-nikolaev/config.json": {
+                "unzip": false,
+                "url": "rhasspy/ru_larynx-nikolaev/raw/master/config.json",
+                "bytes_expected": 4240
+            },
+            "rhasspy/ru_larynx-nikolaev/scale_stats.npy": {
+                "unzip": false,
+                "url": "rhasspy/ru_larynx-nikolaev/raw/master/scale_stats.npy",
+                "bytes_expected": 10535
+            },
+            "rhasspy/ru_larynx-nikolaev/checkpoint_160000.pth.tar": {
+                "unzip": true,
+                "url": "rhasspy/ru_larynx-nikolaev/raw/master/",
+                "parts": [
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-06",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-07",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-08",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-09",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_160000.pth.tar.gz.part-10",
+                        "bytes_expected": 15447489
+                    }
+                ],
+                "zip_bytes_expected": 277591489,
+                "bytes_expected": 301910953
+            },
+            "rhasspy/ru_larynx-nikolaev/vocoder/config.json": {
+                "unzip": false,
+                "url": "rhasspy/ru_larynx-nikolaev/raw/master/vocoder/config.json",
+                "bytes_expected": 3609
+            },
+            "rhasspy/ru_larynx-nikolaev/vocoder/checkpoint_300000.pth.tar": {
+                "unzip": true,
+                "url": "rhasspy/ru_larynx-nikolaev/raw/master/vocoder/",
+                "parts": [
+                    {
+                        "fragment": "checkpoint_300000.pth.tar.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_300000.pth.tar.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "checkpoint_300000.pth.tar.gz.part-02",
+                        "bytes_expected": 24670353
+                    }
+                ],
+                "zip_bytes_expected": 77099153,
+                "bytes_expected": 82914295
             }
         }
     }
