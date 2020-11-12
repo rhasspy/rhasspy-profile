@@ -193,7 +193,7 @@
             "phoneme_examples": "phoneme_examples.txt",
             "phoneme_map": "espeak_phonemes.txt",
             "open_transcription": false,
-            "language_model_type": "arpa"
+            "language_model_type": "text_fst"
         },
         "pocketsphinx": {
             "acoustic_model": "acoustic_model",
