@@ -739,7 +739,7 @@
             "rhasspy/de_larynx-thorsten/config.json": {
                 "unzip": false,
                 "url": "rhasspy/de_larynx-thorsten/master/config.json",
-                "bytes_expected": 3989
+                "bytes_expected": 3984
             },
             "rhasspy/de_larynx-thorsten/vocoder/config.json": {
                 "unzip": false,
