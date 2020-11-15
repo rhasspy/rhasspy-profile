@@ -469,7 +469,7 @@
             "rhasspy/es_larynx-css10/config.json": {
                 "unzip": false,
                 "url": "rhasspy/es_larynx-css10/raw/master/config.json",
-                "bytes_expected": 3565
+                "bytes_expected": 3560
             },
             "rhasspy/es_larynx-css10/checkpoint_335000.pth.tar": {
                 "unzip": true,
