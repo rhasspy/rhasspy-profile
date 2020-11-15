@@ -461,7 +461,7 @@
             "rhasspy/fr_larynx-siwis/config.json": {
                 "unzip": false,
                 "url": "rhasspy/fr_larynx-siwis/master/config.json",
-                "bytes_expected": 3411
+                "bytes_expected": 3406
             },
             "rhasspy/fr_larynx-siwis/checkpoint_270000.pth.tar": {
                 "unzip": true,
