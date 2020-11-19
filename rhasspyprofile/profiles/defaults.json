@@ -18,7 +18,8 @@
         "satellite_site_ids": "",
         "session_timeout": 30,
         "system": "dummy",
-        "volume": 1
+        "volume": 1,
+        "group_separator": ""
     },
     "handle": {
         "satellite_site_ids": "",
