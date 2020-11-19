@@ -515,7 +515,7 @@
             "rhasspy/nl_larynx-rdh/config.json": {
                 "unzip": false,
                 "url": "rhasspy/nl_larynx-rdh/master/config.json",
-                "bytes_expected": 3656
+                "bytes_expected": 3652
             },
             "rhasspy/nl_larynx-rdh/scale_stats.npy": {
                 "unzip": false,
