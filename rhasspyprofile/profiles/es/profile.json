@@ -189,9 +189,15 @@
                 "url": "synesthesiam/es_pocketsphinx-cmu/cf2f65cbbe7c1ab4c0bb6c358adc168c7d171d83/acoustic_model/variances",
                 "bytes_expected": 519244
             },
+            "rhasspy/es_kaldi-rhasspy/base_dictionary.txt": {
+                "unzip": true,
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/base_dictionary.txt.gz",
+                "zip_bytes_expected": 3523820,
+                "bytes_expected": 21039610
+            },
             "rhasspy/es_kaldi-rhasspy/base_language_model.fst": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/",
                 "parts": [
                     {
                         "fragment": "base_language_model.fst.gz.part-00",
@@ -211,7 +217,7 @@
             },
             "rhasspy/es_kaldi-rhasspy/base_language_model.txt": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/",
                 "parts": [
                     {
                         "fragment": "base_language_model.txt.gz.part-00",
@@ -225,40 +231,46 @@
                 "zip_bytes_expected": 51963423,
                 "bytes_expected": 161888851
             },
+            "rhasspy/es_kaldi-rhasspy/g2p.corpus": {
+                "unzip": true,
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/g2p.corpus.gz",
+                "zip_bytes_expected": 1914511,
+                "bytes_expected": 25520608
+            },
             "rhasspy/es_kaldi-rhasspy/g2p.fst": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/g2p.fst.gz",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/g2p.fst.gz",
                 "zip_bytes_expected": 16610493,
                 "bytes_expected": 50708831
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/model/cmvn_opts": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/model/cmvn_opts",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/model/cmvn_opts",
                 "bytes_expected": 37
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/model/tree": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/model/tree",
-                "bytes_expected": 888122
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/model/tree",
+                "bytes_expected": 1321920
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/model/den.fst": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/model/den.fst",
-                "bytes_expected": 867662
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/model/den.fst",
+                "bytes_expected": 1320570
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/model/final.mdl": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/model/final.mdl",
-                "bytes_expected": 9906189
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/model/final.mdl",
+                "bytes_expected": 12445257
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/model/normalization.fst": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/model/normalization.fst",
-                "bytes_expected": 1022750
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/model/normalization.fst",
+                "bytes_expected": 1516746
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/HCLG.fst": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/",
                 "parts": [
                     {
                         "fragment": "HCLG.fst.gz.part-00",
@@ -290,190 +302,178 @@
                     },
                     {
                         "fragment": "HCLG.fst.gz.part-07",
-                        "bytes_expected": 22497041
+                        "bytes_expected": 21808518
                     }
                 ],
-                "zip_bytes_expected": 205997841,
-                "bytes_expected": 638580941
+                "zip_bytes_expected": 205309318,
+                "bytes_expected": 636329509
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/word_boundary.int": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/word_boundary.int",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/word_boundary.int",
                 "bytes_expected": 5193
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/align_lexicon.txt": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/align_lexicon.txt.gz",
-                "zip_bytes_expected": 5512022,
-                "bytes_expected": 41389015
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/align_lexicon.txt.gz",
+                "zip_bytes_expected": 5465293,
+                "bytes_expected": 41123538
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/word_boundary.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/word_boundary.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/word_boundary.txt",
                 "bytes_expected": 6209
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/disambig.int": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/disambig.int",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/disambig.int",
                 "bytes_expected": 60
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/silence.csl": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/silence.csl",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/silence.csl",
                 "bytes_expected": 36
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/optional_silence.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/optional_silence.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/optional_silence.txt",
                 "bytes_expected": 4
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/align_lexicon.int": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/align_lexicon.int.gz",
-                "zip_bytes_expected": 5142424,
-                "bytes_expected": 31610121
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/align_lexicon.int.gz",
+                "zip_bytes_expected": 5100296,
+                "bytes_expected": 31398988
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/optional_silence.int": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/optional_silence.int",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/optional_silence.int",
                 "bytes_expected": 2
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/disambig.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/disambig.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/disambig.txt",
                 "bytes_expected": 50
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones/optional_silence.csl": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones/optional_silence.csl",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones/optional_silence.csl",
                 "bytes_expected": 2
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/disambig_tid.int": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/disambig_tid.int",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/disambig_tid.int",
                 "bytes_expected": 90
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/words.txt": {
                 "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/words.txt.gz",
-                "zip_bytes_expected": 3061241,
-                "bytes_expected": 11903307
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/words.txt.gz",
+                "zip_bytes_expected": 3036263,
+                "bytes_expected": 11821282
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/num_pdfs": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/num_pdfs",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/num_pdfs",
                 "bytes_expected": 5
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/base_graph/phones.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/base_graph/phones.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/base_graph/phones.txt",
                 "bytes_expected": 4686
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/phones/nonsilence_phones.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/phones/nonsilence_phones.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/phones/nonsilence_phones.txt",
                 "bytes_expected": 449
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/phones/extra_questions.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/phones/extra_questions.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/phones/extra_questions.txt",
                 "bytes_expected": 461
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/phones/optional_silence.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/phones/optional_silence.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/phones/optional_silence.txt",
                 "bytes_expected": 4
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/phones/silence_phones.txt": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/phones/silence_phones.txt",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/phones/silence_phones.txt",
                 "bytes_expected": 12
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/path.sh": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/path.sh",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/path.sh",
                 "bytes_expected": 0
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/conf/online_cmvn.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/conf/online_cmvn.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/conf/online_cmvn.conf",
                 "bytes_expected": 108
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/conf/mfcc.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/conf/mfcc.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/conf/mfcc.conf",
                 "bytes_expected": 44
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/conf/mfcc_hires.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/conf/mfcc_hires.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/conf/mfcc_hires.conf",
                 "bytes_expected": 670
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/final.mat": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/final.mat",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/final.mat",
                 "bytes_expected": 44815
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/online_cmvn.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/online_cmvn.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/online_cmvn.conf",
                 "bytes_expected": 108
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/global_cmvn.stats": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/global_cmvn.stats",
-                "bytes_expected": 1053
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/global_cmvn.stats",
+                "bytes_expected": 1069
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/splice_opts": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/splice_opts",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/splice_opts",
                 "bytes_expected": 35
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/final.dubm": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/final.dubm",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/final.dubm",
                 "bytes_expected": 168048
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/extractor/final.ie": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/extractor/final.ie",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/extractor/final.ie",
                 "bytes_expected": 19757687
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf",
                 "bytes_expected": 108
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf",
                 "bytes_expected": 475
             },
             "rhasspy/es_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/splice.conf": {
                 "unzip": false,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/acoustic_model/ivectors_test_hires/conf/splice.conf",
+                "url": "rhasspy/es_kaldi-rhasspy/raw/19998834bd0293404dbdf0a5187733138a8261db/acoustic_model/ivectors_test_hires/conf/splice.conf",
                 "bytes_expected": 35
-            },
-            "rhasspy/es_kaldi-rhasspy/g2p.corpus": {
-                "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/g2p.corpus.gz",
-                "zip_bytes_expected": 1914511,
-                "bytes_expected": 25520608
-            },
-            "rhasspy/es_kaldi-rhasspy/base_dictionary.txt": {
-                "unzip": true,
-                "url": "rhasspy/es_kaldi-rhasspy/997416ceef15a9285ac02ea3f11fd68e6f16d2c3/base_dictionary.txt.gz",
-                "zip_bytes_expected": 3577381,
-                "bytes_expected": 21175148
             },
             "rhasspy/es_larynx-css10/config.json": {
                 "unzip": false,
-                "url": "rhasspy/es_larynx-css10/raw/master/config.json",
+                "url": "rhasspy/es_larynx-css10/raw/f2baa95df37535affa3bbb2b291f344c460db5c7/config.json",
                 "bytes_expected": 3560
             },
             "rhasspy/es_larynx-css10/checkpoint_335000.pth.tar": {
                 "unzip": true,
-                "url": "rhasspy/es_larynx-css10/raw/master/",
+                "url": "rhasspy/es_larynx-css10/raw/f2baa95df37535affa3bbb2b291f344c460db5c7/",
                 "parts": [
                     {
                         "fragment": "checkpoint_335000.pth.tar.gz.part-00",
@@ -525,17 +525,17 @@
             },
             "rhasspy/es_larynx-css10/scale_stats.npy": {
                 "unzip": false,
-                "url": "rhasspy/es_larynx-css10/raw/master/scale_stats.npy",
+                "url": "rhasspy/es_larynx-css10/raw/f2baa95df37535affa3bbb2b291f344c460db5c7/scale_stats.npy",
                 "bytes_expected": 10539
             },
             "rhasspy/es_larynx-css10/vocoder/config.json": {
                 "unzip": false,
-                "url": "rhasspy/es_larynx-css10/raw/master/vocoder/config.json",
+                "url": "rhasspy/es_larynx-css10/raw/f2baa95df37535affa3bbb2b291f344c460db5c7/vocoder/config.json",
                 "bytes_expected": 4114
             },
             "rhasspy/es_larynx-css10/vocoder/checkpoint_425000.pth.tar": {
                 "unzip": true,
-                "url": "rhasspy/es_larynx-css10/raw/master/vocoder/",
+                "url": "rhasspy/es_larynx-css10/raw/f2baa95df37535affa3bbb2b291f344c460db5c7/vocoder/",
                 "parts": [
                     {
                         "fragment": "checkpoint_425000.pth.tar.gz.part-00",
