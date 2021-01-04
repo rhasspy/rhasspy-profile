@@ -90,8 +90,8 @@
                     "kaldi/model/ivectors_test_hires/conf/splice.conf": "synesthesiam/de_kaldi-zamia/acoustic_model/ivectors_test_hires/conf/splice.conf"
                 },
                 "deepspeech": {
-                    "deepspeech/model/0.6.1/alphabet.txt": "de_deepspeech-aashishag/model/alphabet.txt",
-                    "deepspeech/model/0.6.1/output_graph.pb": "de_deepspeech-aashishag/model/output_graph.pb"
+                    "deepspeech/model/0.6.1/alphabet.txt": "synesthesiam/de_deepspeech-aashishag/model/alphabet.txt",
+                    "deepspeech/model/0.6.1/output_graph.pb": "synesthesiam/de_deepspeech-aashishag/model/output_graph.pb"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -119,8 +119,8 @@
             },
             "speech_to_text.deepspeech.open_transcription": {
                 "True": {
-                    "deepspeech/model/0.6.1/base_lm.binary": "de_deepspeech-aashishag/model/lm.binary",
-                    "deepspeech/model/0.6.1/base_trie": "de_deepspeech-aashishag/model/trie"
+                    "deepspeech/model/0.6.1/base_lm.binary": "synesthesiam/de_deepspeech-aashishag/model/lm.binary",
+                    "deepspeech/model/0.6.1/base_trie": "synesthesiam/de_deepspeech-aashishag/model/trie"
                 }
             },
             "speech_to_text.pocketsphinx.mix_weight": {
@@ -423,12 +423,12 @@
                 "url": "synesthesiam/de_kaldi-zamia/94960dcb24f8ec2869c1fac451324b6a232afc33/acoustic_model/ivectors_test_hires/conf/splice.conf",
                 "bytes_expected": 35
             },
-            "de_deepspeech-aashishag/model/alphabet.txt": {
+            "synesthesiam/de_deepspeech-aashishag/model/alphabet.txt": {
                 "unzip": false,
                 "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/alphabet.txt",
                 "bytes_expected": 338
             },
-            "de_deepspeech-aashishag/model/lm.binary": {
+            "synesthesiam/de_deepspeech-aashishag/model/lm.binary": {
                 "unzip": true,
                 "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/",
                 "parts": [
@@ -636,7 +636,7 @@
                 "zip_bytes_expected": 1298177007,
                 "bytes_expected": 2063447966
             },
-            "de_deepspeech-aashishag/model/output_graph.pb": {
+            "synesthesiam/de_deepspeech-aashishag/model/output_graph.pb": {
                 "unzip": true,
                 "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/",
                 "parts": [
@@ -672,13 +672,13 @@
                 "zip_bytes_expected": 175286115,
                 "bytes_expected": 188939504
             },
-            "de_deepspeech-aashishag/model/trie": {
+            "synesthesiam/de_deepspeech-aashishag/model/trie": {
                 "unzip": true,
                 "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/trie.gz",
                 "zip_bytes_expected": 12510829,
                 "bytes_expected": 67818944
             },
-            "de_deepspeech-aashishag/base_language_model.fst": {
+            "synesthesiam/de_deepspeech-aashishag/base_language_model.fst": {
                 "unzip": true,
                 "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/base_language_model.fst.gz",
                 "zip_bytes_expected": 46294251,
