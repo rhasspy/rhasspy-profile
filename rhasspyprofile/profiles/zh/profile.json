@@ -1,98 +1,98 @@
 {
-  "name": "zh",
-  "language": "zh",
-  "locale": "zh_CN",
-  "text_to_speech": {
-    "wavenet": {
-      "language_code": "zh-TW"
-    }
-  },
-  "download": {
-    "conditions": {
-      "speech_to_text.system": {
-        "pocketsphinx": {
-          "base_dictionary.txt": "zh-cn_pocketsphinx-cmu/base_dictionary.txt",
-          "g2p.fst": "zh-cn_pocketsphinx-cmu/g2p.fst",
-          "acoustic_model/feat.params": "zh-cn_pocketsphinx-cmu/acoustic_model/feat.params",
-          "acoustic_model/feature_transform": "zh-cn_pocketsphinx-cmu/acoustic_model/feature_transform",
-          "acoustic_model/mdef": "zh-cn_pocketsphinx-cmu/acoustic_model/mdef",
-          "acoustic_model/means": "zh-cn_pocketsphinx-cmu/acoustic_model/means",
-          "acoustic_model/mixture_weights": "zh-cn_pocketsphinx-cmu/acoustic_model/mixture_weights",
-          "acoustic_model/noisedict": "zh-cn_pocketsphinx-cmu/acoustic_model/noisedict",
-          "acoustic_model/transition_matrices": "zh-cn_pocketsphinx-cmu/acoustic_model/transition_matrices",
-          "acoustic_model/variances": "zh-cn_pocketsphinx-cmu/acoustic_model/variances"
+    "name": "zh",
+    "language": "zh",
+    "locale": "zh_CN",
+    "text_to_speech": {
+        "wavenet": {
+            "language_code": "zh-TW"
         }
-      },
-      "speech_to_text.pocketsphinx.open_transcription": {
-        "True": {
-          "base_language_model.txt": "zh-cn_pocketsphinx-cmu/base_language_model.txt"
-        }
-      },
-      "speech_to_text.pocketsphinx.mix_weight": {
-        ">0": {
-          "base_language_model.txt": "zh-cn_pocketsphinx-cmu/base_language_model.txt"
-        }
-      }
     },
-    "files": {
-      "zh-cn_pocketsphinx-cmu/base_dictionary.txt": {
-        "unzip": true,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/base_dictionary.txt.gz",
-        "zip_bytes_expected": 1187984,
-        "bytes_expected": 3556245
-      },
-      "zh-cn_pocketsphinx-cmu/base_language_model.txt": {
-        "unzip": true,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/base_language_model.txt.gz",
-        "zip_bytes_expected": 4684931,
-        "bytes_expected": 16505693
-      },
-      "zh-cn_pocketsphinx-cmu/g2p.fst": {
-        "unzip": true,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/g2p.fst.gz",
-        "zip_bytes_expected": 1788316,
-        "bytes_expected": 4742816
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/feat.params": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/feat.params",
-        "bytes_expected": 110
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/feature_transform": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/feature_transform",
-        "bytes_expected": 5660
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/mdef": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/mdef",
-        "bytes_expected": 18320672
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/means": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/means",
-        "bytes_expected": 25694276
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/mixture_weights": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/mixture_weights",
-        "bytes_expected": 713792
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/noisedict": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/noisedict",
-        "bytes_expected": 27
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/transition_matrices": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/transition_matrices",
-        "bytes_expected": 9280
-      },
-      "zh-cn_pocketsphinx-cmu/acoustic_model/variances": {
-        "unzip": false,
-        "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/variances",
-        "bytes_expected": 25694276
-      }
+    "download": {
+        "conditions": {
+            "speech_to_text.system": {
+                "pocketsphinx": {
+                    "base_dictionary.txt": "zh-cn_pocketsphinx-cmu/base_dictionary.txt",
+                    "g2p.fst": "zh-cn_pocketsphinx-cmu/g2p.fst",
+                    "acoustic_model/feat.params": "zh-cn_pocketsphinx-cmu/acoustic_model/feat.params",
+                    "acoustic_model/feature_transform": "zh-cn_pocketsphinx-cmu/acoustic_model/feature_transform",
+                    "acoustic_model/mdef": "zh-cn_pocketsphinx-cmu/acoustic_model/mdef",
+                    "acoustic_model/means": "zh-cn_pocketsphinx-cmu/acoustic_model/means",
+                    "acoustic_model/mixture_weights": "zh-cn_pocketsphinx-cmu/acoustic_model/mixture_weights",
+                    "acoustic_model/noisedict": "zh-cn_pocketsphinx-cmu/acoustic_model/noisedict",
+                    "acoustic_model/transition_matrices": "zh-cn_pocketsphinx-cmu/acoustic_model/transition_matrices",
+                    "acoustic_model/variances": "zh-cn_pocketsphinx-cmu/acoustic_model/variances"
+                }
+            },
+            "speech_to_text.pocketsphinx.open_transcription": {
+                "True": {
+                    "base_language_model.txt": "zh-cn_pocketsphinx-cmu/base_language_model.txt"
+                }
+            },
+            "speech_to_text.pocketsphinx.mix_weight": {
+                ">0": {
+                    "base_language_model.txt": "zh-cn_pocketsphinx-cmu/base_language_model.txt"
+                }
+            }
+        },
+        "files": {
+            "zh-cn_pocketsphinx-cmu/base_dictionary.txt": {
+                "unzip": true,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/base_dictionary.txt.gz",
+                "zip_bytes_expected": 1187984,
+                "bytes_expected": 3556245
+            },
+            "zh-cn_pocketsphinx-cmu/base_language_model.txt": {
+                "unzip": true,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/base_language_model.txt.gz",
+                "zip_bytes_expected": 4684931,
+                "bytes_expected": 16505693
+            },
+            "zh-cn_pocketsphinx-cmu/g2p.fst": {
+                "unzip": true,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/g2p.fst.gz",
+                "zip_bytes_expected": 1788316,
+                "bytes_expected": 4742816
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/feat.params": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/feat.params",
+                "bytes_expected": 110
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/feature_transform": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/feature_transform",
+                "bytes_expected": 5660
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/mdef": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/mdef",
+                "bytes_expected": 18320672
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/means": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/means",
+                "bytes_expected": 25694276
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/mixture_weights": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/mixture_weights",
+                "bytes_expected": 713792
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/noisedict": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/noisedict",
+                "bytes_expected": 27
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/transition_matrices": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/transition_matrices",
+                "bytes_expected": 9280
+            },
+            "zh-cn_pocketsphinx-cmu/acoustic_model/variances": {
+                "unzip": false,
+                "url": "zh-cn_pocketsphinx-cmu/394e32aed69b1da357823b67b7b5782a4557a791/acoustic_model/variances",
+                "bytes_expected": 25694276
+            }
+        }
     }
-  }
 }
