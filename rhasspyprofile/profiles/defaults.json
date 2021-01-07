@@ -8,9 +8,9 @@
             "silence_sec": 0.5,
             "before_sec": 0.5,
             "vad_mode": 1,
-            "max_energy": 0,
-            "max_current_ratio_threshold": 20,
-            "current_energy_threshold": 50,
+            "max_energy": "",
+            "max_current_energy_ratio_threshold": "",
+            "current_energy_threshold": "",
             "silence_method": "vad_only"
         }
     },
