@@ -1,0 +1,104 @@
+{
+    "language": "pl",
+    "name": "pl",
+    "locale": "pl_PL",
+    "speech_to_text": {
+        "dictionary_casing": "lower",
+        "pocketsphinx": {
+            "compatible": false
+        },
+        "deepspeech": {
+            "compatible": true,
+            "base_language_model_fst": "deepspeech/base_language_model.fst",
+            "mix_fst": "deepspeech/mixed.fst"
+        }
+    },
+    "text_to_speech": {
+        "wavenet": {
+            "language_code": "pl-PL"
+        }
+    },
+    "download": {
+        "url_base": "https://raw.githubusercontent.com/",
+        "conditions": {
+            "speech_to_text.system": {
+                "deepspeech": {
+                    "deepspeech/model/0.9/alphabet.txt": "rhasspy/pl_deepspeech-jaco/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "rhasspy/pl_deepspeech-jaco/model/output_graph"
+                }
+            },
+            "speech_to_text.deepspeech.open_transcription": {
+                "True": {
+                    "deepspeech/model/0.9/base.scorer": "rhasspy/pl_deepspeech-jaco/model/base.scorer"
+                }
+            },
+            "speech_to_text.deepspeech.mix_weight": {
+                ">0": {
+                    "deepspeech/base_language_model.fst": "rhasspy/pl_deepspeech-jaco/base_language_model.fst"
+                }
+            }
+        },
+        "files": {
+            "rhasspy/pl_deepspeech-jaco/model/output_graph": {
+                "platform": {
+                    "arm.+": "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite",
+                    "aarch64": "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite",
+                    "": "rhasspy/pl_deepspeech-jaco/model/output_graph.pbmm"
+                }
+            },
+            "rhasspy/pl_deepspeech-jaco/model/alphabet.txt": {
+                "unzip": false,
+                "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/alphabet.txt",
+                "bytes_expected": 354
+            },
+            "rhasspy/pl_deepspeech-jaco/model/base.scorer": {
+                "unzip": true,
+                "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/base.scorer.gz",
+                "zip_bytes_expected": 3000583,
+                "bytes_expected": 4856464
+            },
+            "rhasspy/pl_deepspeech-jaco/model/output_graph.pbmm": {
+                "unzip": true,
+                "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/",
+                "parts": [
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-06",
+                        "bytes_expected": 18128454
+                    }
+                ],
+                "zip_bytes_expected": 175414854,
+                "bytes_expected": 188981942
+            },
+            "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite": {
+                "unzip": true,
+                "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/output_graph.tflite.gz",
+                "zip_bytes_expected": 20752162,
+                "bytes_expected": 47348576
+            }
+        }
+    }
+}

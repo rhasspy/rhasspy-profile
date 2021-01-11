@@ -24,7 +24,6 @@
         },
         "deepspeech": {
             "compatible": true,
-            "acoustic_model": "deepspeech/model/0.6.1/output_graph.pb",
             "base_language_model_fst": "deepspeech/base_language_model.fst",
             "mix_fst": "deepspeech/mixed.fst"
         }
@@ -90,8 +89,8 @@
                     "kaldi/model/ivectors_test_hires/conf/splice.conf": "synesthesiam/de_kaldi-zamia/acoustic_model/ivectors_test_hires/conf/splice.conf"
                 },
                 "deepspeech": {
-                    "deepspeech/model/0.6.1/alphabet.txt": "synesthesiam/de_deepspeech-aashishag/model/alphabet.txt",
-                    "deepspeech/model/0.6.1/output_graph.pb": "synesthesiam/de_deepspeech-aashishag/model/output_graph.pb"
+                    "deepspeech/model/0.9/alphabet.txt": "synesthesiam/de_deepspeech-aashishag/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "synesthesiam/de_deepspeech-aashishag/model/output_graph"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -119,8 +118,7 @@
             },
             "speech_to_text.deepspeech.open_transcription": {
                 "True": {
-                    "deepspeech/model/0.6.1/base_lm.binary": "synesthesiam/de_deepspeech-aashishag/model/lm.binary",
-                    "deepspeech/model/0.6.1/base_trie": "synesthesiam/de_deepspeech-aashishag/model/trie"
+                    "deepspeech/model/0.9/base.scorer": "synesthesiam/de_deepspeech-aashishag/model/base.scorer"
                 }
             },
             "speech_to_text.pocketsphinx.mix_weight": {
@@ -135,7 +133,7 @@
             },
             "speech_to_text.deepspeech.mix_weight": {
                 ">0": {
-                    "deepspeech/base_language_model.fst": "synesthesiam/de_pocketsphinx-cmu/base_language_model.fst"
+                    "deepspeech/base_language_model.fst": "synesthesiam/de_deepspeech-aashishag/base_language_model.fst"
                 }
             },
             "text_to_speech.system": {
@@ -149,6 +147,13 @@
             }
         },
         "files": {
+            "synesthesiam/de_deepspeech-aashishag/model/output_graph": {
+                "platform": {
+                    "arm.+": "synesthesiam/de_deepspeech-aashishag/model/output_graph.tflite",
+                    "aarch64": "synesthesiam/de_deepspeech-aashishag/model/output_graph.tflite",
+                    "": "synesthesiam/de_deepspeech-aashishag/model/output_graph.pbmm"
+                }
+            },
             "synesthesiam/de_pocketsphinx-cmu/base_dictionary.txt": {
                 "unzip": true,
                 "url": "synesthesiam/de_pocketsphinx-cmu/d5be9f09679f15a2a7236eb64ae2dc1bedcea78e/base_dictionary.txt.gz",
@@ -425,262 +430,98 @@
             },
             "synesthesiam/de_deepspeech-aashishag/model/alphabet.txt": {
                 "unzip": false,
-                "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/alphabet.txt",
-                "bytes_expected": 338
+                "url": "synesthesiam/de_deepspeech-aashishag/7aadb0561d37ada67c9353cf943eb66f06ec6636/model/alphabet.txt",
+                "bytes_expected": 339
             },
-            "synesthesiam/de_deepspeech-aashishag/model/lm.binary": {
+            "synesthesiam/de_deepspeech-aashishag/model/base.scorer": {
                 "unzip": true,
-                "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/",
+                "url": "synesthesiam/de_deepspeech-aashishag/7aadb0561d37ada67c9353cf943eb66f06ec6636/model/",
                 "parts": [
                     {
-                        "fragment": "lm.binary.gz.part-00",
+                        "fragment": "base.scorer.gz.part-00",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-01",
+                        "fragment": "base.scorer.gz.part-01",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-02",
+                        "fragment": "base.scorer.gz.part-02",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-03",
+                        "fragment": "base.scorer.gz.part-03",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-04",
+                        "fragment": "base.scorer.gz.part-04",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-05",
+                        "fragment": "base.scorer.gz.part-05",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-06",
+                        "fragment": "base.scorer.gz.part-06",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-07",
+                        "fragment": "base.scorer.gz.part-07",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "lm.binary.gz.part-08",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-09",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-10",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-11",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-12",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-13",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-14",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-15",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-16",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-17",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-18",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-19",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-20",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-21",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-22",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-23",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-24",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-25",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-26",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-27",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-28",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-29",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-30",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-31",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-32",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-33",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-34",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-35",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-36",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-37",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-38",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-39",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-40",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-41",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-42",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-43",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-44",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-45",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-46",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-47",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-48",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "lm.binary.gz.part-49",
-                        "bytes_expected": 13671407
+                        "fragment": "base.scorer.gz.part-08",
+                        "bytes_expected": 8657715
                     }
                 ],
-                "zip_bytes_expected": 1298177007,
-                "bytes_expected": 2063447966
+                "zip_bytes_expected": 218372915,
+                "bytes_expected": 263020592
             },
-            "synesthesiam/de_deepspeech-aashishag/model/output_graph.pb": {
+            "synesthesiam/de_deepspeech-aashishag/model/output_graph.pbmm": {
                 "unzip": true,
-                "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/",
+                "url": "synesthesiam/de_deepspeech-aashishag/7aadb0561d37ada67c9353cf943eb66f06ec6636/model/",
                 "parts": [
                     {
-                        "fragment": "output_graph.pb.gz.part-00",
+                        "fragment": "output_graph.pbmm.gz.part-00",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-01",
+                        "fragment": "output_graph.pbmm.gz.part-01",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-02",
+                        "fragment": "output_graph.pbmm.gz.part-02",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-03",
+                        "fragment": "output_graph.pbmm.gz.part-03",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-04",
+                        "fragment": "output_graph.pbmm.gz.part-04",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-05",
+                        "fragment": "output_graph.pbmm.gz.part-05",
                         "bytes_expected": 26214400
                     },
                     {
-                        "fragment": "output_graph.pb.gz.part-06",
-                        "bytes_expected": 17999715
+                        "fragment": "output_graph.pbmm.gz.part-06",
+                        "bytes_expected": 18082753
                     }
                 ],
-                "zip_bytes_expected": 175286115,
-                "bytes_expected": 188939504
+                "zip_bytes_expected": 175369153,
+                "bytes_expected": 188940932
             },
-            "synesthesiam/de_deepspeech-aashishag/model/trie": {
+            "synesthesiam/de_deepspeech-aashishag/model/output_graph.tflite": {
                 "unzip": true,
-                "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/model/trie.gz",
-                "zip_bytes_expected": 12510829,
-                "bytes_expected": 67818944
+                "url": "synesthesiam/de_deepspeech-aashishag/7aadb0561d37ada67c9353cf943eb66f06ec6636/model/output_graph.tflite.gz",
+                "zip_bytes_expected": 20516562,
+                "bytes_expected": 47338288
             },
             "synesthesiam/de_deepspeech-aashishag/base_language_model.fst": {
                 "unzip": true,
-                "url": "synesthesiam/de_deepspeech-aashishag/9fe9fbd758b2f775650ad0972710256d65be1317/base_language_model.fst.gz",
+                "url": "synesthesiam/de_deepspeech-aashishag/7aadb0561d37ada67c9353cf943eb66f06ec6636/base_language_model.fst.gz",
                 "zip_bytes_expected": 46294251,
                 "bytes_expected": 116125088
             },

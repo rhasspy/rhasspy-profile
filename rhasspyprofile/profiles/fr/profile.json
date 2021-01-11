@@ -21,6 +21,11 @@
             "mix_fst": "kaldi/mixed.fst",
             "phoneme_examples": "kaldi/phoneme_examples.txt",
             "phoneme_map": "kaldi/espeak_phonemes.txt"
+        },
+        "deepspeech": {
+            "compatible": true,
+            "base_language_model_fst": "deepspeech/base_language_model.fst",
+            "mix_fst": "deepspeech/mixed.fst"
         }
     },
     "text_to_speech": {
@@ -84,11 +89,20 @@
                     "kaldi/model/ivectors_test_hires/conf/ivector_extractor.conf": "synesthesiam/fr_kaldi-guyot/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf",
                     "kaldi/model/ivectors_test_hires/conf/online_cmvn.conf": "synesthesiam/fr_kaldi-guyot/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf",
                     "kaldi/model/ivectors_test_hires/conf/splice.conf": "synesthesiam/fr_kaldi-guyot/acoustic_model/ivectors_test_hires/conf/splice.conf"
+                },
+                "deepspeech": {
+                    "deepspeech/model/0.9/alphabet.txt": "rhasspy/fr_deepspeech-jaco/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "rhasspy/fr_deepspeech-jaco/model/output_graph"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
                 "True": {
                     "base_language_model.txt": "synesthesiam/fr_pocketsphinx-cmu/base_language_model.txt"
+                }
+            },
+            "speech_to_text.deepspeech.open_transcription": {
+                "True": {
+                    "deepspeech/model/0.9/base.scorer": "rhasspy/fr_deepspeech-jaco/model/base.scorer"
                 }
             },
             "speech_to_text.pocketsphinx.mix_weight": {
@@ -99,6 +113,11 @@
             "speech_to_text.kaldi.mix_weight": {
                 ">0": {
                     "kaldi/base_language_model.fst": "synesthesiam/fr_kaldi-guyot/base_language_model.fst"
+                }
+            },
+            "speech_to_text.deepspeech.mix_weight": {
+                ">0": {
+                    "deepspeech/base_language_model.fst": "rhasspy/fr_deepspeech-jaco/base_language_model.fst"
                 }
             },
             "speech_to_text.kaldi.open_transcription": {
@@ -136,6 +155,13 @@
             }
         },
         "files": {
+            "rhasspy/fr_deepspeech-jaco/model/output_graph": {
+                "platform": {
+                    "arm.+": "rhasspy/fr_deepspeech-jaco/model/output_graph.tflite",
+                    "aarch64": "rhasspy/fr_deepspeech-jaco/model/output_graph.tflite",
+                    "": "rhasspy/fr_deepspeech-jaco/model/output_graph.pbmm"
+                }
+            },
             "synesthesiam/fr_pocketsphinx-cmu/base_dictionary.txt": {
                 "unzip": true,
                 "url": "synesthesiam/fr_pocketsphinx-cmu/b4dbbf00da7f7cf6a61d0bd660521b5e1b474413/base_dictionary.txt.gz",
@@ -544,6 +570,97 @@
                 "unzip": false,
                 "url": "rhasspy/fr_larynx-siwis/master/vocoder/config.json",
                 "bytes_expected": 3474
+            },
+            "rhasspy/fr_deepspeech-jaco/model/alphabet.txt": {
+                "unzip": false,
+                "url": "rhasspy/fr_deepspeech-jaco/9cf6f9937458521e9c1d8674a495cb06f786c738/model/alphabet.txt",
+                "bytes_expected": 70
+            },
+            "rhasspy/fr_deepspeech-jaco/model/base.scorer": {
+                "unzip": true,
+                "url": "rhasspy/fr_deepspeech-jaco/9cf6f9937458521e9c1d8674a495cb06f786c738/model/",
+                "parts": [
+                    {
+                        "fragment": "base.scorer.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-06",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-07",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-08",
+                        "bytes_expected": 16230543
+                    }
+                ],
+                "zip_bytes_expected": 225945743,
+                "bytes_expected": 254972864
+            },
+            "rhasspy/fr_deepspeech-jaco/model/output_graph.pbmm": {
+                "unzip": true,
+                "url": "rhasspy/fr_deepspeech-jaco/9cf6f9937458521e9c1d8674a495cb06f786c738/model/",
+                "parts": [
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-06",
+                        "bytes_expected": 18208359
+                    }
+                ],
+                "zip_bytes_expected": 175494759,
+                "bytes_expected": 189047557
+            },
+            "rhasspy/fr_deepspeech-jaco/model/output_graph.tflite": {
+                "unzip": true,
+                "url": "rhasspy/fr_deepspeech-jaco/9cf6f9937458521e9c1d8674a495cb06f786c738/model/output_graph.tflite.gz",
+                "zip_bytes_expected": 20519594,
+                "bytes_expected": 47365040
             }
         }
     }

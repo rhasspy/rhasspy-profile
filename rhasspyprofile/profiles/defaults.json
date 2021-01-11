@@ -18,6 +18,7 @@
         "satellite_site_ids": "",
         "session_timeout": 30,
         "system": "dummy",
+        "recommended": "rhasspy",
         "volume": 1,
         "group_separator": ""
     },
@@ -29,6 +30,7 @@
         },
         "forward_to_hass": false,
         "system": "dummy",
+        "recommended": "",
         "remote": {
             "url": "http://my-server:port/endpoint"
         }
@@ -91,7 +93,8 @@
             "url": "http://my-server:12101/api/text-to-intent"
         },
         "replace_numbers": true,
-        "system": "dummy"
+        "system": "dummy",
+        "recommended": "fsticuffs"
     },
     "language": "",
     "microphone": {
@@ -118,7 +121,8 @@
             "channels": 1,
             "siteId": ""
         },
-        "system": "dummy"
+        "system": "dummy",
+        "recommended": "pyaudio"
     },
     "mqtt": {
         "enabled": false,
@@ -142,6 +146,7 @@
     "sounds": {
         "recorded": "${RHASSPY_BASE_DIR}/etc/wav/beep_lo.wav",
         "system": "dummy",
+        "recommended": "aplay",
         "wake": "${RHASSPY_BASE_DIR}/etc/wav/beep_hi.wav",
         "error": "${RHASSPY_BASE_DIR}/etc/wav/beep_error.wav",
         "aplay": {
@@ -217,25 +222,27 @@
             "open_transcription": false
         },
         "deepspeech": {
-            "alphabet": "deepspeech/model/0.6.1/alphabet.txt",
-            "acoustic_model": "deepspeech/model/0.6.1/output_graph.pbmm",
+            "alphabet": "deepspeech/model/0.9/alphabet.txt",
+            "acoustic_model": "deepspeech/model/0.9/output_graph.pbmm",
             "base_dictionary": "",
-            "base_language_model": "deepspeech/model/0.6.1/base_lm.binary",
+            "base_language_model": "deepspeech/model/0.9/base_lm.binary",
             "base_language_model_fst": "base_language_model.fst",
-            "base_trie": "deepspeech/model/0.6.1/base_trie",
+            "base_scorer": "deepspeech/model/0.9/base.scorer",
             "compatible": false,
             "custom_words": "",
             "sounds_like": "",
             "dictionary": "",
             "language_model": "deepspeech/lm.binary",
-            "trie": "deepspeech/trie",
+            "scorer": "deepspeech/scorer",
             "unknown_words": "",
             "g2p_model": "",
             "mix_weight": 0,
             "mix_fst": "mixed.fst",
             "phoneme_examples": "",
             "phoneme_map": "",
-            "open_transcription": false
+            "open_transcription": false,
+            "lm_alpha": "",
+            "lm_beta": ""
         },
         "remote": {
             "compatible": true,
@@ -256,7 +263,8 @@
         "sentences_dir": "intents",
         "slots_dir": "slots",
         "slot_programs_dir": "slot_programs",
-        "system": "dummy"
+        "system": "dummy",
+        "recommended": "kaldi"
     },
     "text_to_speech": {
         "satellite_site_ids": "",
@@ -316,7 +324,8 @@
             "compatible": false,
             "cache_dir": "tts/larynx/cache",
             "volume": 1
-        }
+        },
+        "recommended": "nanotts"
     },
     "training": {
         "intent": {
@@ -399,7 +408,8 @@
             "examples_format": "",
             "keywords": {}
         },
-        "system": "dummy"
+        "system": "dummy",
+         "recommended": "porcupine"
     },
     "webhooks": {
         "satellite_site_ids": ""
