@@ -427,5 +427,19 @@
     "download": {
         "url_base": "https://raw.githubusercontent.com/synesthesiam/",
         "conditions": {}
+    },
+    "system": {
+        "reboot": [
+            "sudo",
+            "shutdown",
+            "-r",
+            "now"
+        ],
+        "shutdown": [
+            "sudo",
+            "shutdown",
+            "-h",
+            "now"
+        ]
     }
 }
