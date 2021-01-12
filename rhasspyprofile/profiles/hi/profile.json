@@ -3,9 +3,11 @@
     "name": "hi",
     "locale": "hi_IN",
     "speech_to_text": {
-        "dictionary_casing": "lower"
+        "dictionary_casing": "lower",
+        "recommended": "pocketsphinx"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "wavenet": {
             "language_code": "hi-HI"
         },

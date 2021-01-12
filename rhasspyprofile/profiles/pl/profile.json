@@ -11,9 +11,11 @@
             "compatible": true,
             "base_language_model_fst": "deepspeech/base_language_model.fst",
             "mix_fst": "deepspeech/mixed.fst"
-        }
+        },
+        "recommended": "deepspeech"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "wavenet": {
             "language_code": "pl-PL"
         }

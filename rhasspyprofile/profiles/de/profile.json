@@ -29,6 +29,13 @@
         }
     },
     "text_to_speech": {
+        "recommended": "nanotts",
+        "picotts": {
+            "language": "de-DE"
+        },
+        "nanotts": {
+            "language": "de-DE"
+        },
         "wavenet": {
             "language_code": "de-DE"
         },

@@ -29,6 +29,7 @@
         }
     },
     "text_to_speech": {
+        "recommended": "nanotts",
         "wavenet": {
             "language_code": "fr-FR"
         },

@@ -277,31 +277,37 @@
             "volume": 1
         },
         "espeak": {
-            "volume": 1
+            "volume": 1,
+            "compatible": true
         },
         "flite": {
             "voice": "kal16",
-            "volume": 1
+            "volume": 1,
+            "compatible": false
         },
         "marytts": {
             "url": "http://localhost:59125/process",
             "locale": "",
             "voice": "",
-            "volume": 1
+            "volume": 1,
+            "compatible": true
         },
         "opentts": {
             "url": "http://localhost:5500",
             "voice": "",
-            "volume": 1
+            "volume": 1,
+            "compatible": true
         },
         "picotts": {
             "language": "",
-            "volume": 1
+            "volume": 1,
+            "compatible": false
         },
         "nanotts": {
             "language": "",
             "langdir": "",
-            "volume": 1
+            "volume": 1,
+            "compatible": false
         },
         "system": "dummy",
         "remote": {
@@ -315,7 +321,8 @@
             "sample_rate": 22050,
             "url": "https://texttospeech.googleapis.com/v1/text:synthesize",
             "voice": "en-US-Wavenet-C",
-            "volume": 1
+            "volume": 1,
+            "compatible": true
         },
         "hass_tts": {
             "platform": ""
@@ -409,7 +416,7 @@
             "keywords": {}
         },
         "system": "dummy",
-         "recommended": "porcupine"
+        "recommended": "porcupine"
     },
     "webhooks": {
         "satellite_site_ids": ""

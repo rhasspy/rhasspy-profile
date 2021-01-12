@@ -2,7 +2,11 @@
     "name": "zh",
     "language": "zh",
     "locale": "zh_CN",
+    "speech_to_text": {
+        "recommended": "pocketsphinx"
+    },
     "text_to_speech": {
+        "recommended": "espeak",
         "wavenet": {
             "language_code": "zh-TW"
         }

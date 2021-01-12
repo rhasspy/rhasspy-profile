@@ -13,6 +13,7 @@
         "dictionary_casing": "lower"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "opentts": {
             "voice": "espeak:vi"
         }

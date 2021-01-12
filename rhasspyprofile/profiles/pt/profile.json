@@ -3,9 +3,11 @@
     "name": "pt",
     "locale": "pt_BR",
     "speech_to_text": {
-        "dictionary_casing": "lower"
+        "dictionary_casing": "lower",
+        "recommended": "pocketsphinx"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "wavenet": {
             "language_code": "pt-BR"
         },

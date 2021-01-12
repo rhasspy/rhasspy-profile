@@ -4,9 +4,11 @@
     "locale": "el_GR",
     "speech_to_text": {
         "g2p_casing": "lower",
-        "dictionary_casing": "lower"
+        "dictionary_casing": "lower",
+        "recommended": "pocketsphinx"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "opentts": {
             "voice": "espeak:el"
         }

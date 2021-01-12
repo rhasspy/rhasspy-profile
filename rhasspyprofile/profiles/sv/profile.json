@@ -20,6 +20,7 @@
         }
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "wavenet": {
             "language_code": "sv-SE"
         },

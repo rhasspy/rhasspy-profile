@@ -3,9 +3,11 @@
     "name": "ca",
     "locale": "ca_ES",
     "speech_to_text": {
-        "dictionary_casing": "lower"
+        "dictionary_casing": "lower",
+        "recommended": "pocketsphinx"
     },
     "text_to_speech": {
+        "recommended": "espeak",
         "opentts": {
             "voice": "festival:upc_ca_ona_hts"
         }
