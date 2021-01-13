@@ -31,10 +31,12 @@
     "text_to_speech": {
         "recommended": "nanotts",
         "picotts": {
-            "language": "de-DE"
+            "language": "de-DE",
+            "compatible": true
         },
         "nanotts": {
-            "language": "de-DE"
+            "language": "de-DE",
+            "compatible": true
         },
         "wavenet": {
             "language_code": "de-DE"

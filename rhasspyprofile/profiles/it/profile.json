@@ -28,6 +28,14 @@
     },
     "text_to_speech": {
         "recommended": "nanotts",
+        "picotts": {
+            "language": "it-IT",
+            "compatible": true
+        },
+        "nanotts": {
+            "language": "it-IT",
+            "compatible": true
+        },
         "wavenet": {
             "language_code": "it-IT"
         },
