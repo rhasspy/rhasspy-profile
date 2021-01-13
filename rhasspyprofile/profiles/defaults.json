@@ -3,7 +3,7 @@
         "webrtcvad": {
             "skip_sec": 0,
             "min_sec": 1,
-            "max_sec": 30,
+            "max_sec": 20,
             "speech_sec": 0.3,
             "silence_sec": 0.5,
             "before_sec": 0.5,

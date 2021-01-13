@@ -30,6 +30,15 @@
     },
     "text_to_speech": {
         "recommended": "nanotts",
+        "picotts": {
+            "compatible": true
+        },
+        "nanotts": {
+            "compatible": true
+        },
+        "flite": {
+            "compatible": true
+        },
         "wavenet": {
             "language_code": "en-US"
         },
