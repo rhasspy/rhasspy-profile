@@ -19,6 +19,7 @@
         }
     },
     "download": {
+        "url_base": "https://raw.githubusercontent.com/",
         "conditions": {
             "speech_to_text.system": {
                 "pocketsphinx": {
@@ -48,66 +49,66 @@
         "files": {
             "el-gr_pocketsphinx-cmu/base_dictionary.txt": {
                 "unzip": true,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/base_dictionary.txt.gz",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/base_dictionary.txt.gz",
                 "zip_bytes_expected": 5106813,
                 "bytes_expected": 33394766
             },
             "el-gr_pocketsphinx-cmu/base_language_model.txt": {
                 "unzip": true,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/base_language_model.txt.gz",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/base_language_model.txt.gz",
                 "zip_bytes_expected": 30766031,
                 "bytes_expected": 115494015
             },
             "el-gr_pocketsphinx-cmu/base_language_model.fst": {
                 "unzip": true,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/base_language_model.fst.gz",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/base_language_model.fst.gz",
                 "zip_bytes_expected": 33975780,
                 "bytes_expected": 77318132
             },
             "el-gr_pocketsphinx-cmu/g2p.fst": {
                 "unzip": true,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/g2p.fst.gz",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/g2p.fst.gz",
                 "zip_bytes_expected": 33826556,
                 "bytes_expected": 104299092
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/feat.params": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/feat.params",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/feat.params",
                 "bytes_expected": 127
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/feature_transform": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/feature_transform",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/feature_transform",
                 "bytes_expected": 5660
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/mdef": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/mdef",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/mdef",
                 "bytes_expected": 3223425
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/means": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/means",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/means",
                 "bytes_expected": 23510084
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/mixture_weights": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/mixture_weights",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/mixture_weights",
                 "bytes_expected": 653120
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/noisedict": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/noisedict",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/noisedict",
                 "bytes_expected": 60
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/transition_matrices": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/transition_matrices",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/transition_matrices",
                 "bytes_expected": 1696
             },
             "el-gr_pocketsphinx-cmu/acoustic_model/variances": {
                 "unzip": false,
-                "url": "el-gr_pocketsphinx-cmu/f3cb7dbc715029a4d7e1a84e40c1cc1624e28d1d/acoustic_model/variances",
+                "url": "synesthesiam/el-gr_pocketsphinx-cmu/672f8799f4f4232ef3e85fa86418840e4fbcaafa/acoustic_model/variances",
                 "bytes_expected": 23510084
             }
         }

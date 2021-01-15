@@ -25,41 +25,36 @@
         "conditions": {
             "speech_to_text.system": {
                 "deepspeech": {
-                    "deepspeech/model/0.9/alphabet.txt": "rhasspy/pl_deepspeech-jaco/model/alphabet.txt",
-                    "deepspeech/model/0.9/output_graph.pbmm": "rhasspy/pl_deepspeech-jaco/model/output_graph"
+                    "deepspeech/model/0.9/alphabet.txt": "pl_deepspeech-jaco/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "pl_deepspeech-jaco/model/output_graph"
                 }
             },
             "speech_to_text.deepspeech.open_transcription": {
                 "True": {
-                    "deepspeech/model/0.9/base.scorer": "rhasspy/pl_deepspeech-jaco/model/base.scorer"
-                }
-            },
-            "speech_to_text.deepspeech.mix_weight": {
-                ">0": {
-                    "deepspeech/base_language_model.fst": "rhasspy/pl_deepspeech-jaco/base_language_model.fst"
+                    "deepspeech/model/0.9/base.scorer": "pl_deepspeech-jaco/model/base.scorer"
                 }
             }
         },
         "files": {
-            "rhasspy/pl_deepspeech-jaco/model/output_graph": {
+            "pl_deepspeech-jaco/model/output_graph": {
                 "platform": {
-                    "arm.+": "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite",
-                    "aarch64": "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite",
-                    "": "rhasspy/pl_deepspeech-jaco/model/output_graph.pbmm"
+                    "arm.+": "pl_deepspeech-jaco/model/output_graph.tflite",
+                    "aarch64": "pl_deepspeech-jaco/model/output_graph.tflite",
+                    "": "pl_deepspeech-jaco/model/output_graph.pbmm"
                 }
             },
-            "rhasspy/pl_deepspeech-jaco/model/alphabet.txt": {
+            "pl_deepspeech-jaco/model/alphabet.txt": {
                 "unzip": false,
                 "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/alphabet.txt",
                 "bytes_expected": 354
             },
-            "rhasspy/pl_deepspeech-jaco/model/base.scorer": {
+            "pl_deepspeech-jaco/model/base.scorer": {
                 "unzip": true,
                 "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/base.scorer.gz",
                 "zip_bytes_expected": 3000583,
                 "bytes_expected": 4856464
             },
-            "rhasspy/pl_deepspeech-jaco/model/output_graph.pbmm": {
+            "pl_deepspeech-jaco/model/output_graph.pbmm": {
                 "unzip": true,
                 "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/",
                 "parts": [
@@ -95,7 +90,7 @@
                 "zip_bytes_expected": 175414854,
                 "bytes_expected": 188981942
             },
-            "rhasspy/pl_deepspeech-jaco/model/output_graph.tflite": {
+            "pl_deepspeech-jaco/model/output_graph.tflite": {
                 "unzip": true,
                 "url": "rhasspy/pl_deepspeech-jaco/00266f0e3a3086033ca4726d5b616b1ac215d4ee/model/output_graph.tflite.gz",
                 "zip_bytes_expected": 20752162,
