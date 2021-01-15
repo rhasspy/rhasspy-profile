@@ -92,8 +92,8 @@
                     "kaldi/base_dictionary.txt": "it_kaldi-rhasspy/base_dictionary.txt"
                 },
                 "deepspeech": {
-                    "deepspeech/model/0.9/alphabet.txt": "rhasspy/it_deepspeech-jaco/model/alphabet.txt",
-                    "deepspeech/model/0.9/output_graph.pbmm": "rhasspy/it_deepspeech-jaco/model/output_graph"
+                    "deepspeech/model/0.9/alphabet.txt": "it_deepspeech-mozillaitalia/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "it_deepspeech-mozillaitalia/model/output_graph"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -123,7 +123,7 @@
             },
             "speech_to_text.deepspeech.open_transcription": {
                 "True": {
-                    "deepspeech/model/0.9/base.scorer": "rhasspy/it_deepspeech-jaco/model/base.scorer"
+                    "deepspeech/model/0.9/base.scorer": "it_deepspeech-mozillaitalia/model/base.scorer"
                 }
             },
             "speech_to_text.pocketsphinx.mix_weight": {
@@ -138,16 +138,16 @@
             },
             "speech_to_text.deepspeech.mix_weight": {
                 ">0": {
-                    "deepspeech/base_language_model.fst": "rhasspy/it_deepspeech-jaco/base_language_model.fst"
+                    "deepspeech/base_language_model.fst": "it_deepspeech-mozillaitalia/base_language_model.fst"
                 }
             }
         },
         "files": {
-            "rhasspy/it_deepspeech-jaco/model/output_graph": {
+            "it_deepspeech-mozillaitalia/model/output_graph": {
                 "platform": {
-                    "arm.+": "rhasspy/it_deepspeech-jaco/model/output_graph.tflite",
-                    "aarch64": "rhasspy/it_deepspeech-jaco/model/output_graph.tflite",
-                    "": "rhasspy/it_deepspeech-jaco/model/output_graph.pbmm"
+                    "arm.+": "it_deepspeech-mozillaitalia/model/output_graph.tflite",
+                    "aarch64": "it_deepspeech-mozillaitalia/model/output_graph.tflite",
+                    "": "it_deepspeech-mozillaitalia/model/output_graph.pbmm"
                 }
             },
             "it_pocketsphinx-cmu/base_dictionary.txt": {
@@ -479,20 +479,50 @@
                 "url": "rhasspy/it_kaldi-rhasspy/raw/6988590df44339ca309f4dd4120969699c420bd8/acoustic_model/ivectors_test_hires/conf/splice.conf",
                 "bytes_expected": 35
             },
-            "rhasspy/it_deepspeech-jaco/model/alphabet.txt": {
+            "it_deepspeech-mozillaitalia/model/alphabet.txt": {
                 "unzip": false,
-                "url": "rhasspy/it_deepspeech-jaco/78ac542ae6c9862cda7e3fec303cae1067d0e6a0/model/alphabet.txt",
-                "bytes_expected": 329
+                "url": "rhasspy/it_deepspeech-mozillaitalia/25876712fc1ecdc65908a12894dac3ca9097cfc9/model/alphabet.txt",
+                "bytes_expected": 86
             },
-            "rhasspy/it_deepspeech-jaco/model/base.scorer": {
+            "it_deepspeech-mozillaitalia/model/base.scorer": {
                 "unzip": true,
-                "url": "rhasspy/it_deepspeech-jaco/78ac542ae6c9862cda7e3fec303cae1067d0e6a0/model/base.scorer.gz",
-                "zip_bytes_expected": 5350776,
-                "bytes_expected": 7746880
+                "url": "rhasspy/it_deepspeech-mozillaitalia/25876712fc1ecdc65908a12894dac3ca9097cfc9/model/",
+                "parts": [
+                    {
+                        "fragment": "base.scorer.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "base.scorer.gz.part-06",
+                        "bytes_expected": 3428548
+                    }
+                ],
+                "zip_bytes_expected": 160714948,
+                "bytes_expected": 196052112
             },
-            "rhasspy/it_deepspeech-jaco/model/output_graph.pbmm": {
+            "it_deepspeech-mozillaitalia/model/output_graph.pbmm": {
                 "unzip": true,
-                "url": "rhasspy/it_deepspeech-jaco/78ac542ae6c9862cda7e3fec303cae1067d0e6a0/model/",
+                "url": "rhasspy/it_deepspeech-mozillaitalia/25876712fc1ecdc65908a12894dac3ca9097cfc9/model/",
                 "parts": [
                     {
                         "fragment": "output_graph.pbmm.gz.part-00",
@@ -520,17 +550,17 @@
                     },
                     {
                         "fragment": "output_graph.pbmm.gz.part-06",
-                        "bytes_expected": 18071736
+                        "bytes_expected": 18136891
                     }
                 ],
-                "zip_bytes_expected": 175358136,
-                "bytes_expected": 188916323
+                "zip_bytes_expected": 175423291,
+                "bytes_expected": 188998006
             },
-            "rhasspy/it_deepspeech-jaco/model/output_graph.tflite": {
+            "it_deepspeech-mozillaitalia/model/output_graph.tflite": {
                 "unzip": true,
-                "url": "rhasspy/it_deepspeech-jaco/78ac542ae6c9862cda7e3fec303cae1067d0e6a0/model/output_graph.tflite.gz",
-                "zip_bytes_expected": 20542809,
-                "bytes_expected": 47332112
+                "url": "rhasspy/it_deepspeech-mozillaitalia/25876712fc1ecdc65908a12894dac3ca9097cfc9/model/output_graph.tflite.gz",
+                "zip_bytes_expected": 20690678,
+                "bytes_expected": 47352360
             }
         }
     }
