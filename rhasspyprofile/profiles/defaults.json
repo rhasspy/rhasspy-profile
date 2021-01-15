@@ -59,7 +59,8 @@
         "error_sound": true,
         "fuzzywuzzy": {
             "examples_json": "intent_examples.db",
-            "min_confidence": 0
+            "min_confidence": 0,
+            "converters_dir": "converters"
         },
         "fsticuffs": {
             "intent_fst": "intent.fst",
