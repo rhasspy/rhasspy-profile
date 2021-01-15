@@ -653,12 +653,12 @@
             },
             "rhasspy/en-us_larynx-kathleen/config.json": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/raw/master/config.json",
+                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/config.json",
                 "bytes_expected": 9567
             },
             "rhasspy/en-us_larynx-kathleen/en-kathleen_tts-v1.pth.tar": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/raw/master/",
+                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/",
                 "parts": [
                     {
                         "fragment": "en-kathleen_tts-v1.pth.tar.part-00",
@@ -721,17 +721,17 @@
             },
             "rhasspy/en-us_larynx-kathleen/scale_stats.npy": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/raw/master/scale_stats.npy",
+                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/scale_stats.npy",
                 "bytes_expected": 10485
             },
             "rhasspy/en-us_larynx-kathleen/vocoder/config.json": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/raw/master/vocoder/config.json",
+                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/vocoder/config.json",
                 "bytes_expected": 7511
             },
             "rhasspy/en-us_larynx-kathleen/vocoder/en-kathleen_vocoder-v1.pth.tar": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/raw/master/vocoder/",
+                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/vocoder/",
                 "parts": [
                     {
                         "fragment": "en-kathleen_vocoder-v1.pth.tar.part-00",
