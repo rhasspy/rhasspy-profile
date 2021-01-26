@@ -200,7 +200,8 @@
             "phoneme_examples": "phoneme_examples.txt",
             "phoneme_map": "espeak_phonemes.txt",
             "open_transcription": false,
-            "language_model_type": "text_fst"
+            "language_model_type": "text_fst",
+            "min_confidence": 0
         },
         "pocketsphinx": {
             "acoustic_model": "acoustic_model",
@@ -243,11 +244,13 @@
             "phoneme_map": "",
             "open_transcription": false,
             "lm_alpha": "",
-            "lm_beta": ""
+            "lm_beta": "",
+            "min_confidence": 0
         },
         "remote": {
             "compatible": true,
-            "url": "http://my-server:12101/api/speech-to-text"
+            "url": "http://my-server:12101/api/speech-to-text",
+            "min_confidence": 0
         },
         "hass_stt": {
             "compatible": true,
