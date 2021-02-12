@@ -95,7 +95,8 @@
         },
         "replace_numbers": true,
         "system": "dummy",
-        "recommended": "fsticuffs"
+        "recommended": "fsticuffs",
+        "lang": null
     },
     "language": "",
     "microphone": {
@@ -268,7 +269,8 @@
         "slots_dir": "slots",
         "slot_programs_dir": "slot_programs",
         "system": "dummy",
-        "recommended": "kaldi"
+        "recommended": "kaldi",
+        "lang": null
     },
     "text_to_speech": {
         "satellite_site_ids": "",
@@ -420,7 +422,8 @@
             "keywords": {}
         },
         "system": "dummy",
-        "recommended": "porcupine"
+        "recommended": "porcupine",
+        "lang": null
     },
     "webhooks": {
         "satellite_site_ids": ""
