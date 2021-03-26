@@ -50,11 +50,17 @@
         },
         "larynx": {
             "compatible": true,
-            "default_voice": "en-kathleen",
+            "default_voice": "harvard",
             "voices": {
-                "en-kathleen": {
-                    "model": "tts/larynx/en/kathleen/en-kathleen_tts-v1.pth.tar",
-                    "vocoder_model": "tts/larynx/en/kathleen/vocoder/en-kathleen_vocoder-v1.pth.tar"
+                "harvard": {
+                    "language": "en-us",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/en-us/harvard-glow_tts",
+                    "vocoder_type": "hifi_gan",
+                    "vocoder_path": "tts/larynx/hifi_gan/universal_large",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
                 }
             }
         }
@@ -149,11 +155,7 @@
             },
             "text_to_speech.system": {
                 "larynx": {
-                    "tts/larynx/en/kathleen/en-kathleen_tts-v1.pth.tar": "en-us_larynx-kathleen/en-kathleen_tts-v1.pth.tar",
-                    "tts/larynx/en/kathleen/config.json": "en-us_larynx-kathleen/config.json",
-                    "tts/larynx/en/kathleen/scale_stats.npy": "en-us_larynx-kathleen/scale_stats.npy",
-                    "tts/larynx/en/kathleen/vocoder/en-kathleen_vocoder-v1.pth.tar": "en-us_larynx-kathleen/vocoder/en-kathleen_vocoder-v1.pth.tar",
-                    "tts/larynx/en/kathleen/vocoder/config.json": "en-us_larynx-kathleen/vocoder/config.json"
+                    "tts/larynx/en-us/harvard-glow_tts": "larynx/en-us_harvard-glow_tts.tar.gz"
                 }
             }
         },
@@ -651,110 +653,12 @@
                 "url": "synesthesiam/en-us_kaldi-zamia/a2d6be48f21d3e0ca15c907320e6b46f52c38568/acoustic_model/model/graph/words.txt",
                 "bytes_expected": 2534347
             },
-            "en-us_larynx-kathleen/config.json": {
+            "larynx/en-us_harvard-glow_tts.tar.gz": {
                 "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/config.json",
-                "bytes_expected": 9567
-            },
-            "en-us_larynx-kathleen/en-kathleen_tts-v1.pth.tar": {
-                "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/",
-                "parts": [
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-00",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-01",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-02",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-03",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-04",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-05",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-06",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-07",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-08",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-09",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-10",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-11",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-12",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_tts-v1.pth.tar.part-13",
-                        "bytes_expected": 6383409
-                    }
-                ],
-                "bytes_expected": 347170609
-            },
-            "en-us_larynx-kathleen/scale_stats.npy": {
-                "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/scale_stats.npy",
-                "bytes_expected": 10485
-            },
-            "en-us_larynx-kathleen/vocoder/config.json": {
-                "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/vocoder/config.json",
-                "bytes_expected": 7511
-            },
-            "en-us_larynx-kathleen/vocoder/en-kathleen_vocoder-v1.pth.tar": {
-                "unzip": false,
-                "url": "rhasspy/en-us_larynx-kathleen/7e67212496592399df302004a4ab23c5afc1d416/vocoder/",
-                "parts": [
-                    {
-                        "fragment": "en-kathleen_vocoder-v1.pth.tar.part-00",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_vocoder-v1.pth.tar.part-01",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_vocoder-v1.pth.tar.part-02",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_vocoder-v1.pth.tar.part-03",
-                        "bytes_expected": 26214400
-                    },
-                    {
-                        "fragment": "en-kathleen_vocoder-v1.pth.tar.part-04",
-                        "bytes_expected": 3988427
-                    }
-                ],
-                "bytes_expected": 108846027
+                "extract_as_directory": true,
+                "strip_components": 1,
+                "url": "larynx/raw/master/en-us_harvard-glow_tts.tar.gz",
+                "bytes_expected": 107167872
             }
         }
     }
