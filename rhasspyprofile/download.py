@@ -7,6 +7,7 @@ import platform
 import re
 import ssl
 import subprocess
+import tarfile
 import tempfile
 import typing
 from dataclasses import dataclass
@@ -128,6 +129,7 @@ class MissingFile:
     setting_name: str
     setting_value: str
     bytes_expected: typing.Optional[int] = None
+    target_is_directory: bool = False
 
     def to_dict(self) -> typing.Dict[str, typing.Any]:
         """Convert to JSON serializable dictionary."""
@@ -175,12 +177,38 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
 
     # condition_key is a profile setting (e.g., speech_to_text.system).
     # condition_value has setting value(s) and files required for those values.
+    #
+    # condition_key may have the for "(and A B C)" for multiple settings.
+    # In this case, the value must have the form "(X Y Z)" for the corresponding values.
     for condition_key, condition_details in conditions.items():
-        # Get the actual profile setting for comparison
-        actual_value = profile.get(condition_key)
+        # Get the actual profile setting(s) for comparison
+        if condition_key.startswith("(and"):
+            # Conjunction
+            condition_keys = condition_key[1:-1].split()[1:]
+            actual_value = [profile.get(k) for k in condition_keys]
+            multiple_values = True
+        else:
+            # Literal key
+            actual_value = profile.get(condition_key)
+            multiple_values = False
+
         for expected_value, condition_files in condition_details.items():
             # Allow comparisons like ">=0", etc.
-            compare_func = get_compare_func(expected_value)
+            if multiple_values:
+                # AND of all comparison functions
+                expected_values = expected_value[1:-1].split()
+                compare_funcs = [get_compare_func(v) for v in expected_values]
+
+                def compare_func(values):
+                    # pylint: disable=cell-var-from-loop
+                    for f, v in zip(compare_funcs, values):
+                        if not f(v):
+                            return False
+
+                    return True
+            else:
+                # Single value
+                compare_func = get_compare_func(expected_value)
 
             try:
                 compare_result = compare_func(actual_value)
@@ -201,6 +229,11 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                 # file_key is the destination path (relative to profile directory).
                 # file_value is the source name (in download.files).
                 for file_key, file_value in condition_files.items():
+                    target: typing.Optional[str] = None
+                    if isinstance(file_value, dict):
+                        target = file_value["target"]
+                        file_value = file_value["source"]
+
                     file_details = typing.cast(
                         typing.Dict[str, typing.Any], files.get(file_value)
                     )
@@ -239,6 +272,7 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
 
                     # ---------------------------------------------------------
 
+                    # Path to check if file needs to be downloaded or not
                     file_key_path = file_key
 
                     if replace_filename:
@@ -275,10 +309,11 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                         missing_files.append(
                             MissingFile(
                                 file_key=file_value,
-                                file_path=profile.write_path(file_key_path),
+                                file_path=profile.write_path(target or file_key_path),
                                 setting_name=condition_key,
                                 setting_value=expected_value,
                                 bytes_expected=bytes_expected,
+                                target_is_directory=file_key_path.endswith("/"),
                             )
                         )
                     else:
@@ -324,7 +359,16 @@ async def download_files(
 
             # Actually download files
             for missing_file in missing_files:
-                file_key, download_path = missing_file.file_key, missing_file.file_path
+                file_key, target_path = missing_file.file_key, missing_file.file_path
+                if target_path.is_dir():
+                    # Download to a temporary file, then extract to target directory
+                    download_path = Path(
+                        tempfile.NamedTemporaryFile(dir=cache_dir, delete=False).name
+                    )
+                else:
+                    # Download directly to target path
+                    download_path = target_path
+
                 file_details = typing.cast(
                     typing.Dict[str, typing.Any], files.get(file_key)
                 )
@@ -497,6 +541,15 @@ async def download_files(
                 _LOGGER.debug(
                     "Successfully downloaded %s (%s)", file_key, str(download_path)
                 )
+
+                if target_path.is_dir():
+                    # Extract to directory
+                    _LOGGER.debug("Extracting %s to %s", download_path, target_path)
+                    target_path.mkdir(parents=True, exist_ok=True)
+                    with tarfile.open(download_path, "r") as tar_file:
+                        tar_file.extractall(path=target_path)
+
+                    _LOGGER.debug("Successfully extracted to %s", target_path)
 
     finally:
         # Clean up temporary directory
