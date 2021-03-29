@@ -336,7 +336,8 @@
         "larynx": {
             "compatible": false,
             "cache_dir": "tts/larynx/cache",
-            "volume": 1
+            "volume": 1,
+            "vocoder": "universal_large"
         },
         "recommended": "nanotts"
     },
