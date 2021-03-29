@@ -1,15 +1,27 @@
 #!/usr/bin/env python3
+import argparse
 import json
+import os
 import subprocess
 import sys
 
 
 def main():
+    parser = argparse.ArgumentParser(prog="verify_profiles.py")
+    parser.add_argument("--url-base", help="Change base download URL")
+    args = parser.parse_args()
+
+    if os.isatty(sys.stdin.fileno()):
+        print("Reading profile JSON from stdin...", file=sys.stderr)
+
     profile = json.load(sys.stdin)
     url_base = profile["download"]["url_base"]
 
-    if len(sys.argv) > 1:
-        url_base = sys.argv[1]
+    if args.url_base:
+        url_base = args.url_base
+
+    if not url_base.endswith("/"):
+        url_base = url_base + "/"
 
     files = {}
     for file_key, file_info in profile["download"]["files"].items():
@@ -46,6 +58,9 @@ def main():
     for condition, condition_info in profile["download"]["conditions"].items():
         for condition_files in condition_info.values():
             for download_key in condition_files.values():
+                if isinstance(download_key, dict):
+                    download_key = download_key["source"]
+
                 assert download_key in files, f"Missing {download_key} from {condition}"
 
     # Verify that all platform files exist
@@ -70,7 +85,7 @@ def main():
             header = header.strip()
             if header:
                 if header.startswith("HTTP"):
-                    assert header.split()[-1] == "200", f"{url} {header}"
+                    assert header.split()[-1] in ("200", "302"), f"{url} {header}"
                     continue
 
                 header_name, header_value = header.split(":", maxsplit=1)
