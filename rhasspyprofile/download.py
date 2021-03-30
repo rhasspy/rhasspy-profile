@@ -206,6 +206,7 @@ def get_missing_files(profile: Profile) -> typing.List[MissingFile]:
                             return False
 
                     return True
+
             else:
                 # Single value
                 compare_func = get_compare_func(expected_value)
@@ -360,7 +361,7 @@ async def download_files(
             # Actually download files
             for missing_file in missing_files:
                 file_key, target_path = missing_file.file_key, missing_file.file_path
-                if target_path.is_dir():
+                if missing_file.target_is_directory:
                     # Download to a temporary file, then extract to target directory
                     download_path = Path(
                         tempfile.NamedTemporaryFile(dir=cache_dir, delete=False).name
@@ -542,7 +543,7 @@ async def download_files(
                     "Successfully downloaded %s (%s)", file_key, str(download_path)
                 )
 
-                if target_path.is_dir():
+                if missing_file.target_is_directory:
                     # Extract to directory
                     _LOGGER.debug("Extracting %s to %s", download_path, target_path)
                     target_path.mkdir(parents=True, exist_ok=True)
