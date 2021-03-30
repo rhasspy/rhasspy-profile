@@ -166,6 +166,11 @@
                     "deepspeech/base_language_model.fst": "es_deepspeech-jaco/base_language_model.fst"
                 }
             },
+            "text_to_speech.system": {
+                "larynx": {
+                    "gruut/es-es/": "gruut/es-es.tar.gz"
+                }
+            },
             "(and text_to_speech.system text_to_speech.larynx.default_voice)": {
                 "(larynx carlfm)": {
                     "tts/larynx/es-es/carlfm-glow_tts/": {
@@ -705,6 +710,11 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/hifi_gan-vctk_small.tar.gz",
                 "bytes_expected": 5468855
+            },
+            "gruut/es-es.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/gruut/releases/download/v0.9.0/es-es.tar.gz",
+                "bytes_expected": 24160402
             }
         }
     }

@@ -139,6 +139,11 @@
                     "kaldi/base_language_model.fst": "ru_kaldi-rhasspy/base_language_model.fst"
                 }
             },
+            "text_to_speech.system": {
+                "larynx": {
+                    "gruut/ru-ru/": "gruut/ru-ru.tar.gz"
+                }
+            },
             "(and text_to_speech.system text_to_speech.larynx.default_voice)": {
                 "(larynx nikolaev)": {
                     "tts/larynx/ru-ru/nikolaev-glow_tts/": {
@@ -605,6 +610,11 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/hifi_gan-vctk_small.tar.gz",
                 "bytes_expected": 5468855
+            },
+            "gruut/ru-ru.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/gruut/releases/download/v0.9.0/ru-ru.tar.gz",
+                "bytes_expected": 41673347
             }
         }
     }

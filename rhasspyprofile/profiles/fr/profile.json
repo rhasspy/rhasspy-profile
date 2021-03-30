@@ -167,6 +167,11 @@
                     "kaldi/model/base_graph/num_pdfs": "fr_kaldi-guyot/acoustic_model/model/graph/num_pdfs"
                 }
             },
+            "text_to_speech.system": {
+                "larynx": {
+                    "gruut/fr-fr/": "gruut/fr-fr.tar.gz"
+                }
+            },
             "(and text_to_speech.system text_to_speech.larynx.default_voice)": {
                 "(larynx tom)": {
                     "tts/larynx/fr-fr/tom-glow_tts/": {
@@ -670,6 +675,11 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/hifi_gan-vctk_small.tar.gz",
                 "bytes_expected": 5468855
+            },
+            "gruut/fr-fr.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/gruut/releases/download/v0.9.0/fr-fr.tar.gz",
+                "bytes_expected": 9983999
             }
         }
     }
