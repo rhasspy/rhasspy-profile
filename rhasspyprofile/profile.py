@@ -95,8 +95,13 @@ class Profile:
         # Load just the system profile.json (on top of defaults)
         system_profile_path = self.system_profiles_dir / self.name / "profile.json"
 
-        with open(system_profile_path, "r") as system_profile_file:
-            Profile.recursive_update(self.system_json, json.load(system_profile_file))
+        if system_profile_path.is_file():
+            with open(system_profile_path, "r") as system_profile_file:
+                Profile.recursive_update(
+                    self.system_json, json.load(system_profile_file)
+                )
+        else:
+            _LOGGER.warning("No system profile found for %s", self.name)
 
         # Overlay with profile
         self.json_path = self.read_path("profile.json")
@@ -116,6 +121,46 @@ class Profile:
                         with open(json_path, "r") as profile_file:
                             profile_json = json5.load(profile_file)
 
+                    # Check for parent profile
+                    parent_name = profile_json.get("parent")
+                    if parent_name:
+                        # Load parent profile first
+                        for parent_profiles_dir in self.profiles_dirs[::-1]:
+                            parent_json_path = (
+                                parent_profiles_dir / parent_name / "profile.json"
+                            )
+                            _LOGGER.debug("Loading %s", parent_json_path)
+                            if parent_json_path.is_file():
+                                try:
+                                    with open(
+                                        parent_json_path, "r"
+                                    ) as parent_profile_file:
+                                        parent_profile_json = json.load(
+                                            parent_profile_file
+                                        )
+                                except Exception as e:
+                                    _LOGGER.warning(str(e))
+
+                                    # Fall back to json5
+                                    with open(
+                                        parent_json_path, "r"
+                                    ) as parent_profile_file:
+                                        parent_profile_json = json5.load(
+                                            parent_profile_file
+                                        )
+
+                                # Update with parent profile settings
+                                Profile.recursive_update(self.json, parent_profile_json)
+
+                                # Also update the system JSON, so settings are
+                                # stored relative to the parent profile.
+                                Profile.recursive_update(
+                                    self.system_json, parent_profile_json
+                                )
+
+                    # ---------------------------------------------------------
+
+                    # Update with local profile settings
                     Profile.recursive_update(self.json, profile_json)
 
     def read_path(self, *path_parts: str) -> Path:
