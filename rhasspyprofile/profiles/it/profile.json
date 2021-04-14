@@ -683,7 +683,7 @@
             "gruut/it-it.tar.gz": {
                 "unzip": false,
                 "url": "rhasspy/gruut/releases/download/v0.9.0/it-it.tar.gz",
-                "bytes_expected": 4839488
+                "bytes_expected": 4841389
             }
         }
     }

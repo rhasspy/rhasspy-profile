@@ -74,7 +74,7 @@
         }
     },
     "download": {
-        "url_base": "https://raw.githubusercontent.com/",
+        "url_base": "https://github.com/",
         "conditions": {
             "speech_to_text.system": {
                 "pocketsphinx": {
@@ -652,7 +652,7 @@
             },
             "es_deepspeech-jaco/base_language_model.fst": {
                 "unzip": true,
-                "url": "es_deepspeech-jaco/raw/712f4f359acfd2dffb1dfe087248aa111d776c1f/",
+                "url": "rhasspy/es_deepspeech-jaco/raw/712f4f359acfd2dffb1dfe087248aa111d776c1f/",
                 "parts": [
                     {
                         "fragment": "base_language_model.fst.gz.part-00",
@@ -672,7 +672,7 @@
             },
             "es_deepspeech-jaco/base_language_model.txt": {
                 "unzip": true,
-                "url": "es_deepspeech-jaco/raw/712f4f359acfd2dffb1dfe087248aa111d776c1f/",
+                "url": "rhasspy/es_deepspeech-jaco/raw/712f4f359acfd2dffb1dfe087248aa111d776c1f/",
                 "parts": [
                     {
                         "fragment": "base_language_model.txt.gz.part-00",

@@ -476,7 +476,7 @@
             "gruut/sv-se.tar.gz": {
                 "unzip": false,
                 "url": "rhasspy/gruut/releases/download/v0.9.0/sv-se.tar.gz",
-                "bytes_expected": 3177413
+                "bytes_expected": 3175800
             }
         }
     }
