@@ -1,0 +1,81 @@
+{
+    "language": "ar",
+    "locale": "ar_XA",
+    "name": "ar",
+    "speech_to_text": {
+        "dictionary_casing": "ignore",
+        "pocketsphinx": {
+            "compatible": false
+        },
+        "kaldi": {
+            "base_dictionary": "kaldi/base_dictionary.txt",
+            "base_language_model": "kaldi/base_language_model.txt",
+            "base_language_model_fst": "kaldi/base_language_model.fst",
+            "compatible": true,
+            "custom_words": "kaldi_custom_words.txt",
+            "sounds_like": "kaldi_sounds_like.txt",
+            "dictionary": "kaldi/dictionary.txt",
+            "graph": "graph",
+            "language_model": "kaldi/language_model.txt",
+            "model_dir": "kaldi/model",
+            "unknown_words": "kaldi_unknown_words.txt",
+            "g2p_model": "kaldi/g2p.npz",
+            "mix_fst": "kaldi/mixed.fst",
+            "phoneme_examples": "kaldi/phoneme_examples.txt",
+            "phoneme_map": "kaldi/espeak_phonemes.txt"
+        },
+        "deepspeech": {
+            "compatible": false
+        },
+        "vosk": {
+            "compatible": true
+        }
+    },
+    "text_to_speech": {
+        "recommended": "espeak",
+        "wavenet": {
+            "language_code": "ar-XA"
+        }
+    },
+    "download": {
+        "url_base": "https://raw.githubusercontent.com/",
+        "conditions": {
+            "speech_to_text.system": {
+                "kaldi": {
+                    "kaldi/base_dictionary.txt": "ar_kaldi-rhasspy/base_dictionary.txt",
+                    "kaldi/g2p.npz": "ar_kaldi-rhasspy/g2p.npz",
+                    "kaldi/g2p_config.json": "ar_kaldi-rhasspy/g2p_config.json",
+                    "kaldi/model/conf/mfcc.conf": "ar_kaldi-rhasspy/acoustic_model/conf/mfcc.conf",
+                    "kaldi/model/conf/mfcc_hires.conf": "ar_kaldi-rhasspy/acoustic_model/conf/mfcc_hires.conf",
+                    "kaldi/model/conf/online_cmvn.conf": "ar_kaldi-rhasspy/acoustic_model/conf/online_cmvn.conf",
+                    "kaldi/model/extractor/final.dubm": "ar_kaldi-rhasspy/acoustic_model/extractor/final.dubm",
+                    "kaldi/model/extractor/final.ie": "ar_kaldi-rhasspy/acoustic_model/extractor/final.ie",
+                    "kaldi/model/extractor/final.mat": "ar_kaldi-rhasspy/acoustic_model/extractor/final.mat",
+                    "kaldi/model/extractor/global_cmvn.stats": "ar_kaldi-rhasspy/acoustic_model/extractor/global_cmvn.stats",
+                    "kaldi/model/extractor/online_cmvn.conf": "ar_kaldi-rhasspy/acoustic_model/extractor/online_cmvn.conf",
+                    "kaldi/model/extractor/splice_opts": "ar_kaldi-rhasspy/acoustic_model/extractor/splice_opts",
+                    "kaldi/model/model/cmvn_opts": "ar_kaldi-rhasspy/acoustic_model/model/cmvn_opts",
+                    "kaldi/model/model/den.fst": "ar_kaldi-rhasspy/acoustic_model/model/den.fst",
+                    "kaldi/model/model/final.mdl": "ar_kaldi-rhasspy/acoustic_model/model/final.mdl",
+                    "kaldi/model/model/normalization.fst": "ar_kaldi-rhasspy/acoustic_model/model/normalization.fst",
+                    "kaldi/model/model/tree": "ar_kaldi-rhasspy/acoustic_model/model/tree",
+                    "kaldi/model/phones/extra_questions.txt": "ar_kaldi-rhasspy/acoustic_model/phones/extra_questions.txt",
+                    "kaldi/model/phones/nonsilence_phones.txt": "ar_kaldi-rhasspy/acoustic_model/phones/nonsilence_phones.txt",
+                    "kaldi/model/phones/optional_silence.txt": "ar_kaldi-rhasspy/acoustic_model/phones/optional_silence.txt",
+                    "kaldi/model/phones/silence_phones.txt": "ar_kaldi-rhasspy/acoustic_model/phones/silence_phones.txt"
+                },
+                "vosk": {
+                    "vosk/model/": "vosk/vosk-model-ar-mgb2-0.4.zip"
+                }
+
+            }
+        },
+        "files": {
+            "vosk/vosk-model-ar-mgb2-0.4.zip": {
+                "unzip": false,
+                "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-ar-mgb2-0.4.zip",
+                "bytes_expected": 333241610
+            }
+        }
+    }
+}
