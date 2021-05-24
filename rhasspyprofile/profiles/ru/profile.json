@@ -19,6 +19,9 @@
             "g2p_corpus": "kaldi/g2p.corpus",
             "phoneme_examples": "kaldi/phoneme_examples.txt",
             "phoneme_map": "kaldi/espeak_phonemes.txt"
+        },
+        "vosk": {
+            "compatible": true
         }
     },
     "text_to_speech": {
@@ -102,6 +105,9 @@
                     "kaldi/model/ivectors_test_hires/conf/online_cmvn.conf": "ru_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/online_cmvn.conf",
                     "kaldi/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf": "ru_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/ivector_extractor.conf",
                     "kaldi/acoustic_model/ivectors_test_hires/conf/splice.conf": "ru_kaldi-rhasspy/acoustic_model/ivectors_test_hires/conf/splice.conf"
+                },
+                "vosk": {
+                    "vosk/model/": "vosk/vosk-model-small-ru-0.15.zip"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -615,6 +621,11 @@
                 "unzip": false,
                 "url": "rhasspy/gruut/releases/download/v0.9.0/ru-ru.tar.gz",
                 "bytes_expected": 41673347
+            },
+            "vosk/vosk-model-small-ru-0.15.zip": {
+                "unzip": false,
+                "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-small-ru-0.15.zip",
+                "bytes_expected": 44193249
             }
         }
     }

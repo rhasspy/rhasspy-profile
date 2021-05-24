@@ -4,7 +4,10 @@
     "locale": "ca_ES",
     "speech_to_text": {
         "dictionary_casing": "lower",
-        "recommended": "pocketsphinx"
+        "recommended": "pocketsphinx",
+        "vosk": {
+            "compatible": true
+        }
     },
     "text_to_speech": {
         "recommended": "espeak",
@@ -28,6 +31,9 @@
                     "acoustic_model/noisedict": "ca-es_pocketsphinx-cmu/acoustic_model/noisedict",
                     "acoustic_model/transition_matrices": "ca-es_pocketsphinx-cmu/acoustic_model/transition_matrices",
                     "acoustic_model/variances": "ca-es_pocketsphinx-cmu/acoustic_model/variances"
+                },
+                "vosk": {
+                    "vosk/model/": "vosk/vosk-model-small-ca-0.4.zip"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -105,6 +111,11 @@
                 "unzip": false,
                 "url": "synesthesiam/ca-es_pocketsphinx-cmu/e3699ca7a92c41325a6d3915008ee91712657576/phoneme_examples.txt",
                 "bytes_expected": 622
+            },
+            "vosk/vosk-model-small-ca-0.4.zip": {
+                "unzip": false,
+                "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-small-ca-0.4.zip",
+                "bytes_expected": 43405881
             }
         }
     }

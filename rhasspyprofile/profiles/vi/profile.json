@@ -3,6 +3,7 @@
     "name": "vi",
     "locale": "vi_VN",
     "speech_to_text": {
+        "dictionary_casing": "lower",
         "kaldi": {
             "compatible": true,
             "model_type": "gmm"
@@ -10,7 +11,9 @@
         "pocketsphinx": {
             "compatible": false
         },
-        "dictionary_casing": "lower"
+        "vosk": {
+            "compatible": true
+        }
     },
     "text_to_speech": {
         "recommended": "espeak",
@@ -39,6 +42,9 @@
                     "model/phones/silence_phones.txt": "vi_kaldi-montreal/acoustic_model/phones/silence_phones.txt",
                     "model/path.sh": "vi_kaldi-montreal/acoustic_model/path.sh",
                     "model/conf/mfcc.conf": "vi_kaldi-montreal/acoustic_model/conf/mfcc.conf"
+                },
+                "vosk": {
+                    "vosk/model/": "vosk/vosk-model-small-vn-0.3.zip"
                 }
             },
             "speech_to_text.kaldi.open_transcription": {
@@ -336,6 +342,11 @@
                 "unzip": false,
                 "url": "synesthesiam/vi_kaldi-montreal/8460920c7438e572c064f1b6e88d62eb736ec636/acoustic_model/model/graph/phones.txt",
                 "bytes_expected": 10590
+            },
+            "vosk/vosk-model-small-vn-0.3.zip": {
+                "unzip": false,
+                "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-small-vn-0.3.zip",
+                "bytes_expected": 33655048
             }
         }
     }

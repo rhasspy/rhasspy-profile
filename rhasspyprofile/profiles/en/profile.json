@@ -26,6 +26,9 @@
             "compatible": true,
             "base_language_model_fst": "deepspeech/base_language_model.fst",
             "mix_fst": "deepspeech/mixed.fst"
+        },
+        "vosk": {
+            "compatible": true
         }
     },
     "text_to_speech": {
@@ -258,6 +261,9 @@
                 "deepspeech": {
                     "deepspeech/model/0.9/alphabet.txt": "en-us_deepspeech-mozilla/model/alphabet.txt",
                     "deepspeech/model/0.9/output_graph.pbmm": "en-us_deepspeech-mozilla/model/output_graph"
+                },
+                "vosk": {
+                    "vosk/model/": "vosk/vosk-model-small-en-us-0.15.zip"
                 }
             },
             "speech_to_text.pocketsphinx.open_transcription": {
@@ -1054,6 +1060,11 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/hifi_gan-vctk_small.tar.gz",
                 "bytes_expected": 5468855
+            },
+            "vosk/vosk-model-small-en-us-0.15.zip": {
+                "unzip": false,
+                "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-small-en-us-0.15.zip",
+                "bytes_expected": 41205931
             }
         }
     }

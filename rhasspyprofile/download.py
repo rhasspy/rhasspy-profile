@@ -10,6 +10,7 @@ import subprocess
 import tarfile
 import tempfile
 import typing
+import zipfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -361,14 +362,6 @@ async def download_files(
             # Actually download files
             for missing_file in missing_files:
                 file_key, target_path = missing_file.file_key, missing_file.file_path
-                if missing_file.target_is_directory:
-                    # Download to a temporary file, then extract to target directory
-                    download_path = Path(
-                        tempfile.NamedTemporaryFile(dir=cache_dir, delete=False).name
-                    )
-                else:
-                    # Download directly to target path
-                    download_path = target_path
 
                 file_details = typing.cast(
                     typing.Dict[str, typing.Any], files.get(file_key)
@@ -377,6 +370,18 @@ async def download_files(
                 assert (
                     "platform" not in file_details
                 ), "Platform should be already be resolved"
+
+                if missing_file.target_is_directory:
+                    # Download to a temporary file, then extract to target directory
+                    file_suffix = Path(file_details["url"]).suffix
+                    download_path = Path(
+                        tempfile.NamedTemporaryFile(
+                            dir=cache_dir, delete=False, suffix=file_suffix
+                        ).name
+                    )
+                else:
+                    # Download directly to target path
+                    download_path = target_path
 
                 # Number of bytes the downloaded file should be (pre-unzip)
                 zip_bytes_expected: typing.Optional[int] = file_details.get(
@@ -527,6 +532,17 @@ async def download_files(
                 # Verify size
                 if bytes_expected is not None:
                     if final_size != bytes_expected:
+                        try:
+                            with open(download_path, "rb") as downloaded_file:
+                                first_bytes = downloaded_file.read(min(100, final_size))
+                                _LOGGER.debug(
+                                    "First %s byte(s): %s",
+                                    len(first_bytes),
+                                    first_bytes,
+                                )
+                        except Exception:
+                            pass
+
                         download_path.unlink()
                         _LOGGER.error(
                             "Download failure (%s, got %s byte(s), expected %s)",
@@ -547,8 +563,15 @@ async def download_files(
                     # Extract to directory
                     _LOGGER.debug("Extracting %s to %s", download_path, target_path)
                     target_path.mkdir(parents=True, exist_ok=True)
-                    with tarfile.open(download_path, "r") as tar_file:
-                        tar_file.extractall(path=target_path)
+
+                    if download_path.suffix == ".zip":
+                        # Zip file
+                        with zipfile.ZipFile(download_path) as zip_file:
+                            zip_file.extractall(target_path)
+                    else:
+                        # Tar file
+                        with tarfile.open(download_path, "r") as tar_file:
+                            tar_file.extractall(path=target_path)
 
                     _LOGGER.debug("Successfully extracted to %s", target_path)
 
