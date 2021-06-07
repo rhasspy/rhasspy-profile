@@ -396,7 +396,8 @@
             "compatible": true,
             "keyphrase": "okay rhasspy",
             "mllr_matrix": "",
-            "threshold": 1e-30
+            "threshold": 1e-30,
+            "udp_site_info": {}
         },
         "precise": {
             "compatible": true,
@@ -405,7 +406,7 @@
             "model": "hey-mycroft-2.pb",
             "sensitivity": 0.5,
             "trigger_level": 3,
-            "udp_raw_audio": false
+            "udp_site_info": {}
         },
         "snowboy": {
             "compatible": true,
@@ -414,12 +415,14 @@
             "chunk_size": 960,
             "model": "snowboy.umdl",
             "sensitivity": 0.5,
-            "model_settings": {}
+            "model_settings": {},
+            "udp_site_info": {}
         },
         "porcupine": {
             "compatible": true,
             "keyword_path": "porcupine.ppn",
-            "sensitivity": 0.5
+            "sensitivity": 0.5,
+            "udp_site_info": {}
         },
         "raven": {
             "compatible": true,
@@ -430,7 +433,8 @@
             "vad_sensitivity": 1,
             "examples_dir": "",
             "examples_format": "",
-            "keywords": {}
+            "keywords": {},
+            "udp_site_info": {}
         },
         "system": "dummy",
         "recommended": "porcupine",
