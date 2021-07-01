@@ -38,7 +38,7 @@
         }
     },
     "download": {
-        "url_base": "https://raw.githubusercontent.com/",
+        "url_base": "https://github.com/",
         "conditions": {
             "speech_to_text.system": {
                 "kaldi": {
@@ -67,10 +67,121 @@
                 "vosk": {
                     "vosk/model/": "vosk/vosk-model-ar-mgb2-0.4.zip"
                 }
-
             }
         },
         "files": {
+            "ar_kaldi-rhasspy/g2p.npz": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/g2p.npz",
+                "bytes_expected": 642714
+            },
+            "ar_kaldi-rhasspy/g2p.corpus": {
+                "unzip": true,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/g2p.corpus.gz",
+                "zip_bytes_expected": 6751669,
+                "bytes_expected": 75424855
+            },
+            "ar_kaldi-rhasspy/g2p_config.json": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/g2p_config.json",
+                "bytes_expected": 1038
+            },
+            "ar_kaldi-rhasspy/base_dictionary.txt": {
+                "unzip": true,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/base_dictionary.txt.gz",
+                "zip_bytes_expected": 7407108,
+                "bytes_expected": 46826066
+            },
+            "ar_kaldi-rhasspy/acoustic_model/phones/silence_phones.txt": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/phones/silence_phones.txt",
+                "bytes_expected": 12
+            },
+            "ar_kaldi-rhasspy/acoustic_model/phones/optional_silence.txt": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/phones/optional_silence.txt",
+                "bytes_expected": 4
+            },
+            "ar_kaldi-rhasspy/acoustic_model/phones/nonsilence_phones.txt": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/phones/nonsilence_phones.txt",
+                "bytes_expected": 128
+            },
+            "ar_kaldi-rhasspy/acoustic_model/phones/extra_questions.txt": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/phones/extra_questions.txt",
+                "bytes_expected": 140
+            },
+            "ar_kaldi-rhasspy/acoustic_model/model/tree": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/model/tree",
+                "bytes_expected": 346688
+            },
+            "ar_kaldi-rhasspy/acoustic_model/model/normalization.fst": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/model/normalization.fst",
+                "bytes_expected": 1026598
+            },
+            "ar_kaldi-rhasspy/acoustic_model/model/final.mdl": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/model/final.mdl",
+                "bytes_expected": 10699021
+            },
+            "ar_kaldi-rhasspy/acoustic_model/model/den.fst": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/model/den.fst",
+                "bytes_expected": 869334
+            },
+            "ar_kaldi-rhasspy/acoustic_model/model/cmvn_opts": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/model/cmvn_opts",
+                "bytes_expected": 37
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/splice_opts": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/splice_opts",
+                "bytes_expected": 35
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/online_cmvn.conf": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/online_cmvn.conf",
+                "bytes_expected": 108
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/global_cmvn.stats": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/global_cmvn.stats",
+                "bytes_expected": 1037
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/final.mat": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/final.mat",
+                "bytes_expected": 44815
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/final.ie": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/final.ie",
+                "bytes_expected": 19757687
+            },
+            "ar_kaldi-rhasspy/acoustic_model/extractor/final.dubm": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/extractor/final.dubm",
+                "bytes_expected": 168048
+            },
+            "ar_kaldi-rhasspy/acoustic_model/conf/online_cmvn.conf": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/conf/online_cmvn.conf",
+                "bytes_expected": 108
+            },
+            "ar_kaldi-rhasspy/acoustic_model/conf/mfcc_hires.conf": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/conf/mfcc_hires.conf",
+                "bytes_expected": 670
+            },
+            "ar_kaldi-rhasspy/acoustic_model/conf/mfcc.conf": {
+                "unzip": false,
+                "url": "rhasspy/ar_kaldi-rhasspy/raw/ca65d6f3f7b70cfe36cd8ac9b0694abea778df3c/acoustic_model/conf/mfcc.conf",
+                "bytes_expected": 44
+            },
             "vosk/vosk-model-ar-mgb2-0.4.zip": {
                 "unzip": false,
                 "url": "rhasspy/rhasspy-asr-vosk-hermes/releases/download/v0.1.0/vosk-model-ar-mgb2-0.4.zip",
