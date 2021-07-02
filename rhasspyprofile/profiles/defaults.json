@@ -208,7 +208,8 @@
             "frequent_words": "frequent_words.txt",
             "max_frequent_words": 100,
             "allow_unknown_words": false,
-            "unknown_words_probability": 1e-5,
+            "unknown_words_probability": 1e-05,
+            "unknown_token": "<unk>",
             "silence_probability": 0.5
         },
         "pocketsphinx": {
