@@ -206,8 +206,9 @@
             "language_model_type": "text_fst",
             "min_confidence": 0,
             "frequent_words": "frequent_words.txt",
+            "max_frequent_words": 100,
             "allow_unknown_words": false,
-            "unknown_words_probability": 1e-10,
+            "unknown_words_probability": 1e-5,
             "silence_probability": 0.5
         },
         "pocketsphinx": {
