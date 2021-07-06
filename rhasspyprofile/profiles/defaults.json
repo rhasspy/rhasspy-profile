@@ -21,7 +21,13 @@
         "recommended": "rhasspy",
         "volume": 1,
         "group_separator": "",
-        "say_chars_per_second": 33
+        "say_chars_per_second": 33,
+        "sound_suffixes": [
+            ".wav",
+            ".mp3",
+            ".ogg",
+            ".flac"
+        ]
     },
     "handle": {
         "satellite_site_ids": "",
