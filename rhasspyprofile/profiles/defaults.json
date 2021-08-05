@@ -74,7 +74,8 @@
             "intent_graph": "intent_graph.pickle.gz",
             "ignore_unknown_words": true,
             "converters_dir": "converters",
-            "fuzzy": true
+            "fuzzy": true,
+            "failure_token": "<unk>"
         },
         "flair": {
             "cache_dir": "flair/cache",
@@ -213,10 +214,13 @@
             "min_confidence": 0,
             "frequent_words": "frequent_words.txt",
             "max_frequent_words": 100,
+            "max_unknown_words": 8,
             "allow_unknown_words": false,
             "unknown_words_probability": 1e-05,
             "unknown_token": "<unk>",
-            "silence_probability": 0.5
+            "silence_probability": 0.5,
+            "cancel_word": "",
+            "cancel_probability": 0.01
         },
         "pocketsphinx": {
             "acoustic_model": "acoustic_model",
