@@ -57,6 +57,14 @@
                     "vocoder_settings": {
                         "denoiser_strength": 0.003
                     }
+                },
+                "nathalie": {
+                    "language": "nl",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/nl/nathalie-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.003
+                    }
                 }
             }
         }
@@ -149,6 +157,12 @@
                 "(larynx bart_de_leeuw)": {
                     "tts/larynx/nl/bart_de_leeuw-glow_tts/": {
                         "source": "larynx/nl_bart_de_leeuw-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx nathalie)": {
+                    "tts/larynx/nl/nathalie-glow_tts/": {
+                        "source": "larynx/nl_nathalie-glow_tts.tar.gz",
                         "target": "tts/larynx/"
                     }
                 }
@@ -528,6 +542,11 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/nl_bart_de_leeuw-glow_tts.tar.gz",
                 "bytes_expected": 106975311
+            },
+            "larynx/nl_nathalie-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/nl_nathalie-glow_tts.tar.gz",
+                "bytes_expected": 106850308
             },
             "larynx/hifi_gan-universal_large.tar.gz": {
                 "unzip": false,
