@@ -238,6 +238,38 @@
                     "vocoder_settings": {
                         "denoiser_strength": 0.001
                     }
+                },
+                "northern_english_male": {
+                    "language": "en-us",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/en-us/northern_english_male-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "scottish_english_male": {
+                    "language": "en-us",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/en-us/scottish_english_male-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "southern_english_female": {
+                    "language": "en-us",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/en-us/southern_english_female-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "southern_english_male": {
+                    "language": "en-us",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/en-us/southern_english_male-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
                 }
             }
         }
@@ -469,6 +501,30 @@
                 "(larynx judy_bieber)": {
                     "tts/larynx/en-us/judy_bieber-glow_tts/": {
                         "source": "larynx/en-us_judy_bieber-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx northern_english_male)": {
+                    "tts/larynx/en-us/northern_english_male-glow_tts/": {
+                        "source": "larynx/en-us_northern_english_male-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx scottish_english_male)": {
+                    "tts/larynx/en-us/scottish_english_male-glow_tts/": {
+                        "source": "larynx/en-us_scottish_english_male-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx southern_english_male)": {
+                    "tts/larynx/en-us/southern_english_male-glow_tts/": {
+                        "source": "larynx/en-us_southern_english_male-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx southern_english_female)": {
+                    "tts/larynx/en-us/southern_english_female-glow_tts/": {
+                        "source": "larynx/en-us_southern_english_female-glow_tts.tar.gz",
                         "target": "tts/larynx/"
                     }
                 }
@@ -1102,6 +1158,26 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/en-us_judy_bieber-glow_tts.tar.gz",
                 "bytes_expected": 107284810
+            },
+            "larynx/en-us_northern_english_male-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/en-us_northern_english_male-glow_tts.tar.gz",
+                "bytes_expected": 107023574
+            },
+            "larynx/en-us_scottish_english_male-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/en-us_scottish_english_male-glow_tts.tar.gz",
+                "bytes_expected": 107008472
+            },
+            "larynx/en-us_southern_english_female-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/en-us_southern_english_female-glow_tts.tar.gz",
+                "bytes_expected": 107173666
+            },
+            "larynx/en-us_southern_english_male-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/en-us_southern_english_male-glow_tts.tar.gz",
+                "bytes_expected": 107084707
             },
             "larynx/hifi_gan-universal_large.tar.gz": {
                 "unzip": false,
