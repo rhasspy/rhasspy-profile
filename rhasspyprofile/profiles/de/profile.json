@@ -61,6 +61,54 @@
                     "vocoder_settings": {
                         "denoiser_strength": 0.001
                     }
+                },
+                "eva_k": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/eva_k-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "hokuspokus": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/hokuspokus-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "karlsson": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/karlsson-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "kerstin": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/kerstin-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "pavoque": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/pavoque-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
+                },
+                "rebecca_braunert_plunkett": {
+                    "language": "de-de",
+                    "tts_type": "glow_tts",
+                    "tts_path": "tts/larynx/de-de/rebecca_braunert_plunkett-glow_tts",
+                    "vocoder_settings": {
+                        "denoiser_strength": 0.001
+                    }
                 }
             }
         }
@@ -164,6 +212,42 @@
                 "(larynx thorsten)": {
                     "tts/larynx/de-de/thorsten-glow_tts/": {
                         "source": "larynx/de-de_thorsten-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx eva_k)": {
+                    "tts/larynx/de-de/eva_k-glow_tts/": {
+                        "source": "larynx/de-de_eva_k-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx hokuspokus)": {
+                    "tts/larynx/de-de/hokuspokus-glow_tts/": {
+                        "source": "larynx/de-de_hokuspokus-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx kerstin)": {
+                    "tts/larynx/de-de/kerstin-glow_tts/": {
+                        "source": "larynx/de-de_kerstin-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx karlsson)": {
+                    "tts/larynx/de-de/karlsson-glow_tts/": {
+                        "source": "larynx/de-de_karlsson-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx pavoque)": {
+                    "tts/larynx/de-de/pavoque-glow_tts/": {
+                        "source": "larynx/de-de_pavoque-glow_tts.tar.gz",
+                        "target": "tts/larynx/"
+                    }
+                },
+                "(larynx rebecca_braunert_plunkett)": {
+                    "tts/larynx/de-de/rebecca_braunert_plunkett-glow_tts/": {
+                        "source": "larynx/de-de_rebecca_braunert_plunkett-glow_tts.tar.gz",
                         "target": "tts/larynx/"
                     }
                 }
@@ -572,6 +656,36 @@
                 "unzip": false,
                 "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_thorsten-glow_tts.tar.gz",
                 "bytes_expected": 106973383
+            },
+            "larynx/de-de_eva_k-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_eva_k-glow_tts.tar.gz",
+                "bytes_expected": 107017399
+            },
+            "larynx/de-de_karlsson-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_karlsson-glow_tts.tar.gz",
+                "bytes_expected": 107044952
+            },
+            "larynx/de-de_rebecca_braunert_plunkett-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_rebecca_braunert_plunkett-glow_tts.tar.gz",
+                "bytes_expected": 106974795
+            },
+            "larynx/de-de_hokuspokus-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_hokuspokus-glow_tts.tar.gz",
+                "bytes_expected": 107044148
+            },
+            "larynx/de-de_kerstin-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_kerstin-glow_tts.tar.gz",
+                "bytes_expected": 106830075
+            },
+            "larynx/de-de_pavoque-glow_tts.tar.gz": {
+                "unzip": false,
+                "url": "rhasspy/larynx/releases/download/2021-03-28/de-de_pavoque-glow_tts.tar.gz",
+                "bytes_expected": 106941440
             },
             "larynx/hifi_gan-universal_large.tar.gz": {
                 "unzip": false,
