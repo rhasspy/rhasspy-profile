@@ -1,0 +1,101 @@
+{
+    "language": "lv",
+    "name": "lv",
+    "locale": "lv_LV",
+    "speech_to_text": {
+        "dictionary_casing": "lower",
+        "pocketsphinx": {
+            "compatible": false
+        },
+        "deepspeech": {
+            "compatible": true,
+            "base_language_model_fst": "deepspeech/base_language_model.fst",
+            "mix_fst": "deepspeech/mixed.fst"
+        },
+        "recommended": "deepspeech"
+    },
+    "text_to_speech": {
+        "recommended": "espeak",
+        "wavenet": {
+            "language_code": "lv-LV"
+        }
+    },
+    "download": {
+        "url_base": "https://raw.githubusercontent.com/",
+        "conditions": {
+            "speech_to_text.system": {
+                "deepspeech": {
+                    "deepspeech/model/0.9/alphabet.txt": "DeepSpeechLV/model/alphabet.txt",
+                    "deepspeech/model/0.9/output_graph.pbmm": "DeepSpeechLV/model/output_graph"
+                }
+            },
+            "speech_to_text.deepspeech.open_transcription": {
+                "True": {
+                    "deepspeech/model/0.9/base.scorer": "DeepSpeechLV/model/base.scorer"
+                }
+            }
+        },
+        "files": {
+            "DeepSpeechLV/model/output_graph": {
+                "platform": {
+                    "arm.+": "DeepSpeechLV/model/output_graph.tflite",
+                    "aarch64": "DeepSpeechLV/model/output_graph.tflite",
+                    "": "DeepSpeechLV/model/output_graph.pbmm"
+                }
+            },
+            "DeepSpeechLV/model/alphabet.txt": {
+                "unzip": false,
+                "url": "raivisdejus/DeepSpeechLV/6cc7b3dbd8e3814ed34fef4c2a3315a9b1adf21d/model/rhasspy/alphabet.txt",
+                "bytes_expected": 360
+            },
+            "DeepSpeechLV/model/base.scorer": {
+                "unzip": true,
+                "url": "raivisdejus/DeepSpeechLV/6cc7b3dbd8e3814ed34fef4c2a3315a9b1adf21d/model/rhasspy/base.scorer.gz",
+                "zip_bytes_expected": 5780911,
+                "bytes_expected": 10785168
+            },
+            "DeepSpeechLV/model/output_graph.pbmm": {
+                "unzip": true,
+                "url": "raivisdejus/DeepSpeechLV/6cc7b3dbd8e3814ed34fef4c2a3315a9b1adf21d/model/rhasspy/",
+                "parts": [
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-00",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-01",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-02",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-03",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-04",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-05",
+                        "bytes_expected": 26214400
+                    },
+                    {
+                        "fragment": "output_graph.pbmm.gz.part-06",
+                        "bytes_expected": 18125253
+                    }
+                ],
+                "zip_bytes_expected": 175411653,
+                "bytes_expected": 189006547
+            },
+            "DeepSpeechLV/model/output_graph.tflite": {
+                "unzip": true,
+                "url": "raivisdejus/DeepSpeechLV/6cc7b3dbd8e3814ed34fef4c2a3315a9b1adf21d/model/rhasspy/output_graph.tflite.gz",
+                "zip_bytes_expected": 21153235,
+                "bytes_expected": 47354752
+            }
+        }
+    }
+}
